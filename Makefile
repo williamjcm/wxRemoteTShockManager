@@ -30,12 +30,12 @@ DEP_DEBUG =
 OUT_DEBUG = bin/Debug/wxRemoteTShockManager
 
 INC_RELEASE = $(INC) -Iinclude
-CFLAGS_RELEASE = $(CFLAGS) -g `wx-config --debug=no --version=3.0 --cxxflags`
+CFLAGS_RELEASE = $(CFLAGS) `wx-config --debug=no --version=3.0 --cxxflags`
 RESINC_RELEASE = $(RESINC)
 RCFLAGS_RELEASE = $(RCFLAGS)
 LIBDIR_RELEASE = $(LIBDIR)
 LIB_RELEASE = $(LIB) 
-LDFLAGS_RELEASE = $(LDFLAGS) `wx-config --debug=no --version=3.0 --libs base,core,adv,net`
+LDFLAGS_RELEASE = $(LDFLAGS) -s `wx-config --debug=no --version=3.0 --libs base,core,adv,net`
 OBJDIR_RELEASE = obj/Release
 DEP_RELEASE = 
 OUT_RELEASE = bin/Release/wxRemoteTShockManager
