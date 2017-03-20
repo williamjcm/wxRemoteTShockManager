@@ -1,0 +1,3188 @@
+# depslib dependency file v1.0
+1489834751 source:c:\users\administrateur\documents\dev\wxremotetshockmanager\ihm\bancreatedialog.cpp
+	"BanCreateDialog.h"
+
+1489834674 c:\users\administrateur\documents\dev\wxremotetshockmanager\ihm\bancreatedialog.h
+	<wx/artprov.h>
+	<wx/xrc/xmlres.h>
+	<wx/string.h>
+	<wx/radiobut.h>
+	<wx/gdicmn.h>
+	<wx/font.h>
+	<wx/colour.h>
+	<wx/settings.h>
+	<wx/stattext.h>
+	<wx/textctrl.h>
+	<wx/sizer.h>
+	<wx/button.h>
+	<wx/dialog.h>
+
+1489834799 source:c:\users\administrateur\documents\dev\wxremotetshockmanager\ihm\evtbancreatedialog.cpp
+	"EvtBanCreateDialog.h"
+
+1489834658 c:\users\administrateur\documents\dev\wxremotetshockmanager\ihm\evtbancreatedialog.h
+	"BanCreateDialog.h"
+	<wx/arrstr.h>
+	<wx/msgdlg.h>
+
+1476717704 source:c:\users\administrateur\documents\dev\wxremotetshockmanager\ihm\evtgroupdialog.cpp
+	"EvtGroupDialog.h"
+
+1476717704 c:\users\administrateur\documents\dev\wxremotetshockmanager\ihm\evtgroupdialog.h
+	"GroupDialog.h"
+
+1478266559 c:\users\administrateur\documents\dev\wxremotetshockmanager\ihm\groupdialog.h
+	<wx/artprov.h>
+	<wx/xrc/xmlres.h>
+	<wx/string.h>
+	<wx/stattext.h>
+	<wx/gdicmn.h>
+	<wx/font.h>
+	<wx/colour.h>
+	<wx/settings.h>
+	<wx/textctrl.h>
+	<wx/clrpicker.h>
+	<wx/sizer.h>
+	<wx/statbox.h>
+	<wx/dialog.h>
+
+1489834784 source:c:\users\administrateur\documents\dev\wxremotetshockmanager\ihm\evtlicenceinfodialog.cpp
+	"EvtLicenceInfoDialog.h"
+
+1489834843 c:\users\administrateur\documents\dev\wxremotetshockmanager\ihm\evtlicenceinfodialog.h
+	"LicenceInfoDialog.h"
+
+1489834819 c:\users\administrateur\documents\dev\wxremotetshockmanager\ihm\licenceinfodialog.h
+	<wx/artprov.h>
+	<wx/xrc/xmlres.h>
+	<wx/string.h>
+	<wx/stattext.h>
+	<wx/gdicmn.h>
+	<wx/font.h>
+	<wx/colour.h>
+	<wx/settings.h>
+	<wx/sizer.h>
+	<wx/panel.h>
+	<wx/bitmap.h>
+	<wx/image.h>
+	<wx/icon.h>
+	<wx/textctrl.h>
+	<wx/notebook.h>
+	<wx/dialog.h>
+
+1490019090 source:c:\users\administrateur\documents\dev\wxremotetshockmanager\ihm\evtmainframe.cpp
+	"EvtMainFrame.h"
+
+1489834837 c:\users\administrateur\documents\dev\wxremotetshockmanager\ihm\evtmainframe.h
+	"MainFrame.h"
+	<wx/msgdlg.h>
+	<wx/log.h>
+	<wx/tokenzr.h>
+	<wx/arrstr.h>
+	<wx/textdlg.h>
+	<wx/colordlg.h>
+	<wx/regex.h>
+	"res/tshock.xpm"
+	"../include/json.h"
+	"../include/RESTClient.h"
+	"EvtUserModDialog.h"
+	"EvtBanCreateDialog.h"
+	"EvtLicenceInfoDialog.h"
+	"EvtGroupPermissionsDialog.h"
+
+1490017599 c:\users\administrateur\documents\dev\wxremotetshockmanager\ihm\mainframe.h
+	<wx/artprov.h>
+	<wx/xrc/xmlres.h>
+	<wx/string.h>
+	<wx/stattext.h>
+	<wx/gdicmn.h>
+	<wx/font.h>
+	<wx/colour.h>
+	<wx/settings.h>
+	<wx/textctrl.h>
+	<wx/sizer.h>
+	<wx/statbox.h>
+	<wx/button.h>
+	<wx/panel.h>
+	<wx/bitmap.h>
+	<wx/image.h>
+	<wx/icon.h>
+	<wx/listbox.h>
+	<wx/hyperlink.h>
+	<wx/notebook.h>
+	<wx/frame.h>
+
+1456726217 c:\users\administrateur\documents\dev\wxremotetshockmanager\ihm\res\tshock.xpm
+
+1454147131 c:\users\administrateur\documents\dev\wxremotetshockmanager\include\json.h
+	<vector>
+	<map>
+	<string>
+	<stdexcept>
+
+1489834887 c:\users\administrateur\documents\dev\wxremotetshockmanager\include\restclient.h
+	<sstream>
+	<wx/protocol/http.h>
+	<wx/sstream.h>
+
+1489834830 c:\users\administrateur\documents\dev\wxremotetshockmanager\ihm\evtusermoddialog.h
+	"UserModDialog.h"
+	<wx/arrstr.h>
+	<wx/msgdlg.h>
+
+1489834806 c:\users\administrateur\documents\dev\wxremotetshockmanager\ihm\usermoddialog.h
+	<wx/artprov.h>
+	<wx/xrc/xmlres.h>
+	<wx/string.h>
+	<wx/stattext.h>
+	<wx/gdicmn.h>
+	<wx/font.h>
+	<wx/colour.h>
+	<wx/settings.h>
+	<wx/textctrl.h>
+	<wx/choice.h>
+	<wx/sizer.h>
+	<wx/button.h>
+	<wx/dialog.h>
+
+1489834756 source:c:\users\administrateur\documents\dev\wxremotetshockmanager\ihm\evtusermoddialog.cpp
+	"EvtUserModDialog.h"
+
+1478266559 source:c:\users\administrateur\documents\dev\wxremotetshockmanager\ihm\groupdialog.cpp
+	"GroupDialog.h"
+
+1489950978 source:c:\users\administrateur\documents\dev\wxremotetshockmanager\ihm\licenceinfodialog.cpp
+	"LicenceInfoDialog.h"
+
+1490017634 source:c:\users\administrateur\documents\dev\wxremotetshockmanager\ihm\mainframe.cpp
+	"MainFrame.h"
+
+1489834688 source:c:\users\administrateur\documents\dev\wxremotetshockmanager\ihm\usermoddialog.cpp
+	"UserModDialog.h"
+
+1489834584 source:c:\users\administrateur\documents\dev\wxremotetshockmanager\myapp.cpp
+	"wx_pch.h"
+	"MyApp.h"
+	"IHM/EvtMainFrame.h"
+
+1489834570 c:\users\administrateur\documents\dev\wxremotetshockmanager\myapp.h
+	<wx/app.h>
+
+1461831309 source:c:\users\administrateur\documents\dev\wxremotetshockmanager\resource.rc
+	"wx/msw/wx.rc"
+
+1487747744 source:c:\users\administrateur\documents\dev\wxremotetshockmanager\src\checktreectrl.cpp
+	"../include/checktreectrl.h"
+	<wx/dcmemory.h>
+	<wx/renderer.h>
+	<wx/imaglist.h>
+	<wx/settings.h>
+
+1478263651 c:\users\administrateur\documents\dev\wxremotetshockmanager\include\checktreectrl.h
+	<wx/treectrl.h>
+	<wx/bitmap.h>
+	"list"
+
+1454147132 source:c:\users\administrateur\documents\dev\wxremotetshockmanager\src\json.cpp
+	"../include/json.h"
+	<stdlib.h>
+	<string>
+	<algorithm>
+	<cstdlib>
+	<cstdio>
+	<climits>
+	<string.h>
+	<functional>
+	<cctype>
+	<stack>
+	<cerrno>
+
+1489834883 source:c:\users\administrateur\documents\dev\wxremotetshockmanager\src\restclient.cpp
+	"../include/RESTClient.h"
+
+1484810900 c:\msys64\mingw32\include\wx-3.0\wx\artprov.h
+	"wx/string.h"
+	"wx/bitmap.h"
+	"wx/icon.h"
+	"wx/iconbndl.h"
+
+1484810874 c:\msys64\mingw32\include\wx-3.0\wx\string.h
+	"wx/defs.h"
+	<ctype.h>
+	<stdio.h>
+	<string.h>
+	<stdarg.h>
+	<limits.h>
+	<string.h>
+	<stdio.h>
+	<stdarg.h>
+	<limits.h>
+	<stdlib.h>
+	"wx/wxcrtbase.h"
+	"wx/strvararg.h"
+	"wx/buffer.h"
+	"wx/strconv.h"
+	"wx/stringimpl.h"
+	"wx/stringops.h"
+	"wx/unichar.h"
+	"wx/tls.h"
+	"wx/iosfwrap.h"
+	"wx/crt.h"
+
+1484810863 c:\msys64\mingw32\include\wx-3.0\wx\defs.h
+	"wx/platform.h"
+	"wx/version.h"
+	"wx/dlimpexp.h"
+	<stddef.h>
+	"wx/debug.h"
+	<sys/types.h>
+	<sys/types.h>
+	"wx/windowid.h"
+	<unistd.h>
+	"wx/msw/winundef.h"
+	"wx/features.h"
+
+1484810870 c:\msys64\mingw32\include\wx-3.0\wx\platform.h
+	<unistd.h>
+	<TargetConditionals.h>
+	<AvailabilityMacros.h>
+	"wx/osx/config_xcode.h"
+	"wx/android/config_android.h"
+	"wx/compiler.h"
+	"wx/setup.h"
+	"wx/msw/wince/libraries.h"
+	"wx/msw/libraries.h"
+	"wx/msw/gccpriv.h"
+	<TargetConditionals.h>
+	<AvailabilityMacros.h>
+	"wx/chkconf.h"
+
+1484810862 c:\msys64\mingw32\include\wx-3.0\wx\compiler.h
+
+1484810753 c:\msys64\mingw32\lib\wx\include\msw-unicode-static-3.0\wx\setup.h
+
+1484810882 c:\msys64\mingw32\include\wx-3.0\wx\msw\libraries.h
+
+1484810881 c:\msys64\mingw32\include\wx-3.0\wx\msw\gccpriv.h
+	<_mingw.h>
+	<w32api.h>
+
+1484810861 c:\msys64\mingw32\include\wx-3.0\wx\chkconf.h
+	"wx/msw/wince/chkconf.h"
+	"wx/msw/chkconf.h"
+	"wx/gtk/chkconf.h"
+	"wx/gtk/chkconf.h"
+	"wx/cocoa/chkconf.h"
+	"wx/osx/chkconf.h"
+	"wx/os2/chkconf.h"
+	"wx/dfb/chkconf.h"
+	"wx/motif/chkconf.h"
+	"wx/x11/chkconf.h"
+	"wx/android/chkconf.h"
+	"wx/unix/chkconf.h"
+	"wx/univ/chkconf.h"
+
+1484810881 c:\msys64\mingw32\include\wx-3.0\wx\msw\chkconf.h
+
+1484810877 c:\msys64\mingw32\include\wx-3.0\wx\version.h
+	"wx/cpp.h"
+
+1484810862 c:\msys64\mingw32\include\wx-3.0\wx\cpp.h
+	"wx/compiler.h"
+
+1484810863 c:\msys64\mingw32\include\wx-3.0\wx\dlimpexp.h
+
+1484810863 c:\msys64\mingw32\include\wx-3.0\wx\debug.h
+	<assert.h>
+	<limits.h>
+	"wx/chartype.h"
+	"wx/cpp.h"
+	"wx/dlimpexp.h"
+
+1484810861 c:\msys64\mingw32\include\wx-3.0\wx\chartype.h
+	"wx/platform.h"
+	<sys/types.h>
+	<wchar.h>
+	<wcstr.h>
+	<stdlib.h>
+	<widec.h>
+	<ctype.h>
+	<stddef.h>
+	<string.h>
+	<ctype.h>
+	<tchar.h>
+	<ctype.h>
+
+1484810899 c:\msys64\mingw32\include\wx-3.0\wx\windowid.h
+
+1484810883 c:\msys64\mingw32\include\wx-3.0\wx\msw\winundef.h
+
+1484810865 c:\msys64\mingw32\include\wx-3.0\wx\features.h
+
+1484810878 c:\msys64\mingw32\include\wx-3.0\wx\wxcrtbase.h
+	"wx/chartype.h"
+	<stdio.h>
+	<string.h>
+	<ctype.h>
+	<wctype.h>
+	<time.h>
+	<io.h>
+
+1484810874 c:\msys64\mingw32\include\wx-3.0\wx\strvararg.h
+	"wx/platform.h"
+	"wx/cpp.h"
+	"wx/chartype.h"
+	"wx/strconv.h"
+	"wx/buffer.h"
+	"wx/unichar.h"
+	<type_traits>
+	<type_traits>
+	<tr1/type_traits>
+	"wx/stringimpl.h"
+
+1484810873 c:\msys64\mingw32\include\wx-3.0\wx\strconv.h
+	"wx/defs.h"
+	"wx/chartype.h"
+	"wx/buffer.h"
+	"typeinfo.h"
+	<stdlib.h>
+	"wx/fontenc.h"
+
+1484810861 c:\msys64\mingw32\include\wx-3.0\wx\buffer.h
+	"wx/chartype.h"
+	"wx/wxcrtbase.h"
+	<stdlib.h>
+
+1484810876 c:\msys64\mingw32\include\wx-3.0\wx\typeinfo.h
+	"wx/defs.h"
+	<typeinfo>
+	<string.h>
+
+1484810866 c:\msys64\mingw32\include\wx-3.0\wx\fontenc.h
+
+1484810876 c:\msys64\mingw32\include\wx-3.0\wx\unichar.h
+	"wx/defs.h"
+	"wx/chartype.h"
+	"wx/stringimpl.h"
+
+1484810874 c:\msys64\mingw32\include\wx-3.0\wx\stringimpl.h
+	"wx/defs.h"
+	"wx/chartype.h"
+	"wx/wxcrtbase.h"
+	<stdlib.h>
+	"wx/beforestd.h"
+	<string>
+	"wx/afterstd.h"
+
+1484810861 c:\msys64\mingw32\include\wx-3.0\wx\beforestd.h
+
+1484810860 c:\msys64\mingw32\include\wx-3.0\wx\afterstd.h
+	"wx/msw/winundef.h"
+
+1484810874 c:\msys64\mingw32\include\wx-3.0\wx\stringops.h
+	"wx/chartype.h"
+	"wx/stringimpl.h"
+	"wx/unichar.h"
+	"wx/buffer.h"
+
+1484810875 c:\msys64\mingw32\include\wx-3.0\wx\tls.h
+	"wx/defs.h"
+	"wx/msw/tls.h"
+	"wx/os2/tls.h"
+	"wx/unix/tls.h"
+	<stdlib.h>
+
+1484810867 c:\msys64\mingw32\include\wx-3.0\wx\iosfwrap.h
+	<iostream.h>
+	<iosfwd>
+	"wx/msw/winundef.h"
+
+1484810863 c:\msys64\mingw32\include\wx-3.0\wx\crt.h
+	"wx/defs.h"
+	"wx/chartype.h"
+	"wx/wxcrt.h"
+	"wx/wxcrtvararg.h"
+
+1484810878 c:\msys64\mingw32\include\wx-3.0\wx\wxcrt.h
+	"wx/wxcrtbase.h"
+	"wx/string.h"
+	<string.h>
+
+1484810878 c:\msys64\mingw32\include\wx-3.0\wx\wxcrtvararg.h
+	"wx/wxcrt.h"
+	"wx/strvararg.h"
+	"wx/string.h"
+	<stdarg.h>
+
+1484810901 c:\msys64\mingw32\include\wx-3.0\wx\bitmap.h
+	"wx/string.h"
+	"wx/gdicmn.h"
+	"wx/colour.h"
+	"wx/image.h"
+	"wx/variant.h"
+	"wx/msw/bitmap.h"
+	"wx/x11/bitmap.h"
+	"wx/gtk/bitmap.h"
+	"wx/gtk1/bitmap.h"
+	"wx/x11/bitmap.h"
+	"wx/dfb/bitmap.h"
+	"wx/osx/bitmap.h"
+	"wx/cocoa/bitmap.h"
+	"wx/os2/bitmap.h"
+	"wx/generic/mask.h"
+
+1484810889 c:\msys64\mingw32\include\wx-3.0\wx\gdicmn.h
+	"wx/defs.h"
+	"wx/list.h"
+	"wx/string.h"
+	"wx/fontenc.h"
+	"wx/hashmap.h"
+	"wx/math.h"
+
+1484810868 c:\msys64\mingw32\include\wx-3.0\wx\list.h
+	"wx/defs.h"
+	"wx/object.h"
+	"wx/string.h"
+	"wx/vector.h"
+	"wx/beforestd.h"
+	<algorithm>
+	<iterator>
+	<list>
+	"wx/afterstd.h"
+
+1484810870 c:\msys64\mingw32\include\wx-3.0\wx\object.h
+	"wx/memory.h"
+	"wx/xti.h"
+	"wx/rtti.h"
+	"wx/xti2.h"
+	"wx/msw/msvcrt.h"
+
+1484810869 c:\msys64\mingw32\include\wx-3.0\wx\memory.h
+	"wx/defs.h"
+	"wx/string.h"
+	"wx/msgout.h"
+	<stddef.h>
+
+1484810870 c:\msys64\mingw32\include\wx-3.0\wx\msgout.h
+	"wx/defs.h"
+	"wx/chartype.h"
+	"wx/strvararg.h"
+
+1484810878 c:\msys64\mingw32\include\wx-3.0\wx\xti.h
+	"wx/defs.h"
+	"wx/xtitypes.h"
+	"wx/xtihandler.h"
+
+1484810879 c:\msys64\mingw32\include\wx-3.0\wx\xtitypes.h
+	"wx/defs.h"
+	"wx/string.h"
+	"wx/hashmap.h"
+	"wx/arrstr.h"
+	"wx/flags.h"
+	"wx/intl.h"
+	"wx/log.h"
+	<typeinfo>
+
+1484810867 c:\msys64\mingw32\include\wx-3.0\wx\hashmap.h
+	"wx/string.h"
+	"wx/wxcrt.h"
+	<unordered_map>
+	<tr1/unordered_map>
+	<ext/hash_map>
+	<hash_map>
+	<stddef.h>
+
+1484810860 c:\msys64\mingw32\include\wx-3.0\wx\arrstr.h
+	"wx/defs.h"
+	"wx/string.h"
+	"wx/dynarray.h"
+	"wx/beforestd.h"
+	<iterator>
+	"wx/afterstd.h"
+
+1484810864 c:\msys64\mingw32\include\wx-3.0\wx\dynarray.h
+	"wx/defs.h"
+	"wx/beforestd.h"
+	<vector>
+	<algorithm>
+	"wx/afterstd.h"
+
+1484810865 c:\msys64\mingw32\include\wx-3.0\wx\flags.h
+
+1484810867 c:\msys64\mingw32\include\wx-3.0\wx\intl.h
+	"wx/defs.h"
+	"wx/string.h"
+	"wx/translation.h"
+	"wx/fontenc.h"
+	"wx/language.h"
+
+1484810876 c:\msys64\mingw32\include\wx-3.0\wx\translation.h
+	"wx/defs.h"
+	"wx/string.h"
+	"wx/buffer.h"
+	"wx/language.h"
+	"wx/hashmap.h"
+	"wx/strconv.h"
+	"wx/scopedptr.h"
+
+1484810868 c:\msys64\mingw32\include\wx-3.0\wx\language.h
+	"wx/defs.h"
+
+1484810871 c:\msys64\mingw32\include\wx-3.0\wx\scopedptr.h
+	"wx/defs.h"
+	"wx/checkeddelete.h"
+
+1484810861 c:\msys64\mingw32\include\wx-3.0\wx\checkeddelete.h
+	"wx/cpp.h"
+
+1484810868 c:\msys64\mingw32\include\wx-3.0\wx\log.h
+	"wx/defs.h"
+	"wx/cpp.h"
+	"wx/string.h"
+	"wx/strvararg.h"
+	"wx/arrstr.h"
+	<time.h>
+	"wx/dynarray.h"
+	"wx/hashmap.h"
+	"wx/thread.h"
+	"wx/iosfwrap.h"
+	"wx/generic/logg.h"
+	"wx/cocoa/log.h"
+
+1484810875 c:\msys64\mingw32\include\wx-3.0\wx\thread.h
+	"wx/defs.h"
+
+1484810891 c:\msys64\mingw32\include\wx-3.0\wx\generic\logg.h
+
+1484810879 c:\msys64\mingw32\include\wx-3.0\wx\xtihandler.h
+	"wx/defs.h"
+	"wx/xti.h"
+
+1484810871 c:\msys64\mingw32\include\wx-3.0\wx\rtti.h
+	"wx/memory.h"
+	"wx/flags.h"
+
+1484810878 c:\msys64\mingw32\include\wx-3.0\wx\xti2.h
+	"wx/xtiprop.h"
+	"wx/xtictor.h"
+
+1484810879 c:\msys64\mingw32\include\wx-3.0\wx\xtiprop.h
+	"wx/defs.h"
+	"wx/xti.h"
+	"wx/any.h"
+
+1484810860 c:\msys64\mingw32\include\wx-3.0\wx\any.h
+	"wx/defs.h"
+	<new>
+	"wx/string.h"
+	"wx/meta/if.h"
+	"wx/typeinfo.h"
+	"wx/list.h"
+	"wx/datetime.h"
+	"wx/variant.h"
+
+1484810880 c:\msys64\mingw32\include\wx-3.0\wx\meta\if.h
+	"wx/defs.h"
+
+1484810863 c:\msys64\mingw32\include\wx-3.0\wx\datetime.h
+	"wx/defs.h"
+	"wx/msw/wince/time.h"
+	<time.h>
+	<limits.h>
+	"wx/longlong.h"
+	"wx/anystr.h"
+	"wx/dynarray.h"
+
+1484810869 c:\msys64\mingw32\include\wx-3.0\wx\longlong.h
+	"wx/defs.h"
+	"wx/string.h"
+	<limits.h>
+	"wx/iosfwrap.h"
+	<limits>
+	"wx/strvararg.h"
+
+1484810860 c:\msys64\mingw32\include\wx-3.0\wx\anystr.h
+	"wx/string.h"
+
+1484810877 c:\msys64\mingw32\include\wx-3.0\wx\variant.h
+	"wx/defs.h"
+	"wx/object.h"
+	"wx/string.h"
+	"wx/arrstr.h"
+	"wx/list.h"
+	"wx/cpp.h"
+	"wx/longlong.h"
+	"wx/datetime.h"
+	"wx/iosfwrap.h"
+	"wx/any.h"
+
+1484810879 c:\msys64\mingw32\include\wx-3.0\wx\xtictor.h
+	"wx/defs.h"
+	"wx/xti.h"
+
+1484810921 c:\msys64\mingw32\include\wx-3.0\wx\msw\msvcrt.h
+	<stdlib.h>
+	<crtdbg.h>
+
+1484810877 c:\msys64\mingw32\include\wx-3.0\wx\vector.h
+	"wx/defs.h"
+	<vector>
+	<algorithm>
+	"wx/scopeguard.h"
+	"wx/meta/movable.h"
+	"wx/meta/if.h"
+	"wx/beforestd.h"
+	<new>
+	"wx/afterstd.h"
+
+1484810911 c:\msys64\mingw32\include\wx-3.0\wx\scopeguard.h
+	"wx/defs.h"
+	"wx/except.h"
+
+1484810865 c:\msys64\mingw32\include\wx-3.0\wx\except.h
+	"wx/defs.h"
+
+1484810880 c:\msys64\mingw32\include\wx-3.0\wx\meta\movable.h
+	"wx/meta/pod.h"
+	"wx/string.h"
+
+1484810880 c:\msys64\mingw32\include\wx-3.0\wx\meta\pod.h
+	"wx/defs.h"
+
+1484810869 c:\msys64\mingw32\include\wx-3.0\wx\math.h
+	"wx/defs.h"
+	<math.h>
+	<cmath>
+	<float.h>
+	<ieeefp.h>
+
+1484810902 c:\msys64\mingw32\include\wx-3.0\wx\colour.h
+	"wx/defs.h"
+	"wx/gdiobj.h"
+	"wx/variant.h"
+	"wx/msw/colour.h"
+	"wx/motif/colour.h"
+	"wx/gtk/colour.h"
+	"wx/gtk1/colour.h"
+	"wx/generic/colour.h"
+	"wx/x11/colour.h"
+	"wx/osx/colour.h"
+	"wx/cocoa/colour.h"
+	"wx/os2/colour.h"
+
+1484810905 c:\msys64\mingw32\include\wx-3.0\wx\gdiobj.h
+	"wx/object.h"
+
+1484810917 c:\msys64\mingw32\include\wx-3.0\wx\msw\colour.h
+	"wx/object.h"
+
+1484810906 c:\msys64\mingw32\include\wx-3.0\wx\image.h
+	"wx/defs.h"
+	"wx/object.h"
+	"wx/string.h"
+	"wx/gdicmn.h"
+	"wx/hashmap.h"
+	"wx/arrstr.h"
+	"wx/stream.h"
+	"wx/variant.h"
+	"wx/imagbmp.h"
+	"wx/imagpng.h"
+	"wx/imaggif.h"
+	"wx/imagpcx.h"
+	"wx/imagjpeg.h"
+	"wx/imagtga.h"
+	"wx/imagtiff.h"
+	"wx/imagpnm.h"
+	"wx/imagxpm.h"
+	"wx/imagiff.h"
+
+1484810874 c:\msys64\mingw32\include\wx-3.0\wx\stream.h
+	"wx/defs.h"
+	<stdio.h>
+	"wx/object.h"
+	"wx/string.h"
+	"wx/filefn.h"
+
+1484810865 c:\msys64\mingw32\include\wx-3.0\wx\filefn.h
+	"wx/list.h"
+	"wx/arrstr.h"
+	"wx/msw/wince/time.h"
+	"wx/msw/private.h"
+	<time.h>
+	<sys/types.h>
+	<sys/stat.h>
+	<process.h>
+	"wx/os2/private.h"
+	<direct.h>
+	<io.h>
+	<unistd.h>
+	<unistd.h>
+	<dirent.h>
+	<direct.h>
+	<dos.h>
+	<io.h>
+	<direct.h>
+	<dos.h>
+	<io.h>
+	<io.h>
+	<unistd.h>
+	<dir.h>
+	<fcntl.h>
+	<sys/types.h>
+
+1484810882 c:\msys64\mingw32\include\wx-3.0\wx\msw\private.h
+	"wx/msw/wrapwin.h"
+	"wx/msw/microwin.h"
+	"wx/log.h"
+	"wx/window.h"
+	"wx/gdicmn.h"
+	"wx/colour.h"
+
+1484810883 c:\msys64\mingw32\include\wx-3.0\wx\msw\wrapwin.h
+	"wx/platform.h"
+	<winsock2.h>
+	<windows.h>
+	"wx/msw/winundef.h"
+
+1484810899 c:\msys64\mingw32\include\wx-3.0\wx\window.h
+	"wx/event.h"
+	"wx/list.h"
+	"wx/cursor.h"
+	"wx/font.h"
+	"wx/colour.h"
+	"wx/region.h"
+	"wx/utils.h"
+	"wx/intl.h"
+	"wx/validate.h"
+	"wx/palette.h"
+	"wx/accel.h"
+	"wx/access.h"
+	"wx/msw/window.h"
+	"wx/motif/window.h"
+	"wx/gtk/window.h"
+	"wx/gtk1/window.h"
+	"wx/x11/window.h"
+	"wx/dfb/window.h"
+	"wx/osx/window.h"
+	"wx/cocoa/window.h"
+	"wx/os2/window.h"
+	"wx/univ/window.h"
+
+1484810864 c:\msys64\mingw32\include\wx-3.0\wx\event.h
+	"wx/defs.h"
+	"wx/cpp.h"
+	"wx/object.h"
+	"wx/clntdata.h"
+	"wx/gdicmn.h"
+	"wx/cursor.h"
+	"wx/mousestate.h"
+	"wx/dynarray.h"
+	"wx/thread.h"
+	"wx/tracker.h"
+	"wx/typeinfo.h"
+	"wx/any.h"
+	"wx/meta/convertible.h"
+	"wx/meta/removeref.h"
+
+1484810862 c:\msys64\mingw32\include\wx-3.0\wx\clntdata.h
+	"wx/defs.h"
+	"wx/string.h"
+	"wx/hashmap.h"
+
+1484810887 c:\msys64\mingw32\include\wx-3.0\wx\cursor.h
+	"wx/defs.h"
+	"wx/msw/cursor.h"
+	"wx/motif/cursor.h"
+	"wx/gtk/cursor.h"
+	"wx/gtk1/cursor.h"
+	"wx/x11/cursor.h"
+	"wx/dfb/cursor.h"
+	"wx/osx/cursor.h"
+	"wx/cocoa/cursor.h"
+	"wx/os2/cursor.h"
+	"wx/utils.h"
+
+1484810917 c:\msys64\mingw32\include\wx-3.0\wx\msw\cursor.h
+	"wx/msw/gdiimage.h"
+
+1484810919 c:\msys64\mingw32\include\wx-3.0\wx\msw\gdiimage.h
+	"wx/gdiobj.h"
+	"wx/gdicmn.h"
+	"wx/list.h"
+
+1484810876 c:\msys64\mingw32\include\wx-3.0\wx\utils.h
+	"wx/object.h"
+	"wx/list.h"
+	"wx/filefn.h"
+	"wx/hashmap.h"
+	"wx/versioninfo.h"
+	"wx/meta/implicitconversion.h"
+	"wx/gdicmn.h"
+	"wx/mousestate.h"
+	"wx/longlong.h"
+	"wx/platinfo.h"
+	<direct.h>
+	<dirent.h>
+	<unistd.h>
+	<stdio.h>
+
+1484810877 c:\msys64\mingw32\include\wx-3.0\wx\versioninfo.h
+	"wx/string.h"
+
+1484810880 c:\msys64\mingw32\include\wx-3.0\wx\meta\implicitconversion.h
+	"wx/defs.h"
+	"wx/meta/if.h"
+
+1484810869 c:\msys64\mingw32\include\wx-3.0\wx\mousestate.h
+	"wx/gdicmn.h"
+	"wx/kbdstate.h"
+
+1484810868 c:\msys64\mingw32\include\wx-3.0\wx\kbdstate.h
+	"wx/defs.h"
+
+1484810870 c:\msys64\mingw32\include\wx-3.0\wx\platinfo.h
+	"wx/string.h"
+
+1484810875 c:\msys64\mingw32\include\wx-3.0\wx\tracker.h
+	"wx/defs.h"
+
+1484810879 c:\msys64\mingw32\include\wx-3.0\wx\meta\convertible.h
+
+1484810880 c:\msys64\mingw32\include\wx-3.0\wx\meta\removeref.h
+
+1484810904 c:\msys64\mingw32\include\wx-3.0\wx\font.h
+	"wx/defs.h"
+	"wx/fontenc.h"
+	"wx/gdiobj.h"
+	"wx/gdicmn.h"
+	"wx/msw/font.h"
+	"wx/motif/font.h"
+	"wx/gtk/font.h"
+	"wx/gtk1/font.h"
+	"wx/x11/font.h"
+	"wx/dfb/font.h"
+	"wx/osx/font.h"
+	"wx/cocoa/font.h"
+	"wx/os2/font.h"
+
+1484810919 c:\msys64\mingw32\include\wx-3.0\wx\msw\font.h
+	"wx/gdicmn.h"
+
+1484810911 c:\msys64\mingw32\include\wx-3.0\wx\region.h
+	"wx/gdiobj.h"
+	"wx/gdicmn.h"
+	"wx/msw/region.h"
+	"wx/gtk/region.h"
+	"wx/gtk1/region.h"
+	"wx/x11/region.h"
+	"wx/dfb/region.h"
+	"wx/osx/region.h"
+	"wx/cocoa/region.h"
+	"wx/os2/region.h"
+
+1484810923 c:\msys64\mingw32\include\wx-3.0\wx\msw\region.h
+
+1484810899 c:\msys64\mingw32\include\wx-3.0\wx\validate.h
+	"wx/defs.h"
+	"wx/event.h"
+
+1484810895 c:\msys64\mingw32\include\wx-3.0\wx\palette.h
+	"wx/defs.h"
+	"wx/object.h"
+	"wx/gdiobj.h"
+	"wx/msw/palette.h"
+	"wx/x11/palette.h"
+	"wx/generic/paletteg.h"
+	"wx/osx/palette.h"
+	"wx/os2/palette.h"
+
+1484810922 c:\msys64\mingw32\include\wx-3.0\wx\msw\palette.h
+	"wx/gdiobj.h"
+
+1484810900 c:\msys64\mingw32\include\wx-3.0\wx\accel.h
+	"wx/defs.h"
+	"wx/object.h"
+	"wx/generic/accel.h"
+	"wx/msw/accel.h"
+	"wx/motif/accel.h"
+	"wx/gtk/accel.h"
+	"wx/gtk1/accel.h"
+	"wx/osx/accel.h"
+	"wx/generic/accel.h"
+	"wx/os2/accel.h"
+
+1484810890 c:\msys64\mingw32\include\wx-3.0\wx\generic\accel.h
+
+1484810915 c:\msys64\mingw32\include\wx-3.0\wx\msw\accel.h
+
+1484810900 c:\msys64\mingw32\include\wx-3.0\wx\access.h
+	"wx/defs.h"
+	"wx/variant.h"
+	"wx/msw/ole/access.h"
+
+1484810921 c:\msys64\mingw32\include\wx-3.0\wx\msw\ole\access.h
+
+1484810926 c:\msys64\mingw32\include\wx-3.0\wx\msw\window.h
+	"wx/settings.h"
+
+1484810897 c:\msys64\mingw32\include\wx-3.0\wx\settings.h
+	"wx/colour.h"
+	"wx/font.h"
+
+1484810906 c:\msys64\mingw32\include\wx-3.0\wx\imagbmp.h
+	"wx/image.h"
+
+1484810907 c:\msys64\mingw32\include\wx-3.0\wx\imagpng.h
+	"wx/defs.h"
+	"wx/image.h"
+	"wx/versioninfo.h"
+
+1484810906 c:\msys64\mingw32\include\wx-3.0\wx\imaggif.h
+	"wx/image.h"
+
+1484810907 c:\msys64\mingw32\include\wx-3.0\wx\imagpcx.h
+	"wx/image.h"
+
+1484810907 c:\msys64\mingw32\include\wx-3.0\wx\imagjpeg.h
+	"wx/defs.h"
+	"wx/image.h"
+	"wx/versioninfo.h"
+
+1484810907 c:\msys64\mingw32\include\wx-3.0\wx\imagtga.h
+	"wx/image.h"
+
+1484810907 c:\msys64\mingw32\include\wx-3.0\wx\imagtiff.h
+	"wx/defs.h"
+	"wx/image.h"
+	"wx/versioninfo.h"
+
+1484810907 c:\msys64\mingw32\include\wx-3.0\wx\imagpnm.h
+	"wx/image.h"
+
+1484810907 c:\msys64\mingw32\include\wx-3.0\wx\imagxpm.h
+	"wx/image.h"
+
+1484810906 c:\msys64\mingw32\include\wx-3.0\wx\imagiff.h
+	"wx/image.h"
+
+1484810916 c:\msys64\mingw32\include\wx-3.0\wx\msw\bitmap.h
+	"wx/msw/gdiimage.h"
+	"wx/math.h"
+	"wx/palette.h"
+
+1484810894 c:\msys64\mingw32\include\wx-3.0\wx\icon.h
+	"wx/iconloc.h"
+	"wx/msw/icon.h"
+	"wx/motif/icon.h"
+	"wx/generic/icon.h"
+	"wx/generic/icon.h"
+	"wx/generic/icon.h"
+	"wx/generic/icon.h"
+	"wx/osx/icon.h"
+	"wx/generic/icon.h"
+	"wx/cocoa/icon.h"
+	"wx/os2/icon.h"
+	"wx/variant.h"
+
+1484810867 c:\msys64\mingw32\include\wx-3.0\wx\iconloc.h
+	"wx/string.h"
+
+1484810920 c:\msys64\mingw32\include\wx-3.0\wx\msw\icon.h
+	"wx/msw/gdiimage.h"
+
+1484810906 c:\msys64\mingw32\include\wx-3.0\wx\iconbndl.h
+	"wx/gdiobj.h"
+	"wx/gdicmn.h"
+	"wx/icon.h"
+	"wx/dynarray.h"
+
+1484810949 c:\msys64\mingw32\include\wx-3.0\wx\xrc\xmlres.h
+	"wx/defs.h"
+	"wx/string.h"
+	"wx/dynarray.h"
+	"wx/arrstr.h"
+	"wx/datetime.h"
+	"wx/list.h"
+	"wx/gdicmn.h"
+	"wx/filesys.h"
+	"wx/bitmap.h"
+	"wx/icon.h"
+	"wx/artprov.h"
+	"wx/colour.h"
+	"wx/vector.h"
+	"wx/xrc/xmlreshandler.h"
+
+1484810866 c:\msys64\mingw32\include\wx-3.0\wx\filesys.h
+	"wx/defs.h"
+	"wx/stream.h"
+	"wx/datetime.h"
+	"wx/filename.h"
+	"wx/hashmap.h"
+
+1484810865 c:\msys64\mingw32\include\wx-3.0\wx\filename.h
+	"wx/arrstr.h"
+	"wx/filefn.h"
+	"wx/datetime.h"
+	"wx/intl.h"
+	"wx/longlong.h"
+	"wx/file.h"
+
+1484810865 c:\msys64\mingw32\include\wx-3.0\wx\file.h
+	"wx/defs.h"
+	"wx/string.h"
+	"wx/filefn.h"
+	"wx/convauto.h"
+
+1484810862 c:\msys64\mingw32\include\wx-3.0\wx\convauto.h
+	"wx/strconv.h"
+	"wx/fontenc.h"
+
+1484810914 c:\msys64\mingw32\include\wx-3.0\wx\xrc\xmlreshandler.h
+	"wx/defs.h"
+	"wx/string.h"
+	"wx/artprov.h"
+	"wx/colour.h"
+	"wx/filesys.h"
+	"wx/imaglist.h"
+	"wx/window.h"
+
+1484810907 c:\msys64\mingw32\include\wx-3.0\wx\imaglist.h
+	"wx/defs.h"
+	"wx/generic/imaglist.h"
+	"wx/msw/imaglist.h"
+	"wx/osx/imaglist.h"
+
+1484810920 c:\msys64\mingw32\include\wx-3.0\wx\msw\imaglist.h
+	"wx/bitmap.h"
+
+1484810896 c:\msys64\mingw32\include\wx-3.0\wx\radiobut.h
+	"wx/defs.h"
+	"wx/control.h"
+	"wx/univ/radiobut.h"
+	"wx/msw/radiobut.h"
+	"wx/motif/radiobut.h"
+	"wx/gtk/radiobut.h"
+	"wx/gtk1/radiobut.h"
+	"wx/osx/radiobut.h"
+	"wx/cocoa/radiobut.h"
+	"wx/os2/radiobut.h"
+
+1484810887 c:\msys64\mingw32\include\wx-3.0\wx\control.h
+	"wx/defs.h"
+	"wx/window.h"
+	"wx/univ/control.h"
+	"wx/msw/control.h"
+	"wx/motif/control.h"
+	"wx/gtk/control.h"
+	"wx/gtk1/control.h"
+	"wx/osx/control.h"
+	"wx/cocoa/control.h"
+	"wx/os2/control.h"
+
+1484810917 c:\msys64\mingw32\include\wx-3.0\wx\msw\control.h
+	"wx/dynarray.h"
+
+1484810923 c:\msys64\mingw32\include\wx-3.0\wx\msw\radiobut.h
+
+1484810898 c:\msys64\mingw32\include\wx-3.0\wx\stattext.h
+	"wx/defs.h"
+	"wx/control.h"
+	"wx/univ/stattext.h"
+	"wx/msw/stattext.h"
+	"wx/motif/stattext.h"
+	"wx/gtk/stattext.h"
+	"wx/gtk1/stattext.h"
+	"wx/osx/stattext.h"
+	"wx/cocoa/stattext.h"
+	"wx/os2/stattext.h"
+
+1484810925 c:\msys64\mingw32\include\wx-3.0\wx\msw\stattext.h
+
+1484810898 c:\msys64\mingw32\include\wx-3.0\wx\textctrl.h
+	"wx/defs.h"
+	"wx/control.h"
+	"wx/textentry.h"
+	"wx/dynarray.h"
+	"wx/gdicmn.h"
+	"wx/ioswrap.h"
+	"wx/x11/textctrl.h"
+	"wx/univ/textctrl.h"
+	"wx/msw/wince/textctrlce.h"
+	"wx/msw/textctrl.h"
+	"wx/motif/textctrl.h"
+	"wx/gtk/textctrl.h"
+	"wx/gtk1/textctrl.h"
+	"wx/osx/textctrl.h"
+	"wx/cocoa/textctrl.h"
+	"wx/os2/textctrl.h"
+
+1484810898 c:\msys64\mingw32\include\wx-3.0\wx\textentry.h
+	"wx/filefn.h"
+	"wx/gdicmn.h"
+	"wx/gtk/textentry.h"
+	"wx/osx/textentry.h"
+	"wx/msw/textentry.h"
+	"wx/motif/textentry.h"
+	"wx/os2/textentry.h"
+
+1484810925 c:\msys64\mingw32\include\wx-3.0\wx\msw\textentry.h
+
+1484810867 c:\msys64\mingw32\include\wx-3.0\wx\ioswrap.h
+	"wx/beforestd.h"
+	<iostream.h>
+	<iostream>
+	"wx/afterstd.h"
+	"wx/msw/winundef.h"
+
+1484810925 c:\msys64\mingw32\include\wx-3.0\wx\msw\textctrl.h
+
+1484810897 c:\msys64\mingw32\include\wx-3.0\wx\sizer.h
+	"wx/defs.h"
+	"wx/window.h"
+
+1484810886 c:\msys64\mingw32\include\wx-3.0\wx\button.h
+	"wx/defs.h"
+	"wx/anybutton.h"
+	"wx/univ/button.h"
+	"wx/msw/button.h"
+	"wx/motif/button.h"
+	"wx/gtk/button.h"
+	"wx/gtk1/button.h"
+	"wx/osx/button.h"
+	"wx/cocoa/button.h"
+	"wx/os2/button.h"
+
+1484810885 c:\msys64\mingw32\include\wx-3.0\wx\anybutton.h
+	"wx/defs.h"
+	"wx/bitmap.h"
+	"wx/control.h"
+	"wx/univ/anybutton.h"
+	"wx/msw/anybutton.h"
+	"wx/gtk/anybutton.h"
+	"wx/osx/anybutton.h"
+
+1484810915 c:\msys64\mingw32\include\wx-3.0\wx\msw\anybutton.h
+
+1484810916 c:\msys64\mingw32\include\wx-3.0\wx\msw\button.h
+
+1484810888 c:\msys64\mingw32\include\wx-3.0\wx\dialog.h
+	"wx/toplevel.h"
+	"wx/containr.h"
+	"wx/sharedptr.h"
+	"wx/univ/dialog.h"
+	"wx/msw/dialog.h"
+	"wx/motif/dialog.h"
+	"wx/gtk/dialog.h"
+	"wx/gtk1/dialog.h"
+	"wx/osx/dialog.h"
+	"wx/cocoa/dialog.h"
+	"wx/os2/dialog.h"
+
+1484810912 c:\msys64\mingw32\include\wx-3.0\wx\toplevel.h
+	"wx/nonownedwnd.h"
+	"wx/iconbndl.h"
+	"wx/weakref.h"
+	"wx/msw/toplevel.h"
+	"wx/gtk/toplevel.h"
+	"wx/gtk1/toplevel.h"
+	"wx/x11/toplevel.h"
+	"wx/dfb/toplevel.h"
+	"wx/osx/toplevel.h"
+	"wx/cocoa/toplevel.h"
+	"wx/os2/toplevel.h"
+	"wx/motif/toplevel.h"
+	"wx/univ/toplevel.h"
+
+1484810908 c:\msys64\mingw32\include\wx-3.0\wx\nonownedwnd.h
+	"wx/window.h"
+	"wx/dfb/nonownedwnd.h"
+	"wx/gtk/nonownedwnd.h"
+	"wx/osx/nonownedwnd.h"
+	"wx/msw/nonownedwnd.h"
+
+1484810914 c:\msys64\mingw32\include\wx-3.0\wx\msw\nonownedwnd.h
+
+1484810877 c:\msys64\mingw32\include\wx-3.0\wx\weakref.h
+	"wx/tracker.h"
+	"wx/meta/convertible.h"
+	"wx/meta/int2type.h"
+
+1484810880 c:\msys64\mingw32\include\wx-3.0\wx\meta\int2type.h
+
+1484810926 c:\msys64\mingw32\include\wx-3.0\wx\msw\toplevel.h
+
+1484810862 c:\msys64\mingw32\include\wx-3.0\wx\containr.h
+	"wx/defs.h"
+	"wx/event.h"
+
+1484810872 c:\msys64\mingw32\include\wx-3.0\wx\sharedptr.h
+	"wx/defs.h"
+	"wx/atomic.h"
+
+1484810861 c:\msys64\mingw32\include\wx-3.0\wx\atomic.h
+	"wx/defs.h"
+	"wx/msw/wrapwin.h"
+	"libkern/OSAtomic.h"
+	<atomic.h>
+	"wx/thread.h"
+
+1484810918 c:\msys64\mingw32\include\wx-3.0\wx\msw\dialog.h
+	"wx/panel.h"
+
+1484810895 c:\msys64\mingw32\include\wx-3.0\wx\panel.h
+	"wx/window.h"
+	"wx/containr.h"
+	"wx/univ/panel.h"
+	"wx/msw/panel.h"
+	"wx/generic/panelg.h"
+
+1484810923 c:\msys64\mingw32\include\wx-3.0\wx\msw\panel.h
+
+1484810892 c:\msys64\mingw32\include\wx-3.0\wx\generic\panelg.h
+	"wx/bitmap.h"
+
+1484810895 c:\msys64\mingw32\include\wx-3.0\wx\msgdlg.h
+	"wx/defs.h"
+	"wx/dialog.h"
+	"wx/stockitem.h"
+	"wx/generic/msgdlgg.h"
+	"wx/cocoa/msgdlg.h"
+	"wx/msw/msgdlg.h"
+	"wx/motif/msgdlg.h"
+	"wx/gtk/msgdlg.h"
+	"wx/osx/msgdlg.h"
+	"wx/os2/msgdlg.h"
+
+1484810873 c:\msys64\mingw32\include\wx-3.0\wx\stockitem.h
+	"wx/defs.h"
+	"wx/chartype.h"
+	"wx/string.h"
+	"wx/accel.h"
+
+1484810891 c:\msys64\mingw32\include\wx-3.0\wx\generic\msgdlgg.h
+
+1484810921 c:\msys64\mingw32\include\wx-3.0\wx\msw\msgdlg.h
+
+1484810901 c:\msys64\mingw32\include\wx-3.0\wx\clrpicker.h
+	"wx/defs.h"
+	"wx/pickerbase.h"
+	"wx/gtk/clrpicker.h"
+	"wx/generic/clrpickerg.h"
+
+1484810910 c:\msys64\mingw32\include\wx-3.0\wx\pickerbase.h
+	"wx/control.h"
+	"wx/sizer.h"
+	"wx/containr.h"
+
+1484810915 c:\msys64\mingw32\include\wx-3.0\wx\generic\clrpickerg.h
+	"wx/button.h"
+	"wx/bmpbuttn.h"
+	"wx/colourdata.h"
+
+1484810886 c:\msys64\mingw32\include\wx-3.0\wx\bmpbuttn.h
+	"wx/defs.h"
+	"wx/button.h"
+	"wx/univ/bmpbuttn.h"
+	"wx/msw/bmpbuttn.h"
+	"wx/motif/bmpbuttn.h"
+	"wx/gtk/bmpbuttn.h"
+	"wx/gtk1/bmpbuttn.h"
+	"wx/osx/bmpbuttn.h"
+	"wx/cocoa/bmpbuttn.h"
+	"wx/os2/bmpbuttn.h"
+
+1484810916 c:\msys64\mingw32\include\wx-3.0\wx\msw\bmpbuttn.h
+	"wx/button.h"
+	"wx/bitmap.h"
+	"wx/brush.h"
+
+1484810886 c:\msys64\mingw32\include\wx-3.0\wx\brush.h
+	"wx/defs.h"
+	"wx/object.h"
+	"wx/gdiobj.h"
+	"wx/gdicmn.h"
+	"wx/msw/brush.h"
+	"wx/x11/brush.h"
+	"wx/gtk/brush.h"
+	"wx/gtk1/brush.h"
+	"wx/dfb/brush.h"
+	"wx/osx/brush.h"
+	"wx/cocoa/brush.h"
+	"wx/os2/brush.h"
+
+1484810916 c:\msys64\mingw32\include\wx-3.0\wx\msw\brush.h
+
+1484810902 c:\msys64\mingw32\include\wx-3.0\wx\colourdata.h
+	"wx/colour.h"
+
+1484810898 c:\msys64\mingw32\include\wx-3.0\wx\statbox.h
+	"wx/defs.h"
+	"wx/control.h"
+	"wx/containr.h"
+	"wx/univ/statbox.h"
+	"wx/msw/statbox.h"
+	"wx/motif/statbox.h"
+	"wx/gtk/statbox.h"
+	"wx/gtk1/statbox.h"
+	"wx/osx/statbox.h"
+	"wx/cocoa/statbox.h"
+	"wx/os2/statbox.h"
+
+1484810924 c:\msys64\mingw32\include\wx-3.0\wx\msw\statbox.h
+
+1484810908 c:\msys64\mingw32\include\wx-3.0\wx\notebook.h
+	"wx/defs.h"
+	"wx/bookctrl.h"
+	"wx/univ/notebook.h"
+	"wx/msw/notebook.h"
+	"wx/generic/notebook.h"
+	"wx/gtk/notebook.h"
+	"wx/gtk1/notebook.h"
+	"wx/osx/notebook.h"
+	"wx/cocoa/notebook.h"
+	"wx/os2/notebook.h"
+
+1484810901 c:\msys64\mingw32\include\wx-3.0\wx\bookctrl.h
+	"wx/defs.h"
+	"wx/control.h"
+	"wx/dynarray.h"
+	"wx/withimages.h"
+	"wx/notebook.h"
+	"wx/choicebk.h"
+
+1484810900 c:\msys64\mingw32\include\wx-3.0\wx\withimages.h
+	"wx/defs.h"
+	"wx/icon.h"
+	"wx/imaglist.h"
+
+1484810901 c:\msys64\mingw32\include\wx-3.0\wx\choicebk.h
+	"wx/defs.h"
+	"wx/bookctrl.h"
+	"wx/choice.h"
+	"wx/containr.h"
+
+1484810886 c:\msys64\mingw32\include\wx-3.0\wx\choice.h
+	"wx/defs.h"
+	"wx/ctrlsub.h"
+	"wx/univ/choice.h"
+	"wx/msw/wince/choicece.h"
+	"wx/msw/choice.h"
+	"wx/motif/choice.h"
+	"wx/gtk/choice.h"
+	"wx/gtk1/choice.h"
+	"wx/osx/choice.h"
+	"wx/cocoa/choice.h"
+	"wx/os2/choice.h"
+
+1484810887 c:\msys64\mingw32\include\wx-3.0\wx\ctrlsub.h
+	"wx/defs.h"
+	"wx/arrstr.h"
+	"wx/control.h"
+	"wx/msw/ctrlsub.h"
+	"wx/motif/ctrlsub.h"
+
+1484810917 c:\msys64\mingw32\include\wx-3.0\wx\msw\ctrlsub.h
+
+1484810916 c:\msys64\mingw32\include\wx-3.0\wx\msw\choice.h
+
+1484810921 c:\msys64\mingw32\include\wx-3.0\wx\msw\notebook.h
+	"wx/control.h"
+
+1484810891 c:\msys64\mingw32\include\wx-3.0\wx\generic\notebook.h
+	"wx/event.h"
+	"wx/control.h"
+
+1484810894 c:\msys64\mingw32\include\wx-3.0\wx\listbox.h
+	"wx/defs.h"
+	"wx/ctrlsub.h"
+	"wx/univ/listbox.h"
+	"wx/msw/listbox.h"
+	"wx/motif/listbox.h"
+	"wx/gtk/listbox.h"
+	"wx/gtk1/listbox.h"
+	"wx/osx/listbox.h"
+	"wx/os2/listbox.h"
+	"wx/cocoa/listbox.h"
+
+1484810920 c:\msys64\mingw32\include\wx-3.0\wx\msw\listbox.h
+	"wx/dynarray.h"
+
+1484810934 c:\msys64\mingw32\include\wx-3.0\wx\hyperlink.h
+	"wx/defs.h"
+	"wx/control.h"
+	"wx/gtk/hyperlink.h"
+	"wx/msw/hyperlink.h"
+	"wx/generic/hyperlink.h"
+
+1484810937 c:\msys64\mingw32\include\wx-3.0\wx\msw\hyperlink.h
+	"wx/generic/hyperlink.h"
+
+1484810933 c:\msys64\mingw32\include\wx-3.0\wx\generic\hyperlink.h
+
+1484810889 c:\msys64\mingw32\include\wx-3.0\wx\frame.h
+	"wx/toplevel.h"
+	"wx/statusbr.h"
+	"wx/univ/frame.h"
+	"wx/msw/frame.h"
+	"wx/gtk/frame.h"
+	"wx/gtk1/frame.h"
+	"wx/motif/frame.h"
+	"wx/osx/frame.h"
+	"wx/cocoa/frame.h"
+	"wx/os2/frame.h"
+
+1484810898 c:\msys64\mingw32\include\wx-3.0\wx\statusbr.h
+	"wx/defs.h"
+	"wx/control.h"
+	"wx/list.h"
+	"wx/dynarray.h"
+	"wx/univ/statusbr.h"
+	"wx/msw/statusbar.h"
+	"wx/generic/statusbr.h"
+	"wx/osx/statusbr.h"
+	"wx/generic/statusbr.h"
+
+1484810925 c:\msys64\mingw32\include\wx-3.0\wx\msw\statusbar.h
+	"wx/vector.h"
+	"wx/tooltip.h"
+
+1484810912 c:\msys64\mingw32\include\wx-3.0\wx\tooltip.h
+	"wx/defs.h"
+	"wx/msw/tooltip.h"
+	"wx/gtk/tooltip.h"
+	"wx/gtk1/tooltip.h"
+	"wx/osx/tooltip.h"
+	"wx/cocoa/tooltip.h"
+	"wx/os2/tooltip.h"
+
+1484810925 c:\msys64\mingw32\include\wx-3.0\wx\msw\tooltip.h
+	"wx/object.h"
+	"wx/gdicmn.h"
+
+1484810919 c:\msys64\mingw32\include\wx-3.0\wx\msw\frame.h
+
+1484810860 c:\msys64\mingw32\include\wx-3.0\wx\app.h
+	"wx/event.h"
+	"wx/eventfilter.h"
+	"wx/build.h"
+	"wx/cmdargs.h"
+	"wx/init.h"
+	"wx/intl.h"
+	"wx/log.h"
+	"wx/unix/app.h"
+	"wx/msw/app.h"
+	"wx/motif/app.h"
+	"wx/dfb/app.h"
+	"wx/gtk/app.h"
+	"wx/gtk1/app.h"
+	"wx/x11/app.h"
+	"wx/osx/app.h"
+	"wx/cocoa/app.h"
+	"wx/os2/app.h"
+	"wx/univ/theme.h"
+
+1484810864 c:\msys64\mingw32\include\wx-3.0\wx\eventfilter.h
+	"wx/defs.h"
+
+1484810861 c:\msys64\mingw32\include\wx-3.0\wx\build.h
+	"wx/version.h"
+
+1484810862 c:\msys64\mingw32\include\wx-3.0\wx\cmdargs.h
+	"wx/arrstr.h"
+
+1484810867 c:\msys64\mingw32\include\wx-3.0\wx\init.h
+	"wx/defs.h"
+	"wx/chartype.h"
+	"wx/msw/init.h"
+
+1484810920 c:\msys64\mingw32\include\wx-3.0\wx\msw\init.h
+	"wx/msw/wrapwin.h"
+
+1484810915 c:\msys64\mingw32\include\wx-3.0\wx\msw\app.h
+	"wx/event.h"
+	"wx/icon.h"
+
+1484810875 c:\msys64\mingw32\include\wx-3.0\wx\tokenzr.h
+	"wx/object.h"
+	"wx/string.h"
+	"wx/arrstr.h"
+
+1484810898 c:\msys64\mingw32\include\wx-3.0\wx\textdlg.h
+	"wx/generic/textdlgg.h"
+
+1484810893 c:\msys64\mingw32\include\wx-3.0\wx\generic\textdlgg.h
+	"wx/defs.h"
+	"wx/dialog.h"
+	"wx/valtext.h"
+	"wx/textctrl.h"
+
+1484810899 c:\msys64\mingw32\include\wx-3.0\wx\valtext.h
+	"wx/defs.h"
+	"wx/validate.h"
+
+1484810871 c:\msys64\mingw32\include\wx-3.0\wx\regex.h
+	"wx/defs.h"
+	"wx/string.h"
+
+1484810884 c:\msys64\mingw32\include\wx-3.0\wx\protocol\http.h
+	"wx/defs.h"
+	"wx/hashmap.h"
+	"wx/protocol/protocol.h"
+	"wx/buffer.h"
+
+1484810884 c:\msys64\mingw32\include\wx-3.0\wx\protocol\protocol.h
+	"wx/defs.h"
+	"wx/object.h"
+	"wx/string.h"
+	"wx/stream.h"
+	"wx/socket.h"
+
+1484810885 c:\msys64\mingw32\include\wx-3.0\wx\socket.h
+	"wx/defs.h"
+	"wx/event.h"
+	"wx/sckaddr.h"
+	"wx/list.h"
+
+1484810884 c:\msys64\mingw32\include\wx-3.0\wx\sckaddr.h
+	"wx/defs.h"
+	"wx/string.h"
+
+1484810873 c:\msys64\mingw32\include\wx-3.0\wx\sstream.h
+	"wx/stream.h"
+
+1484810926 c:\msys64\mingw32\include\wx-3.0\wx\msw\wx.rc
+	<windows.h>
+	"wx/msw/wince/wince.rc"
+	"wx/msw/rcdefs.h"
+
+1484810753 c:\msys64\mingw32\lib\wx\include\msw-unicode-static-3.0\wx\msw\rcdefs.h
+
+1484810913 c:\msys64\mingw32\include\wx-3.0\wx\treectrl.h
+	"wx/defs.h"
+	"wx/control.h"
+	"wx/treebase.h"
+	"wx/textctrl.h"
+	"wx/generic/treectlg.h"
+	"wx/msw/treectrl.h"
+	"wx/generic/treectlg.h"
+	"wx/generic/treectlg.h"
+	"wx/generic/treectlg.h"
+	"wx/generic/treectlg.h"
+	"wx/generic/treectlg.h"
+
+1484810912 c:\msys64\mingw32\include\wx-3.0\wx\treebase.h
+	"wx/defs.h"
+	"wx/window.h"
+	"wx/event.h"
+	"wx/dynarray.h"
+	"wx/itemid.h"
+
+1484810894 c:\msys64\mingw32\include\wx-3.0\wx\itemid.h
+
+1484810893 c:\msys64\mingw32\include\wx-3.0\wx\generic\treectlg.h
+	"wx/scrolwin.h"
+	"wx/pen.h"
+
+1484810897 c:\msys64\mingw32\include\wx-3.0\wx\scrolwin.h
+	"wx/panel.h"
+	"wx/gtk/scrolwin.h"
+	"wx/gtk1/scrolwin.h"
+	"wx/generic/scrolwin.h"
+
+1484810892 c:\msys64\mingw32\include\wx-3.0\wx\generic\scrolwin.h
+
+1484810896 c:\msys64\mingw32\include\wx-3.0\wx\pen.h
+	"wx/gdiobj.h"
+	"wx/gdicmn.h"
+	"wx/msw/pen.h"
+	"wx/x11/pen.h"
+	"wx/gtk/pen.h"
+	"wx/gtk1/pen.h"
+	"wx/dfb/pen.h"
+	"wx/osx/pen.h"
+	"wx/cocoa/pen.h"
+	"wx/os2/pen.h"
+
+1484810923 c:\msys64\mingw32\include\wx-3.0\wx\msw\pen.h
+	"wx/gdiobj.h"
+	"wx/gdicmn.h"
+
+1484810926 c:\msys64\mingw32\include\wx-3.0\wx\msw\treectrl.h
+	"wx/textctrl.h"
+	"wx/dynarray.h"
+	"wx/treebase.h"
+	"wx/hashmap.h"
+
+1484810888 c:\msys64\mingw32\include\wx-3.0\wx\dcmemory.h
+	"wx/dc.h"
+	"wx/bitmap.h"
+
+1484810888 c:\msys64\mingw32\include\wx-3.0\wx\dc.h
+	"wx/object.h"
+	"wx/intl.h"
+	"wx/cursor.h"
+	"wx/font.h"
+	"wx/colour.h"
+	"wx/bitmap.h"
+	"wx/brush.h"
+	"wx/pen.h"
+	"wx/palette.h"
+	"wx/dynarray.h"
+	"wx/math.h"
+	"wx/image.h"
+	"wx/region.h"
+	"wx/affinematrix2d.h"
+
+1484810885 c:\msys64\mingw32\include\wx-3.0\wx\affinematrix2d.h
+	"wx/defs.h"
+	"wx/affinematrix2dbase.h"
+
+1484810885 c:\msys64\mingw32\include\wx-3.0\wx\affinematrix2dbase.h
+	"wx/defs.h"
+	"wx/geometry.h"
+
+1484810905 c:\msys64\mingw32\include\wx-3.0\wx\geometry.h
+	"wx/defs.h"
+	"wx/utils.h"
+	"wx/gdicmn.h"
+	"wx/math.h"
+
+1484810896 c:\msys64\mingw32\include\wx-3.0\wx\renderer.h
+	"wx/gdicmn.h"
+	"wx/colour.h"
+	"wx/font.h"
+	"wx/bitmap.h"
+	"wx/string.h"
+
+1484809525 c:\msys64\mingw64\include\wx-3.0\wx\artprov.h
+	"wx/string.h"
+	"wx/bitmap.h"
+	"wx/icon.h"
+	"wx/iconbndl.h"
+
+1484809499 c:\msys64\mingw64\include\wx-3.0\wx\string.h
+	"wx/defs.h"
+	<ctype.h>
+	<stdio.h>
+	<string.h>
+	<stdarg.h>
+	<limits.h>
+	<string.h>
+	<stdio.h>
+	<stdarg.h>
+	<limits.h>
+	<stdlib.h>
+	"wx/wxcrtbase.h"
+	"wx/strvararg.h"
+	"wx/buffer.h"
+	"wx/strconv.h"
+	"wx/stringimpl.h"
+	"wx/stringops.h"
+	"wx/unichar.h"
+	"wx/tls.h"
+	"wx/iosfwrap.h"
+	"wx/crt.h"
+
+1484809490 c:\msys64\mingw64\include\wx-3.0\wx\defs.h
+	"wx/platform.h"
+	"wx/version.h"
+	"wx/dlimpexp.h"
+	<stddef.h>
+	"wx/debug.h"
+	<sys/types.h>
+	<sys/types.h>
+	"wx/windowid.h"
+	<unistd.h>
+	"wx/msw/winundef.h"
+	"wx/features.h"
+
+1484809496 c:\msys64\mingw64\include\wx-3.0\wx\platform.h
+	<unistd.h>
+	<TargetConditionals.h>
+	<AvailabilityMacros.h>
+	"wx/osx/config_xcode.h"
+	"wx/android/config_android.h"
+	"wx/compiler.h"
+	"wx/setup.h"
+	"wx/msw/wince/libraries.h"
+	"wx/msw/libraries.h"
+	"wx/msw/gccpriv.h"
+	<TargetConditionals.h>
+	<AvailabilityMacros.h>
+	"wx/chkconf.h"
+
+1484809488 c:\msys64\mingw64\include\wx-3.0\wx\compiler.h
+
+1484809381 c:\msys64\mingw64\lib\wx\include\msw-unicode-static-3.0\wx\setup.h
+
+1484809507 c:\msys64\mingw64\include\wx-3.0\wx\msw\libraries.h
+
+1484809507 c:\msys64\mingw64\include\wx-3.0\wx\msw\gccpriv.h
+	<_mingw.h>
+	<w32api.h>
+
+1484809488 c:\msys64\mingw64\include\wx-3.0\wx\chkconf.h
+	"wx/msw/wince/chkconf.h"
+	"wx/msw/chkconf.h"
+	"wx/gtk/chkconf.h"
+	"wx/gtk/chkconf.h"
+	"wx/cocoa/chkconf.h"
+	"wx/osx/chkconf.h"
+	"wx/os2/chkconf.h"
+	"wx/dfb/chkconf.h"
+	"wx/motif/chkconf.h"
+	"wx/x11/chkconf.h"
+	"wx/android/chkconf.h"
+	"wx/unix/chkconf.h"
+	"wx/univ/chkconf.h"
+
+1484809506 c:\msys64\mingw64\include\wx-3.0\wx\msw\chkconf.h
+
+1484809502 c:\msys64\mingw64\include\wx-3.0\wx\version.h
+	"wx/cpp.h"
+
+1484809489 c:\msys64\mingw64\include\wx-3.0\wx\cpp.h
+	"wx/compiler.h"
+
+1484809490 c:\msys64\mingw64\include\wx-3.0\wx\dlimpexp.h
+
+1484809489 c:\msys64\mingw64\include\wx-3.0\wx\debug.h
+	<assert.h>
+	<limits.h>
+	"wx/chartype.h"
+	"wx/cpp.h"
+	"wx/dlimpexp.h"
+
+1484809488 c:\msys64\mingw64\include\wx-3.0\wx\chartype.h
+	"wx/platform.h"
+	<sys/types.h>
+	<wchar.h>
+	<wcstr.h>
+	<stdlib.h>
+	<widec.h>
+	<ctype.h>
+	<stddef.h>
+	<string.h>
+	<ctype.h>
+	<tchar.h>
+	<ctype.h>
+
+1484809524 c:\msys64\mingw64\include\wx-3.0\wx\windowid.h
+
+1484809508 c:\msys64\mingw64\include\wx-3.0\wx\msw\winundef.h
+
+1484809491 c:\msys64\mingw64\include\wx-3.0\wx\features.h
+
+1484809503 c:\msys64\mingw64\include\wx-3.0\wx\wxcrtbase.h
+	"wx/chartype.h"
+	<stdio.h>
+	<string.h>
+	<ctype.h>
+	<wctype.h>
+	<time.h>
+	<io.h>
+
+1484809499 c:\msys64\mingw64\include\wx-3.0\wx\strvararg.h
+	"wx/platform.h"
+	"wx/cpp.h"
+	"wx/chartype.h"
+	"wx/strconv.h"
+	"wx/buffer.h"
+	"wx/unichar.h"
+	<type_traits>
+	<type_traits>
+	<tr1/type_traits>
+	"wx/stringimpl.h"
+
+1484809499 c:\msys64\mingw64\include\wx-3.0\wx\strconv.h
+	"wx/defs.h"
+	"wx/chartype.h"
+	"wx/buffer.h"
+	"typeinfo.h"
+	<stdlib.h>
+	"wx/fontenc.h"
+
+1484809487 c:\msys64\mingw64\include\wx-3.0\wx\buffer.h
+	"wx/chartype.h"
+	"wx/wxcrtbase.h"
+	<stdlib.h>
+
+1484809501 c:\msys64\mingw64\include\wx-3.0\wx\typeinfo.h
+	"wx/defs.h"
+	<typeinfo>
+	<string.h>
+
+1484809492 c:\msys64\mingw64\include\wx-3.0\wx\fontenc.h
+
+1484809501 c:\msys64\mingw64\include\wx-3.0\wx\unichar.h
+	"wx/defs.h"
+	"wx/chartype.h"
+	"wx/stringimpl.h"
+
+1484809499 c:\msys64\mingw64\include\wx-3.0\wx\stringimpl.h
+	"wx/defs.h"
+	"wx/chartype.h"
+	"wx/wxcrtbase.h"
+	<stdlib.h>
+	"wx/beforestd.h"
+	<string>
+	"wx/afterstd.h"
+
+1484809487 c:\msys64\mingw64\include\wx-3.0\wx\beforestd.h
+
+1484809486 c:\msys64\mingw64\include\wx-3.0\wx\afterstd.h
+	"wx/msw/winundef.h"
+
+1484809499 c:\msys64\mingw64\include\wx-3.0\wx\stringops.h
+	"wx/chartype.h"
+	"wx/stringimpl.h"
+	"wx/unichar.h"
+	"wx/buffer.h"
+
+1484809501 c:\msys64\mingw64\include\wx-3.0\wx\tls.h
+	"wx/defs.h"
+	"wx/msw/tls.h"
+	"wx/os2/tls.h"
+	"wx/unix/tls.h"
+	<stdlib.h>
+
+1484809494 c:\msys64\mingw64\include\wx-3.0\wx\iosfwrap.h
+	<iostream.h>
+	<iosfwd>
+	"wx/msw/winundef.h"
+
+1484809489 c:\msys64\mingw64\include\wx-3.0\wx\crt.h
+	"wx/defs.h"
+	"wx/chartype.h"
+	"wx/wxcrt.h"
+	"wx/wxcrtvararg.h"
+
+1484809503 c:\msys64\mingw64\include\wx-3.0\wx\wxcrt.h
+	"wx/wxcrtbase.h"
+	"wx/string.h"
+	<string.h>
+
+1484809503 c:\msys64\mingw64\include\wx-3.0\wx\wxcrtvararg.h
+	"wx/wxcrt.h"
+	"wx/strvararg.h"
+	"wx/string.h"
+	<stdarg.h>
+
+1484809525 c:\msys64\mingw64\include\wx-3.0\wx\bitmap.h
+	"wx/string.h"
+	"wx/gdicmn.h"
+	"wx/colour.h"
+	"wx/image.h"
+	"wx/variant.h"
+	"wx/msw/bitmap.h"
+	"wx/x11/bitmap.h"
+	"wx/gtk/bitmap.h"
+	"wx/gtk1/bitmap.h"
+	"wx/x11/bitmap.h"
+	"wx/dfb/bitmap.h"
+	"wx/osx/bitmap.h"
+	"wx/cocoa/bitmap.h"
+	"wx/os2/bitmap.h"
+	"wx/generic/mask.h"
+
+1484809514 c:\msys64\mingw64\include\wx-3.0\wx\gdicmn.h
+	"wx/defs.h"
+	"wx/list.h"
+	"wx/string.h"
+	"wx/fontenc.h"
+	"wx/hashmap.h"
+	"wx/math.h"
+
+1484809494 c:\msys64\mingw64\include\wx-3.0\wx\list.h
+	"wx/defs.h"
+	"wx/object.h"
+	"wx/string.h"
+	"wx/vector.h"
+	"wx/beforestd.h"
+	<algorithm>
+	<iterator>
+	<list>
+	"wx/afterstd.h"
+
+1484809496 c:\msys64\mingw64\include\wx-3.0\wx\object.h
+	"wx/memory.h"
+	"wx/xti.h"
+	"wx/rtti.h"
+	"wx/xti2.h"
+	"wx/msw/msvcrt.h"
+
+1484809495 c:\msys64\mingw64\include\wx-3.0\wx\memory.h
+	"wx/defs.h"
+	"wx/string.h"
+	"wx/msgout.h"
+	<stddef.h>
+
+1484809496 c:\msys64\mingw64\include\wx-3.0\wx\msgout.h
+	"wx/defs.h"
+	"wx/chartype.h"
+	"wx/strvararg.h"
+
+1484809504 c:\msys64\mingw64\include\wx-3.0\wx\xti.h
+	"wx/defs.h"
+	"wx/xtitypes.h"
+	"wx/xtihandler.h"
+
+1484809504 c:\msys64\mingw64\include\wx-3.0\wx\xtitypes.h
+	"wx/defs.h"
+	"wx/string.h"
+	"wx/hashmap.h"
+	"wx/arrstr.h"
+	"wx/flags.h"
+	"wx/intl.h"
+	"wx/log.h"
+	<typeinfo>
+
+1484809493 c:\msys64\mingw64\include\wx-3.0\wx\hashmap.h
+	"wx/string.h"
+	"wx/wxcrt.h"
+	<unordered_map>
+	<tr1/unordered_map>
+	<ext/hash_map>
+	<hash_map>
+	<stddef.h>
+
+1484809487 c:\msys64\mingw64\include\wx-3.0\wx\arrstr.h
+	"wx/defs.h"
+	"wx/string.h"
+	"wx/dynarray.h"
+	"wx/beforestd.h"
+	<iterator>
+	"wx/afterstd.h"
+
+1484809490 c:\msys64\mingw64\include\wx-3.0\wx\dynarray.h
+	"wx/defs.h"
+	"wx/beforestd.h"
+	<vector>
+	<algorithm>
+	"wx/afterstd.h"
+
+1484809491 c:\msys64\mingw64\include\wx-3.0\wx\flags.h
+
+1484809493 c:\msys64\mingw64\include\wx-3.0\wx\intl.h
+	"wx/defs.h"
+	"wx/string.h"
+	"wx/translation.h"
+	"wx/fontenc.h"
+	"wx/language.h"
+
+1484809501 c:\msys64\mingw64\include\wx-3.0\wx\translation.h
+	"wx/defs.h"
+	"wx/string.h"
+	"wx/buffer.h"
+	"wx/language.h"
+	"wx/hashmap.h"
+	"wx/strconv.h"
+	"wx/scopedptr.h"
+
+1484809494 c:\msys64\mingw64\include\wx-3.0\wx\language.h
+	"wx/defs.h"
+
+1484809498 c:\msys64\mingw64\include\wx-3.0\wx\scopedptr.h
+	"wx/defs.h"
+	"wx/checkeddelete.h"
+
+1484809488 c:\msys64\mingw64\include\wx-3.0\wx\checkeddelete.h
+	"wx/cpp.h"
+
+1484809495 c:\msys64\mingw64\include\wx-3.0\wx\log.h
+	"wx/defs.h"
+	"wx/cpp.h"
+	"wx/string.h"
+	"wx/strvararg.h"
+	"wx/arrstr.h"
+	<time.h>
+	"wx/dynarray.h"
+	"wx/hashmap.h"
+	"wx/thread.h"
+	"wx/iosfwrap.h"
+	"wx/generic/logg.h"
+	"wx/cocoa/log.h"
+
+1484809500 c:\msys64\mingw64\include\wx-3.0\wx\thread.h
+	"wx/defs.h"
+
+1484809516 c:\msys64\mingw64\include\wx-3.0\wx\generic\logg.h
+
+1484809504 c:\msys64\mingw64\include\wx-3.0\wx\xtihandler.h
+	"wx/defs.h"
+	"wx/xti.h"
+
+1484809497 c:\msys64\mingw64\include\wx-3.0\wx\rtti.h
+	"wx/memory.h"
+	"wx/flags.h"
+
+1484809504 c:\msys64\mingw64\include\wx-3.0\wx\xti2.h
+	"wx/xtiprop.h"
+	"wx/xtictor.h"
+
+1484809504 c:\msys64\mingw64\include\wx-3.0\wx\xtiprop.h
+	"wx/defs.h"
+	"wx/xti.h"
+	"wx/any.h"
+
+1484809486 c:\msys64\mingw64\include\wx-3.0\wx\any.h
+	"wx/defs.h"
+	<new>
+	"wx/string.h"
+	"wx/meta/if.h"
+	"wx/typeinfo.h"
+	"wx/list.h"
+	"wx/datetime.h"
+	"wx/variant.h"
+
+1484809505 c:\msys64\mingw64\include\wx-3.0\wx\meta\if.h
+	"wx/defs.h"
+
+1484809489 c:\msys64\mingw64\include\wx-3.0\wx\datetime.h
+	"wx/defs.h"
+	"wx/msw/wince/time.h"
+	<time.h>
+	<limits.h>
+	"wx/longlong.h"
+	"wx/anystr.h"
+	"wx/dynarray.h"
+
+1484809495 c:\msys64\mingw64\include\wx-3.0\wx\longlong.h
+	"wx/defs.h"
+	"wx/string.h"
+	<limits.h>
+	"wx/iosfwrap.h"
+	<limits>
+	"wx/strvararg.h"
+
+1484809486 c:\msys64\mingw64\include\wx-3.0\wx\anystr.h
+	"wx/string.h"
+
+1484809502 c:\msys64\mingw64\include\wx-3.0\wx\variant.h
+	"wx/defs.h"
+	"wx/object.h"
+	"wx/string.h"
+	"wx/arrstr.h"
+	"wx/list.h"
+	"wx/cpp.h"
+	"wx/longlong.h"
+	"wx/datetime.h"
+	"wx/iosfwrap.h"
+	"wx/any.h"
+
+1484809504 c:\msys64\mingw64\include\wx-3.0\wx\xtictor.h
+	"wx/defs.h"
+	"wx/xti.h"
+
+1484809545 c:\msys64\mingw64\include\wx-3.0\wx\msw\msvcrt.h
+	<stdlib.h>
+	<crtdbg.h>
+
+1484809502 c:\msys64\mingw64\include\wx-3.0\wx\vector.h
+	"wx/defs.h"
+	<vector>
+	<algorithm>
+	"wx/scopeguard.h"
+	"wx/meta/movable.h"
+	"wx/meta/if.h"
+	"wx/beforestd.h"
+	<new>
+	"wx/afterstd.h"
+
+1484809535 c:\msys64\mingw64\include\wx-3.0\wx\scopeguard.h
+	"wx/defs.h"
+	"wx/except.h"
+
+1484809491 c:\msys64\mingw64\include\wx-3.0\wx\except.h
+	"wx/defs.h"
+
+1484809505 c:\msys64\mingw64\include\wx-3.0\wx\meta\movable.h
+	"wx/meta/pod.h"
+	"wx/string.h"
+
+1484809505 c:\msys64\mingw64\include\wx-3.0\wx\meta\pod.h
+	"wx/defs.h"
+
+1484809495 c:\msys64\mingw64\include\wx-3.0\wx\math.h
+	"wx/defs.h"
+	<math.h>
+	<cmath>
+	<float.h>
+	<ieeefp.h>
+
+1484809526 c:\msys64\mingw64\include\wx-3.0\wx\colour.h
+	"wx/defs.h"
+	"wx/gdiobj.h"
+	"wx/variant.h"
+	"wx/msw/colour.h"
+	"wx/motif/colour.h"
+	"wx/gtk/colour.h"
+	"wx/gtk1/colour.h"
+	"wx/generic/colour.h"
+	"wx/x11/colour.h"
+	"wx/osx/colour.h"
+	"wx/cocoa/colour.h"
+	"wx/os2/colour.h"
+
+1484809529 c:\msys64\mingw64\include\wx-3.0\wx\gdiobj.h
+	"wx/object.h"
+
+1484809541 c:\msys64\mingw64\include\wx-3.0\wx\msw\colour.h
+	"wx/object.h"
+
+1484809530 c:\msys64\mingw64\include\wx-3.0\wx\image.h
+	"wx/defs.h"
+	"wx/object.h"
+	"wx/string.h"
+	"wx/gdicmn.h"
+	"wx/hashmap.h"
+	"wx/arrstr.h"
+	"wx/stream.h"
+	"wx/variant.h"
+	"wx/imagbmp.h"
+	"wx/imagpng.h"
+	"wx/imaggif.h"
+	"wx/imagpcx.h"
+	"wx/imagjpeg.h"
+	"wx/imagtga.h"
+	"wx/imagtiff.h"
+	"wx/imagpnm.h"
+	"wx/imagxpm.h"
+	"wx/imagiff.h"
+
+1484809499 c:\msys64\mingw64\include\wx-3.0\wx\stream.h
+	"wx/defs.h"
+	<stdio.h>
+	"wx/object.h"
+	"wx/string.h"
+	"wx/filefn.h"
+
+1484809492 c:\msys64\mingw64\include\wx-3.0\wx\filefn.h
+	"wx/list.h"
+	"wx/arrstr.h"
+	"wx/msw/wince/time.h"
+	"wx/msw/private.h"
+	<time.h>
+	<sys/types.h>
+	<sys/stat.h>
+	<process.h>
+	"wx/os2/private.h"
+	<direct.h>
+	<io.h>
+	<unistd.h>
+	<unistd.h>
+	<dirent.h>
+	<direct.h>
+	<dos.h>
+	<io.h>
+	<direct.h>
+	<dos.h>
+	<io.h>
+	<io.h>
+	<unistd.h>
+	<dir.h>
+	<fcntl.h>
+	<sys/types.h>
+
+1484809507 c:\msys64\mingw64\include\wx-3.0\wx\msw\private.h
+	"wx/msw/wrapwin.h"
+	"wx/msw/microwin.h"
+	"wx/log.h"
+	"wx/window.h"
+	"wx/gdicmn.h"
+	"wx/colour.h"
+
+1484809508 c:\msys64\mingw64\include\wx-3.0\wx\msw\wrapwin.h
+	"wx/platform.h"
+	<winsock2.h>
+	<windows.h>
+	"wx/msw/winundef.h"
+
+1484809524 c:\msys64\mingw64\include\wx-3.0\wx\window.h
+	"wx/event.h"
+	"wx/list.h"
+	"wx/cursor.h"
+	"wx/font.h"
+	"wx/colour.h"
+	"wx/region.h"
+	"wx/utils.h"
+	"wx/intl.h"
+	"wx/validate.h"
+	"wx/palette.h"
+	"wx/accel.h"
+	"wx/access.h"
+	"wx/msw/window.h"
+	"wx/motif/window.h"
+	"wx/gtk/window.h"
+	"wx/gtk1/window.h"
+	"wx/x11/window.h"
+	"wx/dfb/window.h"
+	"wx/osx/window.h"
+	"wx/cocoa/window.h"
+	"wx/os2/window.h"
+	"wx/univ/window.h"
+
+1484809491 c:\msys64\mingw64\include\wx-3.0\wx\event.h
+	"wx/defs.h"
+	"wx/cpp.h"
+	"wx/object.h"
+	"wx/clntdata.h"
+	"wx/gdicmn.h"
+	"wx/cursor.h"
+	"wx/mousestate.h"
+	"wx/dynarray.h"
+	"wx/thread.h"
+	"wx/tracker.h"
+	"wx/typeinfo.h"
+	"wx/any.h"
+	"wx/meta/convertible.h"
+	"wx/meta/removeref.h"
+
+1484809488 c:\msys64\mingw64\include\wx-3.0\wx\clntdata.h
+	"wx/defs.h"
+	"wx/string.h"
+	"wx/hashmap.h"
+
+1484809512 c:\msys64\mingw64\include\wx-3.0\wx\cursor.h
+	"wx/defs.h"
+	"wx/msw/cursor.h"
+	"wx/motif/cursor.h"
+	"wx/gtk/cursor.h"
+	"wx/gtk1/cursor.h"
+	"wx/x11/cursor.h"
+	"wx/dfb/cursor.h"
+	"wx/osx/cursor.h"
+	"wx/cocoa/cursor.h"
+	"wx/os2/cursor.h"
+	"wx/utils.h"
+
+1484809541 c:\msys64\mingw64\include\wx-3.0\wx\msw\cursor.h
+	"wx/msw/gdiimage.h"
+
+1484809543 c:\msys64\mingw64\include\wx-3.0\wx\msw\gdiimage.h
+	"wx/gdiobj.h"
+	"wx/gdicmn.h"
+	"wx/list.h"
+
+1484809502 c:\msys64\mingw64\include\wx-3.0\wx\utils.h
+	"wx/object.h"
+	"wx/list.h"
+	"wx/filefn.h"
+	"wx/hashmap.h"
+	"wx/versioninfo.h"
+	"wx/meta/implicitconversion.h"
+	"wx/gdicmn.h"
+	"wx/mousestate.h"
+	"wx/longlong.h"
+	"wx/platinfo.h"
+	<direct.h>
+	<dirent.h>
+	<unistd.h>
+	<stdio.h>
+
+1484809502 c:\msys64\mingw64\include\wx-3.0\wx\versioninfo.h
+	"wx/string.h"
+
+1484809505 c:\msys64\mingw64\include\wx-3.0\wx\meta\implicitconversion.h
+	"wx/defs.h"
+	"wx/meta/if.h"
+
+1484809496 c:\msys64\mingw64\include\wx-3.0\wx\mousestate.h
+	"wx/gdicmn.h"
+	"wx/kbdstate.h"
+
+1484809494 c:\msys64\mingw64\include\wx-3.0\wx\kbdstate.h
+	"wx/defs.h"
+
+1484809497 c:\msys64\mingw64\include\wx-3.0\wx\platinfo.h
+	"wx/string.h"
+
+1484809501 c:\msys64\mingw64\include\wx-3.0\wx\tracker.h
+	"wx/defs.h"
+
+1484809505 c:\msys64\mingw64\include\wx-3.0\wx\meta\convertible.h
+
+1484809505 c:\msys64\mingw64\include\wx-3.0\wx\meta\removeref.h
+
+1484809529 c:\msys64\mingw64\include\wx-3.0\wx\font.h
+	"wx/defs.h"
+	"wx/fontenc.h"
+	"wx/gdiobj.h"
+	"wx/gdicmn.h"
+	"wx/msw/font.h"
+	"wx/motif/font.h"
+	"wx/gtk/font.h"
+	"wx/gtk1/font.h"
+	"wx/x11/font.h"
+	"wx/dfb/font.h"
+	"wx/osx/font.h"
+	"wx/cocoa/font.h"
+	"wx/os2/font.h"
+
+1484809543 c:\msys64\mingw64\include\wx-3.0\wx\msw\font.h
+	"wx/gdicmn.h"
+
+1484809535 c:\msys64\mingw64\include\wx-3.0\wx\region.h
+	"wx/gdiobj.h"
+	"wx/gdicmn.h"
+	"wx/msw/region.h"
+	"wx/gtk/region.h"
+	"wx/gtk1/region.h"
+	"wx/x11/region.h"
+	"wx/dfb/region.h"
+	"wx/osx/region.h"
+	"wx/cocoa/region.h"
+	"wx/os2/region.h"
+
+1484809548 c:\msys64\mingw64\include\wx-3.0\wx\msw\region.h
+
+1484809523 c:\msys64\mingw64\include\wx-3.0\wx\validate.h
+	"wx/defs.h"
+	"wx/event.h"
+
+1484809520 c:\msys64\mingw64\include\wx-3.0\wx\palette.h
+	"wx/defs.h"
+	"wx/object.h"
+	"wx/gdiobj.h"
+	"wx/msw/palette.h"
+	"wx/x11/palette.h"
+	"wx/generic/paletteg.h"
+	"wx/osx/palette.h"
+	"wx/os2/palette.h"
+
+1484809547 c:\msys64\mingw64\include\wx-3.0\wx\msw\palette.h
+	"wx/gdiobj.h"
+
+1484809524 c:\msys64\mingw64\include\wx-3.0\wx\accel.h
+	"wx/defs.h"
+	"wx/object.h"
+	"wx/generic/accel.h"
+	"wx/msw/accel.h"
+	"wx/motif/accel.h"
+	"wx/gtk/accel.h"
+	"wx/gtk1/accel.h"
+	"wx/osx/accel.h"
+	"wx/generic/accel.h"
+	"wx/os2/accel.h"
+
+1484809514 c:\msys64\mingw64\include\wx-3.0\wx\generic\accel.h
+
+1484809539 c:\msys64\mingw64\include\wx-3.0\wx\msw\accel.h
+
+1484809525 c:\msys64\mingw64\include\wx-3.0\wx\access.h
+	"wx/defs.h"
+	"wx/variant.h"
+	"wx/msw/ole/access.h"
+
+1484809545 c:\msys64\mingw64\include\wx-3.0\wx\msw\ole\access.h
+
+1484809550 c:\msys64\mingw64\include\wx-3.0\wx\msw\window.h
+	"wx/settings.h"
+
+1484809522 c:\msys64\mingw64\include\wx-3.0\wx\settings.h
+	"wx/colour.h"
+	"wx/font.h"
+
+1484809530 c:\msys64\mingw64\include\wx-3.0\wx\imagbmp.h
+	"wx/image.h"
+
+1484809531 c:\msys64\mingw64\include\wx-3.0\wx\imagpng.h
+	"wx/defs.h"
+	"wx/image.h"
+	"wx/versioninfo.h"
+
+1484809530 c:\msys64\mingw64\include\wx-3.0\wx\imaggif.h
+	"wx/image.h"
+
+1484809531 c:\msys64\mingw64\include\wx-3.0\wx\imagpcx.h
+	"wx/image.h"
+
+1484809531 c:\msys64\mingw64\include\wx-3.0\wx\imagjpeg.h
+	"wx/defs.h"
+	"wx/image.h"
+	"wx/versioninfo.h"
+
+1484809531 c:\msys64\mingw64\include\wx-3.0\wx\imagtga.h
+	"wx/image.h"
+
+1484809531 c:\msys64\mingw64\include\wx-3.0\wx\imagtiff.h
+	"wx/defs.h"
+	"wx/image.h"
+	"wx/versioninfo.h"
+
+1484809531 c:\msys64\mingw64\include\wx-3.0\wx\imagpnm.h
+	"wx/image.h"
+
+1484809532 c:\msys64\mingw64\include\wx-3.0\wx\imagxpm.h
+	"wx/image.h"
+
+1484809531 c:\msys64\mingw64\include\wx-3.0\wx\imagiff.h
+	"wx/image.h"
+
+1484809540 c:\msys64\mingw64\include\wx-3.0\wx\msw\bitmap.h
+	"wx/msw/gdiimage.h"
+	"wx/math.h"
+	"wx/palette.h"
+
+1484809518 c:\msys64\mingw64\include\wx-3.0\wx\icon.h
+	"wx/iconloc.h"
+	"wx/msw/icon.h"
+	"wx/motif/icon.h"
+	"wx/generic/icon.h"
+	"wx/generic/icon.h"
+	"wx/generic/icon.h"
+	"wx/generic/icon.h"
+	"wx/osx/icon.h"
+	"wx/generic/icon.h"
+	"wx/cocoa/icon.h"
+	"wx/os2/icon.h"
+	"wx/variant.h"
+
+1484809493 c:\msys64\mingw64\include\wx-3.0\wx\iconloc.h
+	"wx/string.h"
+
+1484809544 c:\msys64\mingw64\include\wx-3.0\wx\msw\icon.h
+	"wx/msw/gdiimage.h"
+
+1484809530 c:\msys64\mingw64\include\wx-3.0\wx\iconbndl.h
+	"wx/gdiobj.h"
+	"wx/gdicmn.h"
+	"wx/icon.h"
+	"wx/dynarray.h"
+
+1484809572 c:\msys64\mingw64\include\wx-3.0\wx\xrc\xmlres.h
+	"wx/defs.h"
+	"wx/string.h"
+	"wx/dynarray.h"
+	"wx/arrstr.h"
+	"wx/datetime.h"
+	"wx/list.h"
+	"wx/gdicmn.h"
+	"wx/filesys.h"
+	"wx/bitmap.h"
+	"wx/icon.h"
+	"wx/artprov.h"
+	"wx/colour.h"
+	"wx/vector.h"
+	"wx/xrc/xmlreshandler.h"
+
+1484809492 c:\msys64\mingw64\include\wx-3.0\wx\filesys.h
+	"wx/defs.h"
+	"wx/stream.h"
+	"wx/datetime.h"
+	"wx/filename.h"
+	"wx/hashmap.h"
+
+1484809492 c:\msys64\mingw64\include\wx-3.0\wx\filename.h
+	"wx/arrstr.h"
+	"wx/filefn.h"
+	"wx/datetime.h"
+	"wx/intl.h"
+	"wx/longlong.h"
+	"wx/file.h"
+
+1484809491 c:\msys64\mingw64\include\wx-3.0\wx\file.h
+	"wx/defs.h"
+	"wx/string.h"
+	"wx/filefn.h"
+	"wx/convauto.h"
+
+1484809489 c:\msys64\mingw64\include\wx-3.0\wx\convauto.h
+	"wx/strconv.h"
+	"wx/fontenc.h"
+
+1484809538 c:\msys64\mingw64\include\wx-3.0\wx\xrc\xmlreshandler.h
+	"wx/defs.h"
+	"wx/string.h"
+	"wx/artprov.h"
+	"wx/colour.h"
+	"wx/filesys.h"
+	"wx/imaglist.h"
+	"wx/window.h"
+
+1484809531 c:\msys64\mingw64\include\wx-3.0\wx\imaglist.h
+	"wx/defs.h"
+	"wx/generic/imaglist.h"
+	"wx/msw/imaglist.h"
+	"wx/osx/imaglist.h"
+
+1484809544 c:\msys64\mingw64\include\wx-3.0\wx\msw\imaglist.h
+	"wx/bitmap.h"
+
+1484809521 c:\msys64\mingw64\include\wx-3.0\wx\radiobut.h
+	"wx/defs.h"
+	"wx/control.h"
+	"wx/univ/radiobut.h"
+	"wx/msw/radiobut.h"
+	"wx/motif/radiobut.h"
+	"wx/gtk/radiobut.h"
+	"wx/gtk1/radiobut.h"
+	"wx/osx/radiobut.h"
+	"wx/cocoa/radiobut.h"
+	"wx/os2/radiobut.h"
+
+1484809512 c:\msys64\mingw64\include\wx-3.0\wx\control.h
+	"wx/defs.h"
+	"wx/window.h"
+	"wx/univ/control.h"
+	"wx/msw/control.h"
+	"wx/motif/control.h"
+	"wx/gtk/control.h"
+	"wx/gtk1/control.h"
+	"wx/osx/control.h"
+	"wx/cocoa/control.h"
+	"wx/os2/control.h"
+
+1484809541 c:\msys64\mingw64\include\wx-3.0\wx\msw\control.h
+	"wx/dynarray.h"
+
+1484809547 c:\msys64\mingw64\include\wx-3.0\wx\msw\radiobut.h
+
+1484809522 c:\msys64\mingw64\include\wx-3.0\wx\stattext.h
+	"wx/defs.h"
+	"wx/control.h"
+	"wx/univ/stattext.h"
+	"wx/msw/stattext.h"
+	"wx/motif/stattext.h"
+	"wx/gtk/stattext.h"
+	"wx/gtk1/stattext.h"
+	"wx/osx/stattext.h"
+	"wx/cocoa/stattext.h"
+	"wx/os2/stattext.h"
+
+1484809549 c:\msys64\mingw64\include\wx-3.0\wx\msw\stattext.h
+
+1484809523 c:\msys64\mingw64\include\wx-3.0\wx\textctrl.h
+	"wx/defs.h"
+	"wx/control.h"
+	"wx/textentry.h"
+	"wx/dynarray.h"
+	"wx/gdicmn.h"
+	"wx/ioswrap.h"
+	"wx/x11/textctrl.h"
+	"wx/univ/textctrl.h"
+	"wx/msw/wince/textctrlce.h"
+	"wx/msw/textctrl.h"
+	"wx/motif/textctrl.h"
+	"wx/gtk/textctrl.h"
+	"wx/gtk1/textctrl.h"
+	"wx/osx/textctrl.h"
+	"wx/cocoa/textctrl.h"
+	"wx/os2/textctrl.h"
+
+1484809523 c:\msys64\mingw64\include\wx-3.0\wx\textentry.h
+	"wx/filefn.h"
+	"wx/gdicmn.h"
+	"wx/gtk/textentry.h"
+	"wx/osx/textentry.h"
+	"wx/msw/textentry.h"
+	"wx/motif/textentry.h"
+	"wx/os2/textentry.h"
+
+1484809549 c:\msys64\mingw64\include\wx-3.0\wx\msw\textentry.h
+
+1484809494 c:\msys64\mingw64\include\wx-3.0\wx\ioswrap.h
+	"wx/beforestd.h"
+	<iostream.h>
+	<iostream>
+	"wx/afterstd.h"
+	"wx/msw/winundef.h"
+
+1484809549 c:\msys64\mingw64\include\wx-3.0\wx\msw\textctrl.h
+
+1484809522 c:\msys64\mingw64\include\wx-3.0\wx\sizer.h
+	"wx/defs.h"
+	"wx/window.h"
+
+1484809511 c:\msys64\mingw64\include\wx-3.0\wx\button.h
+	"wx/defs.h"
+	"wx/anybutton.h"
+	"wx/univ/button.h"
+	"wx/msw/button.h"
+	"wx/motif/button.h"
+	"wx/gtk/button.h"
+	"wx/gtk1/button.h"
+	"wx/osx/button.h"
+	"wx/cocoa/button.h"
+	"wx/os2/button.h"
+
+1484809510 c:\msys64\mingw64\include\wx-3.0\wx\anybutton.h
+	"wx/defs.h"
+	"wx/bitmap.h"
+	"wx/control.h"
+	"wx/univ/anybutton.h"
+	"wx/msw/anybutton.h"
+	"wx/gtk/anybutton.h"
+	"wx/osx/anybutton.h"
+
+1484809539 c:\msys64\mingw64\include\wx-3.0\wx\msw\anybutton.h
+
+1484809540 c:\msys64\mingw64\include\wx-3.0\wx\msw\button.h
+
+1484809513 c:\msys64\mingw64\include\wx-3.0\wx\dialog.h
+	"wx/toplevel.h"
+	"wx/containr.h"
+	"wx/sharedptr.h"
+	"wx/univ/dialog.h"
+	"wx/msw/dialog.h"
+	"wx/motif/dialog.h"
+	"wx/gtk/dialog.h"
+	"wx/gtk1/dialog.h"
+	"wx/osx/dialog.h"
+	"wx/cocoa/dialog.h"
+	"wx/os2/dialog.h"
+
+1484809536 c:\msys64\mingw64\include\wx-3.0\wx\toplevel.h
+	"wx/nonownedwnd.h"
+	"wx/iconbndl.h"
+	"wx/weakref.h"
+	"wx/msw/toplevel.h"
+	"wx/gtk/toplevel.h"
+	"wx/gtk1/toplevel.h"
+	"wx/x11/toplevel.h"
+	"wx/dfb/toplevel.h"
+	"wx/osx/toplevel.h"
+	"wx/cocoa/toplevel.h"
+	"wx/os2/toplevel.h"
+	"wx/motif/toplevel.h"
+	"wx/univ/toplevel.h"
+
+1484809533 c:\msys64\mingw64\include\wx-3.0\wx\nonownedwnd.h
+	"wx/window.h"
+	"wx/dfb/nonownedwnd.h"
+	"wx/gtk/nonownedwnd.h"
+	"wx/osx/nonownedwnd.h"
+	"wx/msw/nonownedwnd.h"
+
+1484809538 c:\msys64\mingw64\include\wx-3.0\wx\msw\nonownedwnd.h
+
+1484809503 c:\msys64\mingw64\include\wx-3.0\wx\weakref.h
+	"wx/tracker.h"
+	"wx/meta/convertible.h"
+	"wx/meta/int2type.h"
+
+1484809505 c:\msys64\mingw64\include\wx-3.0\wx\meta\int2type.h
+
+1484809550 c:\msys64\mingw64\include\wx-3.0\wx\msw\toplevel.h
+
+1484809489 c:\msys64\mingw64\include\wx-3.0\wx\containr.h
+	"wx/defs.h"
+	"wx/event.h"
+
+1484809498 c:\msys64\mingw64\include\wx-3.0\wx\sharedptr.h
+	"wx/defs.h"
+	"wx/atomic.h"
+
+1484809487 c:\msys64\mingw64\include\wx-3.0\wx\atomic.h
+	"wx/defs.h"
+	"wx/msw/wrapwin.h"
+	"libkern/OSAtomic.h"
+	<atomic.h>
+	"wx/thread.h"
+
+1484809542 c:\msys64\mingw64\include\wx-3.0\wx\msw\dialog.h
+	"wx/panel.h"
+
+1484809520 c:\msys64\mingw64\include\wx-3.0\wx\panel.h
+	"wx/window.h"
+	"wx/containr.h"
+	"wx/univ/panel.h"
+	"wx/msw/panel.h"
+	"wx/generic/panelg.h"
+
+1484809547 c:\msys64\mingw64\include\wx-3.0\wx\msw\panel.h
+
+1484809516 c:\msys64\mingw64\include\wx-3.0\wx\generic\panelg.h
+	"wx/bitmap.h"
+
+1484809519 c:\msys64\mingw64\include\wx-3.0\wx\msgdlg.h
+	"wx/defs.h"
+	"wx/dialog.h"
+	"wx/stockitem.h"
+	"wx/generic/msgdlgg.h"
+	"wx/cocoa/msgdlg.h"
+	"wx/msw/msgdlg.h"
+	"wx/motif/msgdlg.h"
+	"wx/gtk/msgdlg.h"
+	"wx/osx/msgdlg.h"
+	"wx/os2/msgdlg.h"
+
+1484809499 c:\msys64\mingw64\include\wx-3.0\wx\stockitem.h
+	"wx/defs.h"
+	"wx/chartype.h"
+	"wx/string.h"
+	"wx/accel.h"
+
+1484809516 c:\msys64\mingw64\include\wx-3.0\wx\generic\msgdlgg.h
+
+1484809545 c:\msys64\mingw64\include\wx-3.0\wx\msw\msgdlg.h
+
+1484809526 c:\msys64\mingw64\include\wx-3.0\wx\clrpicker.h
+	"wx/defs.h"
+	"wx/pickerbase.h"
+	"wx/gtk/clrpicker.h"
+	"wx/generic/clrpickerg.h"
+
+1484809534 c:\msys64\mingw64\include\wx-3.0\wx\pickerbase.h
+	"wx/control.h"
+	"wx/sizer.h"
+	"wx/containr.h"
+
+1484809539 c:\msys64\mingw64\include\wx-3.0\wx\generic\clrpickerg.h
+	"wx/button.h"
+	"wx/bmpbuttn.h"
+	"wx/colourdata.h"
+
+1484809510 c:\msys64\mingw64\include\wx-3.0\wx\bmpbuttn.h
+	"wx/defs.h"
+	"wx/button.h"
+	"wx/univ/bmpbuttn.h"
+	"wx/msw/bmpbuttn.h"
+	"wx/motif/bmpbuttn.h"
+	"wx/gtk/bmpbuttn.h"
+	"wx/gtk1/bmpbuttn.h"
+	"wx/osx/bmpbuttn.h"
+	"wx/cocoa/bmpbuttn.h"
+	"wx/os2/bmpbuttn.h"
+
+1484809540 c:\msys64\mingw64\include\wx-3.0\wx\msw\bmpbuttn.h
+	"wx/button.h"
+	"wx/bitmap.h"
+	"wx/brush.h"
+
+1484809511 c:\msys64\mingw64\include\wx-3.0\wx\brush.h
+	"wx/defs.h"
+	"wx/object.h"
+	"wx/gdiobj.h"
+	"wx/gdicmn.h"
+	"wx/msw/brush.h"
+	"wx/x11/brush.h"
+	"wx/gtk/brush.h"
+	"wx/gtk1/brush.h"
+	"wx/dfb/brush.h"
+	"wx/osx/brush.h"
+	"wx/cocoa/brush.h"
+	"wx/os2/brush.h"
+
+1484809540 c:\msys64\mingw64\include\wx-3.0\wx\msw\brush.h
+
+1484809526 c:\msys64\mingw64\include\wx-3.0\wx\colourdata.h
+	"wx/colour.h"
+
+1484809522 c:\msys64\mingw64\include\wx-3.0\wx\statbox.h
+	"wx/defs.h"
+	"wx/control.h"
+	"wx/containr.h"
+	"wx/univ/statbox.h"
+	"wx/msw/statbox.h"
+	"wx/motif/statbox.h"
+	"wx/gtk/statbox.h"
+	"wx/gtk1/statbox.h"
+	"wx/osx/statbox.h"
+	"wx/cocoa/statbox.h"
+	"wx/os2/statbox.h"
+
+1484809549 c:\msys64\mingw64\include\wx-3.0\wx\msw\statbox.h
+
+1484809533 c:\msys64\mingw64\include\wx-3.0\wx\notebook.h
+	"wx/defs.h"
+	"wx/bookctrl.h"
+	"wx/univ/notebook.h"
+	"wx/msw/notebook.h"
+	"wx/generic/notebook.h"
+	"wx/gtk/notebook.h"
+	"wx/gtk1/notebook.h"
+	"wx/osx/notebook.h"
+	"wx/cocoa/notebook.h"
+	"wx/os2/notebook.h"
+
+1484809525 c:\msys64\mingw64\include\wx-3.0\wx\bookctrl.h
+	"wx/defs.h"
+	"wx/control.h"
+	"wx/dynarray.h"
+	"wx/withimages.h"
+	"wx/notebook.h"
+	"wx/choicebk.h"
+
+1484809524 c:\msys64\mingw64\include\wx-3.0\wx\withimages.h
+	"wx/defs.h"
+	"wx/icon.h"
+	"wx/imaglist.h"
+
+1484809526 c:\msys64\mingw64\include\wx-3.0\wx\choicebk.h
+	"wx/defs.h"
+	"wx/bookctrl.h"
+	"wx/choice.h"
+	"wx/containr.h"
+
+1484809511 c:\msys64\mingw64\include\wx-3.0\wx\choice.h
+	"wx/defs.h"
+	"wx/ctrlsub.h"
+	"wx/univ/choice.h"
+	"wx/msw/wince/choicece.h"
+	"wx/msw/choice.h"
+	"wx/motif/choice.h"
+	"wx/gtk/choice.h"
+	"wx/gtk1/choice.h"
+	"wx/osx/choice.h"
+	"wx/cocoa/choice.h"
+	"wx/os2/choice.h"
+
+1484809512 c:\msys64\mingw64\include\wx-3.0\wx\ctrlsub.h
+	"wx/defs.h"
+	"wx/arrstr.h"
+	"wx/control.h"
+	"wx/msw/ctrlsub.h"
+	"wx/motif/ctrlsub.h"
+
+1484809541 c:\msys64\mingw64\include\wx-3.0\wx\msw\ctrlsub.h
+
+1484809540 c:\msys64\mingw64\include\wx-3.0\wx\msw\choice.h
+
+1484809545 c:\msys64\mingw64\include\wx-3.0\wx\msw\notebook.h
+	"wx/control.h"
+
+1484809516 c:\msys64\mingw64\include\wx-3.0\wx\generic\notebook.h
+	"wx/event.h"
+	"wx/control.h"
+
+1484809519 c:\msys64\mingw64\include\wx-3.0\wx\listbox.h
+	"wx/defs.h"
+	"wx/ctrlsub.h"
+	"wx/univ/listbox.h"
+	"wx/msw/listbox.h"
+	"wx/motif/listbox.h"
+	"wx/gtk/listbox.h"
+	"wx/gtk1/listbox.h"
+	"wx/osx/listbox.h"
+	"wx/os2/listbox.h"
+	"wx/cocoa/listbox.h"
+
+1484809544 c:\msys64\mingw64\include\wx-3.0\wx\msw\listbox.h
+	"wx/dynarray.h"
+
+1484809558 c:\msys64\mingw64\include\wx-3.0\wx\hyperlink.h
+	"wx/defs.h"
+	"wx/control.h"
+	"wx/gtk/hyperlink.h"
+	"wx/msw/hyperlink.h"
+	"wx/generic/hyperlink.h"
+
+1484809561 c:\msys64\mingw64\include\wx-3.0\wx\msw\hyperlink.h
+	"wx/generic/hyperlink.h"
+
+1484809557 c:\msys64\mingw64\include\wx-3.0\wx\generic\hyperlink.h
+
+1484809514 c:\msys64\mingw64\include\wx-3.0\wx\frame.h
+	"wx/toplevel.h"
+	"wx/statusbr.h"
+	"wx/univ/frame.h"
+	"wx/msw/frame.h"
+	"wx/gtk/frame.h"
+	"wx/gtk1/frame.h"
+	"wx/motif/frame.h"
+	"wx/osx/frame.h"
+	"wx/cocoa/frame.h"
+	"wx/os2/frame.h"
+
+1484809522 c:\msys64\mingw64\include\wx-3.0\wx\statusbr.h
+	"wx/defs.h"
+	"wx/control.h"
+	"wx/list.h"
+	"wx/dynarray.h"
+	"wx/univ/statusbr.h"
+	"wx/msw/statusbar.h"
+	"wx/generic/statusbr.h"
+	"wx/osx/statusbr.h"
+	"wx/generic/statusbr.h"
+
+1484809549 c:\msys64\mingw64\include\wx-3.0\wx\msw\statusbar.h
+	"wx/vector.h"
+	"wx/tooltip.h"
+
+1484809536 c:\msys64\mingw64\include\wx-3.0\wx\tooltip.h
+	"wx/defs.h"
+	"wx/msw/tooltip.h"
+	"wx/gtk/tooltip.h"
+	"wx/gtk1/tooltip.h"
+	"wx/osx/tooltip.h"
+	"wx/cocoa/tooltip.h"
+	"wx/os2/tooltip.h"
+
+1484809550 c:\msys64\mingw64\include\wx-3.0\wx\msw\tooltip.h
+	"wx/object.h"
+	"wx/gdicmn.h"
+
+1484809543 c:\msys64\mingw64\include\wx-3.0\wx\msw\frame.h
+
+1484809486 c:\msys64\mingw64\include\wx-3.0\wx\app.h
+	"wx/event.h"
+	"wx/eventfilter.h"
+	"wx/build.h"
+	"wx/cmdargs.h"
+	"wx/init.h"
+	"wx/intl.h"
+	"wx/log.h"
+	"wx/unix/app.h"
+	"wx/msw/app.h"
+	"wx/motif/app.h"
+	"wx/dfb/app.h"
+	"wx/gtk/app.h"
+	"wx/gtk1/app.h"
+	"wx/x11/app.h"
+	"wx/osx/app.h"
+	"wx/cocoa/app.h"
+	"wx/os2/app.h"
+	"wx/univ/theme.h"
+
+1484809491 c:\msys64\mingw64\include\wx-3.0\wx\eventfilter.h
+	"wx/defs.h"
+
+1484809487 c:\msys64\mingw64\include\wx-3.0\wx\build.h
+	"wx/version.h"
+
+1484809488 c:\msys64\mingw64\include\wx-3.0\wx\cmdargs.h
+	"wx/arrstr.h"
+
+1484809493 c:\msys64\mingw64\include\wx-3.0\wx\init.h
+	"wx/defs.h"
+	"wx/chartype.h"
+	"wx/msw/init.h"
+
+1484809544 c:\msys64\mingw64\include\wx-3.0\wx\msw\init.h
+	"wx/msw/wrapwin.h"
+
+1484809540 c:\msys64\mingw64\include\wx-3.0\wx\msw\app.h
+	"wx/event.h"
+	"wx/icon.h"
+
+1484809501 c:\msys64\mingw64\include\wx-3.0\wx\tokenzr.h
+	"wx/object.h"
+	"wx/string.h"
+	"wx/arrstr.h"
+
+1484809523 c:\msys64\mingw64\include\wx-3.0\wx\textdlg.h
+	"wx/generic/textdlgg.h"
+
+1484809518 c:\msys64\mingw64\include\wx-3.0\wx\generic\textdlgg.h
+	"wx/defs.h"
+	"wx/dialog.h"
+	"wx/valtext.h"
+	"wx/textctrl.h"
+
+1484809523 c:\msys64\mingw64\include\wx-3.0\wx\valtext.h
+	"wx/defs.h"
+	"wx/validate.h"
+
+1484809497 c:\msys64\mingw64\include\wx-3.0\wx\regex.h
+	"wx/defs.h"
+	"wx/string.h"
+
+1484809509 c:\msys64\mingw64\include\wx-3.0\wx\protocol\http.h
+	"wx/defs.h"
+	"wx/hashmap.h"
+	"wx/protocol/protocol.h"
+	"wx/buffer.h"
+
+1484809509 c:\msys64\mingw64\include\wx-3.0\wx\protocol\protocol.h
+	"wx/defs.h"
+	"wx/object.h"
+	"wx/string.h"
+	"wx/stream.h"
+	"wx/socket.h"
+
+1484809510 c:\msys64\mingw64\include\wx-3.0\wx\socket.h
+	"wx/defs.h"
+	"wx/event.h"
+	"wx/sckaddr.h"
+	"wx/list.h"
+
+1484809509 c:\msys64\mingw64\include\wx-3.0\wx\sckaddr.h
+	"wx/defs.h"
+	"wx/string.h"
+
+1484809498 c:\msys64\mingw64\include\wx-3.0\wx\sstream.h
+	"wx/stream.h"
+
+1484809550 c:\msys64\mingw64\include\wx-3.0\wx\msw\wx.rc
+	<windows.h>
+	"wx/msw/wince/wince.rc"
+	"wx/msw/rcdefs.h"
+
+1484809382 c:\msys64\mingw64\lib\wx\include\msw-unicode-static-3.0\wx\msw\rcdefs.h
+
+1484809537 c:\msys64\mingw64\include\wx-3.0\wx\treectrl.h
+	"wx/defs.h"
+	"wx/control.h"
+	"wx/treebase.h"
+	"wx/textctrl.h"
+	"wx/generic/treectlg.h"
+	"wx/msw/treectrl.h"
+	"wx/generic/treectlg.h"
+	"wx/generic/treectlg.h"
+	"wx/generic/treectlg.h"
+	"wx/generic/treectlg.h"
+	"wx/generic/treectlg.h"
+
+1484809536 c:\msys64\mingw64\include\wx-3.0\wx\treebase.h
+	"wx/defs.h"
+	"wx/window.h"
+	"wx/event.h"
+	"wx/dynarray.h"
+	"wx/itemid.h"
+
+1484809518 c:\msys64\mingw64\include\wx-3.0\wx\itemid.h
+
+1484809518 c:\msys64\mingw64\include\wx-3.0\wx\generic\treectlg.h
+	"wx/scrolwin.h"
+	"wx/pen.h"
+
+1484809521 c:\msys64\mingw64\include\wx-3.0\wx\scrolwin.h
+	"wx/panel.h"
+	"wx/gtk/scrolwin.h"
+	"wx/gtk1/scrolwin.h"
+	"wx/generic/scrolwin.h"
+
+1484809517 c:\msys64\mingw64\include\wx-3.0\wx\generic\scrolwin.h
+
+1484809520 c:\msys64\mingw64\include\wx-3.0\wx\pen.h
+	"wx/gdiobj.h"
+	"wx/gdicmn.h"
+	"wx/msw/pen.h"
+	"wx/x11/pen.h"
+	"wx/gtk/pen.h"
+	"wx/gtk1/pen.h"
+	"wx/dfb/pen.h"
+	"wx/osx/pen.h"
+	"wx/cocoa/pen.h"
+	"wx/os2/pen.h"
+
+1484809547 c:\msys64\mingw64\include\wx-3.0\wx\msw\pen.h
+	"wx/gdiobj.h"
+	"wx/gdicmn.h"
+
+1484809550 c:\msys64\mingw64\include\wx-3.0\wx\msw\treectrl.h
+	"wx/textctrl.h"
+	"wx/dynarray.h"
+	"wx/treebase.h"
+	"wx/hashmap.h"
+
+1484809513 c:\msys64\mingw64\include\wx-3.0\wx\dcmemory.h
+	"wx/dc.h"
+	"wx/bitmap.h"
+
+1484809512 c:\msys64\mingw64\include\wx-3.0\wx\dc.h
+	"wx/object.h"
+	"wx/intl.h"
+	"wx/cursor.h"
+	"wx/font.h"
+	"wx/colour.h"
+	"wx/bitmap.h"
+	"wx/brush.h"
+	"wx/pen.h"
+	"wx/palette.h"
+	"wx/dynarray.h"
+	"wx/math.h"
+	"wx/image.h"
+	"wx/region.h"
+	"wx/affinematrix2d.h"
+
+1484809510 c:\msys64\mingw64\include\wx-3.0\wx\affinematrix2d.h
+	"wx/defs.h"
+	"wx/affinematrix2dbase.h"
+
+1484809510 c:\msys64\mingw64\include\wx-3.0\wx\affinematrix2dbase.h
+	"wx/defs.h"
+	"wx/geometry.h"
+
+1484809530 c:\msys64\mingw64\include\wx-3.0\wx\geometry.h
+	"wx/defs.h"
+	"wx/utils.h"
+	"wx/gdicmn.h"
+	"wx/math.h"
+
+1484809521 c:\msys64\mingw64\include\wx-3.0\wx\renderer.h
+	"wx/gdicmn.h"
+	"wx/colour.h"
+	"wx/font.h"
+	"wx/bitmap.h"
+	"wx/string.h"
+
+1488906423 source:c:\users\administrateur\documents\dev\wxremotetshockmanager\ihm\evtgroupmanagedialog.cpp
+	"EvtGroupManageDialog.h"
+
+1488906684 c:\users\administrateur\documents\dev\wxremotetshockmanager\ihm\evtgroupmanagedialog.h
+	"GroupManageDialog.h"
+
+1488906680 c:\users\administrateur\documents\dev\wxremotetshockmanager\ihm\groupmanagedialog.h
+	<wx/artprov.h>
+	<wx/xrc/xmlres.h>
+	<wx/string.h>
+	<wx/stattext.h>
+	<wx/gdicmn.h>
+	<wx/font.h>
+	<wx/colour.h>
+	<wx/settings.h>
+	<wx/textctrl.h>
+	<wx/clrpicker.h>
+	<wx/sizer.h>
+	"../include/checktreectrl.h"
+	<wx/dialog.h>
+
+1488906680 source:c:\users\administrateur\documents\dev\wxremotetshockmanager\ihm\groupmanagedialog.cpp
+	"GroupManageDialog.h"
+
+1484810902 c:\msys64\mingw32\include\wx-3.0\wx\colordlg.h
+	"wx/defs.h"
+	"wx/colourdata.h"
+	"wx/msw/colordlg.h"
+	"wx/osx/colordlg.h"
+	"wx/gtk/colordlg.h"
+	"wx/generic/colrdlgg.h"
+
+1484810917 c:\msys64\mingw32\include\wx-3.0\wx\msw\colordlg.h
+	"wx/dialog.h"
+
+1484810890 c:\msys64\mingw32\include\wx-3.0\wx\generic\colrdlgg.h
+	"wx/gdicmn.h"
+	"wx/dialog.h"
+
+1484809526 c:\msys64\mingw64\include\wx-3.0\wx\colordlg.h
+	"wx/defs.h"
+	"wx/colourdata.h"
+	"wx/msw/colordlg.h"
+	"wx/osx/colordlg.h"
+	"wx/gtk/colordlg.h"
+	"wx/generic/colrdlgg.h"
+
+1484809541 c:\msys64\mingw64\include\wx-3.0\wx\msw\colordlg.h
+	"wx/dialog.h"
+
+1484809515 c:\msys64\mingw64\include\wx-3.0\wx\generic\colrdlgg.h
+	"wx/gdicmn.h"
+	"wx/dialog.h"
+
+1489958245 source:c:\users\administrateur\documents\dev\wxremotetshockmanager\ihm\grouppermissionsdialog.cpp
+	"GroupPermissionsDialog.h"
+
+1489958182 c:\users\administrateur\documents\dev\wxremotetshockmanager\ihm\grouppermissionsdialog.h
+	<wx/artprov.h>
+	<wx/xrc/xmlres.h>
+	"../include/checktreectrl.h"
+	<wx/gdicmn.h>
+	<wx/font.h>
+	<wx/colour.h>
+	<wx/settings.h>
+	<wx/string.h>
+	<wx/sizer.h>
+	<wx/button.h>
+	<wx/dialog.h>
+
+1489958063 c:\users\administrateur\documents\dev\wxremotetshockmanager\ihm\evtgrouppermissionsdialog.h
+	"GroupPermissionsDialog.h"
+	<map>
+	<wx/arrstr.h>
+
+1489958086 source:c:\users\administrateur\documents\dev\wxremotetshockmanager\ihm\evtgrouppermissionsdialog.cpp
+	"EvtGroupPermissionsDialog.h"
+
