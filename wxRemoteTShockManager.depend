@@ -3186,3 +3186,234 @@
 1489958086 source:c:\users\administrateur\documents\dev\wxremotetshockmanager\ihm\evtgrouppermissionsdialog.cpp
 	"EvtGroupPermissionsDialog.h"
 
+1489834751 source:c:\users\administrateur\documents\github\wxremotetshockmanager\ihm\bancreatedialog.cpp
+	"BanCreateDialog.h"
+
+1489834674 c:\users\administrateur\documents\github\wxremotetshockmanager\ihm\bancreatedialog.h
+	<wx/artprov.h>
+	<wx/xrc/xmlres.h>
+	<wx/string.h>
+	<wx/radiobut.h>
+	<wx/gdicmn.h>
+	<wx/font.h>
+	<wx/colour.h>
+	<wx/settings.h>
+	<wx/stattext.h>
+	<wx/textctrl.h>
+	<wx/sizer.h>
+	<wx/button.h>
+	<wx/dialog.h>
+
+1489834799 source:c:\users\administrateur\documents\github\wxremotetshockmanager\ihm\evtbancreatedialog.cpp
+	"EvtBanCreateDialog.h"
+
+1489834658 c:\users\administrateur\documents\github\wxremotetshockmanager\ihm\evtbancreatedialog.h
+	"BanCreateDialog.h"
+	<wx/arrstr.h>
+	<wx/msgdlg.h>
+
+1489958086 source:c:\users\administrateur\documents\github\wxremotetshockmanager\ihm\evtgrouppermissionsdialog.cpp
+	"EvtGroupPermissionsDialog.h"
+
+1489958063 c:\users\administrateur\documents\github\wxremotetshockmanager\ihm\evtgrouppermissionsdialog.h
+	"GroupPermissionsDialog.h"
+	<map>
+	<wx/arrstr.h>
+
+1489958182 c:\users\administrateur\documents\github\wxremotetshockmanager\ihm\grouppermissionsdialog.h
+	<wx/artprov.h>
+	<wx/xrc/xmlres.h>
+	"../include/checktreectrl.h"
+	<wx/gdicmn.h>
+	<wx/font.h>
+	<wx/colour.h>
+	<wx/settings.h>
+	<wx/string.h>
+	<wx/sizer.h>
+	<wx/button.h>
+	<wx/dialog.h>
+
+1478263651 c:\users\administrateur\documents\github\wxremotetshockmanager\include\checktreectrl.h
+	<wx/treectrl.h>
+	<wx/bitmap.h>
+	"list"
+
+1489834784 source:c:\users\administrateur\documents\github\wxremotetshockmanager\ihm\evtlicenceinfodialog.cpp
+	"EvtLicenceInfoDialog.h"
+
+1489834843 c:\users\administrateur\documents\github\wxremotetshockmanager\ihm\evtlicenceinfodialog.h
+	"LicenceInfoDialog.h"
+
+1489834819 c:\users\administrateur\documents\github\wxremotetshockmanager\ihm\licenceinfodialog.h
+	<wx/artprov.h>
+	<wx/xrc/xmlres.h>
+	<wx/string.h>
+	<wx/stattext.h>
+	<wx/gdicmn.h>
+	<wx/font.h>
+	<wx/colour.h>
+	<wx/settings.h>
+	<wx/sizer.h>
+	<wx/panel.h>
+	<wx/bitmap.h>
+	<wx/image.h>
+	<wx/icon.h>
+	<wx/textctrl.h>
+	<wx/notebook.h>
+	<wx/dialog.h>
+
+1490259756 source:c:\users\administrateur\documents\github\wxremotetshockmanager\ihm\evtmainframe.cpp
+	"EvtMainFrame.h"
+
+1490259181 c:\users\administrateur\documents\github\wxremotetshockmanager\ihm\evtmainframe.h
+	"MainFrame.h"
+	<wx/msgdlg.h>
+	<wx/log.h>
+	<wx/tokenzr.h>
+	<wx/arrstr.h>
+	<wx/textdlg.h>
+	<wx/colordlg.h>
+	<wx/regex.h>
+	"res/tshock.xpm"
+	"../include/json.h"
+	"../include/RESTClient.h"
+	"EvtUserModDialog.h"
+	"EvtBanCreateDialog.h"
+	"EvtLicenceInfoDialog.h"
+	"EvtGroupPermissionsDialog.h"
+	<wx/fileconf.h>
+
+1490019625 c:\users\administrateur\documents\github\wxremotetshockmanager\ihm\mainframe.h
+	<wx/artprov.h>
+	<wx/xrc/xmlres.h>
+	<wx/string.h>
+	<wx/stattext.h>
+	<wx/gdicmn.h>
+	<wx/font.h>
+	<wx/colour.h>
+	<wx/settings.h>
+	<wx/textctrl.h>
+	<wx/sizer.h>
+	<wx/statbox.h>
+	<wx/button.h>
+	<wx/panel.h>
+	<wx/bitmap.h>
+	<wx/image.h>
+	<wx/icon.h>
+	<wx/listbox.h>
+	<wx/hyperlink.h>
+	<wx/notebook.h>
+	<wx/frame.h>
+
+1456726217 c:\users\administrateur\documents\github\wxremotetshockmanager\ihm\res\tshock.xpm
+
+1454147131 c:\users\administrateur\documents\github\wxremotetshockmanager\include\json.h
+	<vector>
+	<map>
+	<string>
+	<stdexcept>
+
+1489834887 c:\users\administrateur\documents\github\wxremotetshockmanager\include\restclient.h
+	<sstream>
+	<wx/protocol/http.h>
+	<wx/sstream.h>
+
+1489834830 c:\users\administrateur\documents\github\wxremotetshockmanager\ihm\evtusermoddialog.h
+	"UserModDialog.h"
+	<wx/arrstr.h>
+	<wx/msgdlg.h>
+
+1489834806 c:\users\administrateur\documents\github\wxremotetshockmanager\ihm\usermoddialog.h
+	<wx/artprov.h>
+	<wx/xrc/xmlres.h>
+	<wx/string.h>
+	<wx/stattext.h>
+	<wx/gdicmn.h>
+	<wx/font.h>
+	<wx/colour.h>
+	<wx/settings.h>
+	<wx/textctrl.h>
+	<wx/choice.h>
+	<wx/sizer.h>
+	<wx/button.h>
+	<wx/dialog.h>
+
+1484809492 c:\msys64\mingw64\include\wx-3.0\wx\fileconf.h
+	"wx/defs.h"
+	"wx/textfile.h"
+	"wx/string.h"
+	"wx/confbase.h"
+	"wx/filename.h"
+
+1484809500 c:\msys64\mingw64\include\wx-3.0\wx\textfile.h
+	"wx/defs.h"
+	"wx/textbuf.h"
+	"wx/file.h"
+
+1484809500 c:\msys64\mingw64\include\wx-3.0\wx\textbuf.h
+	"wx/defs.h"
+	"wx/arrstr.h"
+	"wx/convauto.h"
+	"wx/string.h"
+	"wx/dynarray.h"
+
+1484809488 c:\msys64\mingw64\include\wx-3.0\wx\confbase.h
+	"wx/defs.h"
+	"wx/string.h"
+	"wx/object.h"
+	"wx/base64.h"
+
+1484809487 c:\msys64\mingw64\include\wx-3.0\wx\base64.h
+	"wx/string.h"
+	"wx/buffer.h"
+
+1489834756 source:c:\users\administrateur\documents\github\wxremotetshockmanager\ihm\evtusermoddialog.cpp
+	"EvtUserModDialog.h"
+
+1489958245 source:c:\users\administrateur\documents\github\wxremotetshockmanager\ihm\grouppermissionsdialog.cpp
+	"GroupPermissionsDialog.h"
+
+1489950978 source:c:\users\administrateur\documents\github\wxremotetshockmanager\ihm\licenceinfodialog.cpp
+	"LicenceInfoDialog.h"
+
+1490019628 source:c:\users\administrateur\documents\github\wxremotetshockmanager\ihm\mainframe.cpp
+	"MainFrame.h"
+
+1489834688 source:c:\users\administrateur\documents\github\wxremotetshockmanager\ihm\usermoddialog.cpp
+	"UserModDialog.h"
+
+1489834584 source:c:\users\administrateur\documents\github\wxremotetshockmanager\myapp.cpp
+	"wx_pch.h"
+	"MyApp.h"
+	"IHM/EvtMainFrame.h"
+
+1489834570 c:\users\administrateur\documents\github\wxremotetshockmanager\myapp.h
+	<wx/app.h>
+
+1461831309 source:c:\users\administrateur\documents\github\wxremotetshockmanager\resource.rc
+	"wx/msw/wx.rc"
+
+1487747744 source:c:\users\administrateur\documents\github\wxremotetshockmanager\src\checktreectrl.cpp
+	"../include/checktreectrl.h"
+	<wx/dcmemory.h>
+	<wx/renderer.h>
+	<wx/imaglist.h>
+	<wx/settings.h>
+
+1454147132 source:c:\users\administrateur\documents\github\wxremotetshockmanager\src\json.cpp
+	"../include/json.h"
+	<stdlib.h>
+	<string>
+	<algorithm>
+	<cstdlib>
+	<cstdio>
+	<climits>
+	<string.h>
+	<functional>
+	<cctype>
+	<stack>
+	<cerrno>
+
+1489834883 source:c:\users\administrateur\documents\github\wxremotetshockmanager\src\restclient.cpp
+	"../include/RESTClient.h"
+
