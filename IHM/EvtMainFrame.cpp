@@ -24,11 +24,30 @@ EvtMainFrame::EvtMainFrame( wxWindow* parent )
     :
     MainFrame( parent )
 {
+    m_LastServerConfig = new wxFileConfig("wxRemoteTShockManager", wxEmptyString, "wxRemoteTShockManager.conf", wxEmptyString, wxCONFIG_USE_LOCAL_FILE);
+    wxString LastServerHost, LastServerPort, LastServerToken;
+    if(m_LastServerConfig->Read("LastHost", &LastServerHost))
+    {
+        m_textCtrlHostname->SetValue(LastServerHost);
+        if(m_LastServerConfig->Read("LastPort", &LastServerPort))
+        {
+            m_textCtrlPort->SetValue(LastServerPort);
+            if(m_LastServerConfig->Read("LastToken", &LastServerToken))
+            {
+                m_textCtrlToken->SetValue(LastServerToken);
+            }
+        }
+    }
     this->SetIcon(tshock_xpm);
     SetTabs(false);
 #ifdef WXRTSM_DEBUG
     this->SetTitle(this->GetTitle() + " (Debug build)");
 #endif
+}
+
+EvtMainFrame::~EvtMainFrame()
+{
+    delete m_LastServerConfig;
 }
 
 void EvtMainFrame::OnManagerPageChanged( wxNotebookEvent& event )
@@ -79,6 +98,9 @@ void EvtMainFrame::OnButtonConnectClick( wxCommandEvent& event )
                     m_textCtrlToken->Disable();
                     m_buttonConnect->SetLabel("Disconnect");
                     SetTabs(true);
+                    m_LastServerConfig->Write("LastHost", m_textCtrlHostname->GetValue());
+                    m_LastServerConfig->Write("LastPort", m_textCtrlPort->GetValue());
+                    m_LastServerConfig->Write("LastToken", m_textCtrlToken->GetValue());
                 }
                 else if(Response_JSON["status"].ToString() == "403")
                 {
