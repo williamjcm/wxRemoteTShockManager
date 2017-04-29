@@ -24,11 +24,11 @@ EvtMainFrame::EvtMainFrame( wxWindow* parent )
     :
     MainFrame( parent )
 {
-    m_LastServerConfig = new wxFileConfig("wxRemoteTShockManager",
-                                          wxEmptyString,
-                                          "wxRemoteTShockManager.conf",
-                                          wxEmptyString,
-                                          wxCONFIG_USE_LOCAL_FILE);
+    m_LastServerConfig.reset(new wxFileConfig("wxRemoteTShockManager",
+                                              wxEmptyString,
+                                              "wxRemoteTShockManager.conf",
+                                              wxEmptyString,
+                                              wxCONFIG_USE_LOCAL_FILE));
     wxString LastServerHost, LastServerPort, LastServerToken;
     if(m_LastServerConfig->Read("LastHost", &LastServerHost))
     {
@@ -51,7 +51,6 @@ EvtMainFrame::EvtMainFrame( wxWindow* parent )
 
 EvtMainFrame::~EvtMainFrame()
 {
-    delete m_LastServerConfig;
 }
 
 void EvtMainFrame::OnManagerPageChanged( wxNotebookEvent& event )

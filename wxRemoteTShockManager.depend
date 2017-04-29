@@ -3262,10 +3262,10 @@
 	<wx/notebook.h>
 	<wx/dialog.h>
 
-1493473567 source:c:\users\administrateur\documents\github\wxremotetshockmanager\ihm\evtmainframe.cpp
+1493492661 source:c:\users\administrateur\documents\github\wxremotetshockmanager\ihm\evtmainframe.cpp
 	"EvtMainFrame.h"
 
-1493473573 c:\users\administrateur\documents\github\wxremotetshockmanager\ihm\evtmainframe.h
+1493492695 c:\users\administrateur\documents\github\wxremotetshockmanager\ihm\evtmainframe.h
 	"MainFrame.h"
 	<wx/msgdlg.h>
 	<wx/log.h>
@@ -3274,6 +3274,8 @@
 	<wx/textdlg.h>
 	<wx/colordlg.h>
 	<wx/regex.h>
+	<wx/fileconf.h>
+	<memory>
 	"res/tshock.xpm"
 	"../include/json.h"
 	"../include/RESTClient.h"
@@ -3281,7 +3283,6 @@
 	"EvtBanCreateDialog.h"
 	"EvtLicenceInfoDialog.h"
 	"EvtGroupPermissionsDialog.h"
-	<wx/fileconf.h>
 
 1490023225 c:\users\administrateur\documents\github\wxremotetshockmanager\ihm\mainframe.h
 	<wx/artprov.h>
