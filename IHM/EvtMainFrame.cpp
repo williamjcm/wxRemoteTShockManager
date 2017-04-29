@@ -778,15 +778,15 @@ void EvtMainFrame::OnButtonGroupCreateClick( wxCommandEvent& event )
                                                                ChatColour.Red(),
                                                                ChatColour.Green(),
                                                                ChatColour.Blue());
-                    m_GroupPermissionsDialog = new EvtGroupPermissionsDialog(this);
-                    int Ok = m_GroupPermissionsDialog->ShowModal();
+                    EvtGroupPermissionsDialog GroupPermissions(this);
+                    int Ok = GroupPermissions.ShowModal();
                     if(Ok != 1)
                     {
                         ShowError("Group creation cancelled.");
                     }
                     else
                     {
-                        wxString Permissions = m_GroupPermissionsDialog->GetPermissions();
+                        wxString Permissions = GroupPermissions.GetPermissions();
                         wxString Response = m_TShockRESTClient.CreateGroup(GroupName,
                                                                            ParentGroup,
                                                                            Permissions,
@@ -802,7 +802,7 @@ void EvtMainFrame::OnButtonGroupCreateClick( wxCommandEvent& event )
                             ShowError("It seems the account associated with the token has insufficient permissions.");
                         }
                     }
-                    m_GroupPermissionsDialog->Destroy();
+                    GroupPermissions.Destroy();
                 }
             }
         }
@@ -859,15 +859,15 @@ void EvtMainFrame::OnButtonGroupEditClick( wxCommandEvent& event )
                     {
                         Permissions.push_back(FirstResponse_JSON["permissions"][i].ToString());
                     }
-                    m_GroupPermissionsDialog = new EvtGroupPermissionsDialog(this, Permissions);
-                    int Ok = m_GroupPermissionsDialog->ShowModal();
+                    EvtGroupPermissionsDialog GroupPermissions(this, Permissions);
+                    int Ok = GroupPermissions.ShowModal();
                     if(Ok != 1)
                     {
                         ShowError("Group update cancelled.");
                     }
                     else
                     {
-                        wxString Permissions = m_GroupPermissionsDialog->GetPermissions();
+                        wxString Permissions = GroupPermissions.GetPermissions();
                         wxString SecondResponse = m_TShockRESTClient.UpdateGroup(GroupName,
                                                                                  ParentGroup,
                                                                                  Permissions,
@@ -883,7 +883,7 @@ void EvtMainFrame::OnButtonGroupEditClick( wxCommandEvent& event )
                             ShowError("It seems the account associated with the token has insufficient permissions.");
                         }
                     }
-                    m_GroupPermissionsDialog->Destroy();
+                    GroupPermissions.Destroy();
                 }
             }
         }
@@ -1283,8 +1283,8 @@ void EvtMainFrame::OnButtonButcherClick( wxCommandEvent& event )
 void EvtMainFrame::OnButtonLicenceInfoClick( wxCommandEvent& event )
 {
     EvtLicenceInfoDialog LicenceDialog(this);
-    LicenceDialog->ShowModal();
-    LicenceDialog->Destroy();
+    LicenceDialog.ShowModal();
+    LicenceDialog.Destroy();
 }
 
 void EvtMainFrame::RefreshUserList()

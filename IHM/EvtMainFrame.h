@@ -103,7 +103,6 @@ class EvtMainFrame : public MainFrame
 	    void RefreshUserList();
 	    void RefreshGroupList();
 	    void RefreshBanList();
-	    EvtGroupPermissionsDialog *m_GroupPermissionsDialog;
 	    wxFileConfig *m_LastServerConfig;
 };
 
