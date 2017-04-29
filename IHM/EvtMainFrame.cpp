@@ -24,7 +24,11 @@ EvtMainFrame::EvtMainFrame( wxWindow* parent )
     :
     MainFrame( parent )
 {
-    m_LastServerConfig = new wxFileConfig("wxRemoteTShockManager", wxEmptyString, "wxRemoteTShockManager.conf", wxEmptyString, wxCONFIG_USE_LOCAL_FILE);
+    m_LastServerConfig = new wxFileConfig("wxRemoteTShockManager",
+                                          wxEmptyString,
+                                          "wxRemoteTShockManager.conf",
+                                          wxEmptyString,
+                                          wxCONFIG_USE_LOCAL_FILE);
     wxString LastServerHost, LastServerPort, LastServerToken;
     if(m_LastServerConfig->Read("LastHost", &LastServerHost))
     {
@@ -74,8 +78,8 @@ void EvtMainFrame::OnButtonConnectClick( wxCommandEvent& event )
     if(m_buttonConnect->GetLabel() == "Connect")
     {
         if(m_textCtrlHostname->GetValue().IsEmpty() &&
-                m_textCtrlPort->GetValue().IsEmpty() &&
-                m_textCtrlToken->GetValue().IsEmpty())
+           m_textCtrlPort->GetValue().IsEmpty() &&
+           m_textCtrlToken->GetValue().IsEmpty())
         {
             ShowError("One or more of the required fields is/are empty.");
         }
@@ -129,7 +133,9 @@ void EvtMainFrame::OnButtonStatusClick( wxCommandEvent& event )
     try
     {
         int Choice = wxMessageBox("Do you want to see some of the server configuration rules ?",
-                                  "Question", wxYES_NO|wxCENTRE|wxNO_DEFAULT|wxICON_QUESTION, this);
+                                  "Question",
+                                  wxYES_NO|wxCENTRE|wxNO_DEFAULT|wxICON_QUESTION,
+                                  this);
         wxString Response = m_TShockRESTClient.GetServerInfo((Choice == wxYES) ? "true" : "false");
         Object Response_JSON = json::Deserialize(Response.ToStdString());
         if(Response_JSON["status"].ToString() == "200")
@@ -200,7 +206,8 @@ void EvtMainFrame::OnButtonStatusClick( wxCommandEvent& event )
         }
         else if(Response_JSON["status"].ToString() == "403")
         {
-            ShowError("While the provided token is valid,\nit seems the associated account does not have sufficient privileges.");
+            ShowError("While the provided token is valid,\n"
+                      "it seems the associated account does not have sufficient privileges.");
         }
     }
     catch(...)
@@ -227,7 +234,8 @@ void EvtMainFrame::OnButtonMotDClick( wxCommandEvent& event )
         }
         else if(Response_JSON["status"].ToString() == "403")
         {
-            ShowError("While the provided token is valid,\nit seems the associated account does not have sufficient privileges.");
+            ShowError("While the provided token is valid,\n"
+                      "it seems the associated account does not have sufficient privileges.");
         }
     }
     catch(...)
@@ -254,7 +262,8 @@ void EvtMainFrame::OnButtonRulesClick( wxCommandEvent& event )
         }
         else if(Response_JSON["status"].ToString() == "403")
         {
-            ShowError("While the provided token is valid,\nit seems the associated account does not have sufficient privileges.");
+            ShowError("While the provided token is valid,\n"
+                      "it seems the associated account does not have sufficient privileges.");
         }
     }
     catch(...)
@@ -275,7 +284,8 @@ void EvtMainFrame::OnButtonReloadConfigClick( wxCommandEvent& event )
         }
         else if(Response_JSON["status"].ToString() == "403")
         {
-            ShowError("While the provided token is valid,\nit seems the associated account does not have sufficient privileges.");
+            ShowError("While the provided token is valid,\n"
+                      "it seems the associated account does not have sufficient privileges.");
         }
     }
     catch(...)
@@ -294,7 +304,9 @@ void EvtMainFrame::OnButtonShutdownClick( wxCommandEvent& event )
     try
     {
         int Choice = wxMessageBox("Do you want to save the world before quitting ?",
-                                  "Question", wxYES_NO|wxCENTRE|wxNO_DEFAULT|wxICON_QUESTION, this);
+                                  "Question",
+                                  wxYES_NO|wxCENTRE|wxNO_DEFAULT|wxICON_QUESTION,
+                                  this);
         wxString Response = m_TShockRESTClient.ShutdownServer((Choice == wxYES) ? "false" : "true");
         Object Response_JSON = json::Deserialize(Response.ToStdString());
         if(Response_JSON["status"].ToString() == "200")
@@ -333,7 +345,8 @@ void EvtMainFrame::OnButtonBroadcastClick( wxCommandEvent& event )
         }
         else if(Response_JSON["status"].ToString() == "403")
         {
-            ShowError("While the provided token is valid,\nit seems the associated account does not have sufficient privileges.");
+            ShowError("While the provided token is valid,\n"
+                      "it seems the associated account does not have sufficient privileges.");
         }
     }
     catch(...)
@@ -354,7 +367,8 @@ void EvtMainFrame::OnButtonRawCmdClick( wxCommandEvent& event )
         }
         else if(Response_JSON["status"].ToString() == "403")
         {
-            ShowError("While the provided token is valid,\nit seems the associated account does not have sufficient privileges.");
+            ShowError("While the provided token is valid,\n"
+                      "it seems the associated account does not have sufficient privileges.");
         }
     }
     catch(std::runtime_error)
@@ -441,7 +455,13 @@ void EvtMainFrame::OnButtonKickPlayerClick( wxCommandEvent& event )
     try
     {
         wxString PlayerToKick = m_listBoxPlayerList->GetString(m_listBoxPlayerList->GetSelection());
-        wxString Reason = wxGetTextFromUser("Why do you want to kick " + PlayerToKick + "?", "Enter reason", "Misbehaviour", this, wxDefaultCoord, wxDefaultCoord, false);
+        wxString Reason = wxGetTextFromUser("Why do you want to kick " + PlayerToKick + "?",
+                                            "Enter reason",
+                                            "Misbehaviour",
+                                            this,
+                                            wxDefaultCoord,
+                                            wxDefaultCoord,
+                                            false);
         wxString Response = m_TShockRESTClient.KickPlayer(PlayerToKick, Reason);
         Object Response_JSON = json::Deserialize(Response.ToStdString());
         if(Response_JSON["status"].ToString() == "200")
@@ -467,7 +487,13 @@ void EvtMainFrame::OnButtonBanPlayerClick( wxCommandEvent& event )
     try
     {
         wxString PlayerToBan = m_listBoxPlayerList->GetString(m_listBoxPlayerList->GetSelection());
-        wxString Reason = wxGetTextFromUser("Why do you want to ban " + PlayerToBan + "?", "Enter reason", "Misbehaviour", this, wxDefaultCoord, wxDefaultCoord, false);
+        wxString Reason = wxGetTextFromUser("Why do you want to ban " + PlayerToBan + "?",
+                                            "Enter reason",
+                                            "Misbehaviour",
+                                            this,
+                                            wxDefaultCoord,
+                                            wxDefaultCoord,
+                                            false);
         wxString Response = m_TShockRESTClient.BanPlayer(PlayerToBan, Reason);
         Object Response_JSON = json::Deserialize(Response.ToStdString());
         if(Response_JSON["status"].ToString() == "200")
@@ -493,7 +519,13 @@ void EvtMainFrame::OnButtonKillPlayerClick( wxCommandEvent& event )
     try
     {
         wxString PlayerToKill = m_listBoxPlayerList->GetString(m_listBoxPlayerList->GetSelection());
-        wxString Reason = wxGetTextFromUser("Who is the perpetrator ?", "Enter name", "Death", this, wxDefaultCoord, wxDefaultCoord, false);
+        wxString Reason = wxGetTextFromUser("Who is the perpetrator ?",
+                                            "Enter name",
+                                            "Death",
+                                            this,
+                                            wxDefaultCoord,
+                                            wxDefaultCoord,
+                                            false);
         wxString Response = m_TShockRESTClient.KillPlayer(PlayerToKill, Reason);
         Object Response_JSON = json::Deserialize(Response.ToStdString());
         if(Response_JSON["status"].ToString() == "200")
@@ -520,9 +552,7 @@ void EvtMainFrame::OnButtonMutePlayerClick( wxCommandEvent& event )
         wxString Response = m_TShockRESTClient.MutePlayer(m_listBoxPlayerList->GetString(m_listBoxPlayerList->GetSelection()));
         Object Response_JSON = json::Deserialize(Response.ToStdString());
         if(Response_JSON["status"].ToString() == "200")
-        {
             ShowInfo(Response_JSON["response"].ToString());
-        }
         else if(Response_JSON["status"].ToString() == "403")
             ShowError("It seems that the account associated with the token has insufficient privileges.");
     }
@@ -744,7 +774,10 @@ void EvtMainFrame::OnButtonGroupCreateClick( wxCommandEvent& event )
                 }
                 else
                 {
-                    wxString ChatColour_str = wxString::Format("%i,%i,%i", ChatColour.Red(), ChatColour.Green(), ChatColour.Blue());
+                    wxString ChatColour_str = wxString::Format("%i,%i,%i",
+                                                               ChatColour.Red(),
+                                                               ChatColour.Green(),
+                                                               ChatColour.Blue());
                     m_GroupPermissionsDialog = new EvtGroupPermissionsDialog(this);
                     int Ok = m_GroupPermissionsDialog->ShowModal();
                     if(Ok != 1)
@@ -754,7 +787,10 @@ void EvtMainFrame::OnButtonGroupCreateClick( wxCommandEvent& event )
                     else
                     {
                         wxString Permissions = m_GroupPermissionsDialog->GetPermissions();
-                        wxString Response = m_TShockRESTClient.CreateGroup(GroupName, ParentGroup, Permissions, ChatColour_str);
+                        wxString Response = m_TShockRESTClient.CreateGroup(GroupName,
+                                                                           ParentGroup,
+                                                                           Permissions,
+                                                                           ChatColour_str);
                         Object Response_JSON = Deserialize(Response.ToStdString());
                         if(Response_JSON["status"] == "200")
                         {
@@ -803,14 +839,21 @@ void EvtMainFrame::OnButtonGroupEditClick( wxCommandEvent& event )
                 ChatColourRGB[0].ToLong(&ChatColourRed);
                 ChatColourRGB[1].ToLong(&ChatColourGreen);
                 ChatColourRGB[2].ToLong(&ChatColourBlue);
-                wxColour ChatColour = wxGetColourFromUser(this, wxColour(ChatColourRed, ChatColourGreen, ChatColourBlue), "Choose chat color");
+                wxColour ChatColour = wxGetColourFromUser(this,
+                                                          wxColour(ChatColourRed,
+                                                                   ChatColourGreen,
+                                                                   ChatColourBlue),
+                                                                   "Choose chat color");
                 if(!ChatColour.IsOk())
                 {
                     ShowError("Group update cancelled.");
                 }
                 else
                 {
-                    wxString ChatColour_str = wxString::Format("%i,%i,%i", ChatColour.Red(), ChatColour.Green(), ChatColour.Blue());
+                    wxString ChatColour_str = wxString::Format("%i,%i,%i",
+                                                               ChatColour.Red(),
+                                                               ChatColour.Green(),
+                                                               ChatColour.Blue());
                     wxArrayString Permissions;
                     for(unsigned int i = 0; i < FirstResponse_JSON["permissions"].size(); i++)
                     {
@@ -825,7 +868,10 @@ void EvtMainFrame::OnButtonGroupEditClick( wxCommandEvent& event )
                     else
                     {
                         wxString Permissions = m_GroupPermissionsDialog->GetPermissions();
-                        wxString SecondResponse = m_TShockRESTClient.UpdateGroup(GroupName, ParentGroup, Permissions, ChatColour_str);
+                        wxString SecondResponse = m_TShockRESTClient.UpdateGroup(GroupName,
+                                                                                 ParentGroup,
+                                                                                 Permissions,
+                                                                                 ChatColour_str);
                         Object SecondResponse_JSON = Deserialize(SecondResponse.ToStdString());
                         if(SecondResponse_JSON["status"] == "200")
                         {
@@ -1236,9 +1282,9 @@ void EvtMainFrame::OnButtonButcherClick( wxCommandEvent& event )
 
 void EvtMainFrame::OnButtonLicenceInfoClick( wxCommandEvent& event )
 {
-    m_LicenceInfoDialog = new EvtLicenceInfoDialog(this);
-    m_LicenceInfoDialog->ShowModal();
-    m_LicenceInfoDialog->Destroy();
+    EvtLicenceInfoDialog LicenceDialog(this);
+    LicenceDialog->ShowModal();
+    LicenceDialog->Destroy();
 }
 
 void EvtMainFrame::RefreshUserList()
