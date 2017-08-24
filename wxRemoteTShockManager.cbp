@@ -241,6 +241,12 @@
 				</Linker>
 			</Target>
 		</Build>
+		<VirtualTargets>
+			<Add alias="All Linux" targets="Linux GCC (Debug);Linux GCC (Release);" />
+			<Add alias="All MSYS2" targets="Win MSYS2/MinGW32 (Debug);Win MSYS2/MinGW32 (Release);Win MSYS2/MinGW64 (Debug);Win MSYS2/MinGW64 (Release);" />
+			<Add alias="All MSYS2/MinGW32" targets="Win MSYS2/MinGW32 (Debug);Win MSYS2/MinGW32 (Release);" />
+			<Add alias="All MSYS2/MinGW64" targets="Win MSYS2/MinGW64 (Debug);Win MSYS2/MinGW64 (Release);" />
+		</VirtualTargets>
 		<Compiler>
 			<Add option="-Wall" />
 			<Add option="-std=c++11" />
