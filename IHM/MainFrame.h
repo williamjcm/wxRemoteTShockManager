@@ -44,6 +44,7 @@
 #include <wx/bitmap.h>
 #include <wx/image.h>
 #include <wx/icon.h>
+#include <wx/listctrl.h>
 #include <wx/listbox.h>
 #include <wx/hyperlink.h>
 #include <wx/notebook.h>
@@ -81,13 +82,14 @@ class MainFrame : public wxFrame
 		wxTextCtrl* m_textCtrlRawCmd;
 		wxButton* m_buttonRawCmd;
 		wxPanel* m_panelPlayers;
-		wxListBox* m_listBoxPlayerList;
+		wxListView* m_listViewPlayerList;
 		wxButton* m_buttonPlayerInfo;
 		wxButton* m_buttonKick;
 		wxButton* m_buttonBan;
 		wxButton* m_buttonKill;
 		wxButton* m_buttonMute;
 		wxButton* m_buttonUnmute;
+		wxButton* m_buttonPlayerListRefresh;
 		wxPanel* m_panelUsers;
 		wxListBox* m_listBoxUsers;
 		wxButton* m_buttonUserInfo;
@@ -137,6 +139,7 @@ class MainFrame : public wxFrame
 		virtual void OnButtonKillPlayerClick( wxCommandEvent& event ) { event.Skip(); }
 		virtual void OnButtonMutePlayerClick( wxCommandEvent& event ) { event.Skip(); }
 		virtual void OnButtonUnmutePlayerClick( wxCommandEvent& event ) { event.Skip(); }
+		virtual void OnButtonRefreshClick( wxCommandEvent& event ) { event.Skip(); }
 		virtual void OnButtonMoreUserInfoClick( wxCommandEvent& event ) { event.Skip(); }
 		virtual void OnButtonCreateUserClick( wxCommandEvent& event ) { event.Skip(); }
 		virtual void OnButtonEditUserClick( wxCommandEvent& event ) { event.Skip(); }
@@ -161,7 +164,7 @@ class MainFrame : public wxFrame
 
 	public:
 
-		MainFrame( wxWindow* parent, wxWindowID id = wxID_ANY, const wxString& title = wxT("wxRemoteTShockManager"), const wxPoint& pos = wxDefaultPosition, const wxSize& size = wxSize( 640,400 ), long style = wxCAPTION|wxCLOSE_BOX|wxMINIMIZE_BOX|wxSYSTEM_MENU|wxTAB_TRAVERSAL );
+		MainFrame( wxWindow* parent, wxWindowID id = wxID_ANY, const wxString& title = wxT("wxRemoteTShockManager"), const wxPoint& pos = wxDefaultPosition, const wxSize& size = wxSize( 1024,600 ), long style = wxCAPTION|wxCLOSE_BOX|wxMINIMIZE_BOX|wxSYSTEM_MENU|wxTAB_TRAVERSAL );
 
 		~MainFrame();
 

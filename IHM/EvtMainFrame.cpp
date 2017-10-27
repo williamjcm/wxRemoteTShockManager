@@ -21,8 +21,8 @@
 #include "EvtMainFrame.h"
 
 EvtMainFrame::EvtMainFrame( wxWindow* parent )
-    :
-    MainFrame( parent )
+:
+MainFrame( parent )
 {
     m_LastServerConfig.reset(new wxFileConfig("wxRemoteTShockManager",
                                               wxEmptyString,
@@ -49,11 +49,7 @@ EvtMainFrame::EvtMainFrame( wxWindow* parent )
 #endif
 }
 
-EvtMainFrame::~EvtMainFrame()
-{
-}
-
-void EvtMainFrame::OnManagerPageChanged( wxNotebookEvent& event )
+void EvtMainFrame::OnManagerPageChanged(wxNotebookEvent& event)
 {
     switch(m_MainNotebook->GetSelection())
     {
@@ -72,13 +68,13 @@ void EvtMainFrame::OnManagerPageChanged( wxNotebookEvent& event )
     }
 }
 
-void EvtMainFrame::OnButtonConnectClick( wxCommandEvent& event )
+void EvtMainFrame::OnButtonConnectClick(wxCommandEvent& event)
 {
     if(m_buttonConnect->GetLabel() == "Connect")
     {
         if(m_textCtrlHostname->GetValue().IsEmpty() &&
-           m_textCtrlPort->GetValue().IsEmpty() &&
-           m_textCtrlToken->GetValue().IsEmpty())
+                m_textCtrlPort->GetValue().IsEmpty() &&
+                m_textCtrlToken->GetValue().IsEmpty())
         {
             ShowError("One or more of the required fields is/are empty.");
         }
@@ -127,22 +123,19 @@ void EvtMainFrame::OnButtonConnectClick( wxCommandEvent& event )
     }
 }
 
-void EvtMainFrame::OnButtonStatusClick( wxCommandEvent& event )
+void EvtMainFrame::OnButtonStatusClick(wxCommandEvent& event)
 {
     try
     {
         int Choice = wxMessageBox("Do you want to see some of the server configuration rules ?",
                                   "Question",
-                                  wxYES_NO|wxCENTRE|wxNO_DEFAULT|wxICON_QUESTION,
+                                  wxYES_NO | wxCENTRE | wxNO_DEFAULT | wxICON_QUESTION,
                                   this);
         wxString Response = m_TShockRESTClient.GetServerInfo((Choice == wxYES) ? "true" : "false");
         Object Response_JSON = json::Deserialize(Response.ToStdString());
         if(Response_JSON["status"].ToString() == "200")
         {
-            wxString ServerStatus = "";
-            if(Choice == wxNO)
-            {
-                ServerStatus.Printf("%s is running TShock version %d.%d.%d, based on Terraria %s.\n"
+            wxString ServerStatus = wxString::Format("%s is running TShock version %d.%d.%d, based on Terraria %s.\n"
                                     "It is listening on port %d, is%s password-protected and has an uptime of %s.\n"
                                     "Currently, %d player(s) are on %s, out of a maximum of %d.",
                                     Response_JSON["name"].ToString(),
@@ -156,50 +149,34 @@ void EvtMainFrame::OnButtonStatusClick( wxCommandEvent& event )
                                     Response_JSON["playercount"].ToInt(),
                                     Response_JSON["world"].ToString(),
                                     Response_JSON["maxplayers"].ToInt());
-            }
-            else if(Choice == wxYES)
+            if(Choice == wxYES)
             {
                 Object Rules_JSON = Response_JSON["rules"];
-                ServerStatus.Printf("%s is running TShock version %d.%d.%d, based on Terraria API %s.\n"
-                                    "It is listening on port %d, is%s password-protected and has an uptime of %s.\n"
-                                    "Currently, %d player(s) are on %s, out of a maximum of %d.\n\n"
-                                    "Config rules:\n"
-                                    "Autosave is %s.\n"
-                                    "Building is %s.\n"
-                                    "Clown bombs are %s.\n"
-                                    "The Dungeon Guardian is %s.\n"
-                                    "Invisibility during PvP is %s.\n"
-                                    "Snowballs are %s.\n"
-                                    "Tombstones are %s.\n"
-                                    "Server whitelist is %s.\n"
-                                    "Non-hardcore characters are %s.\n"
-                                    "PvP is set to %s.\n"
-                                    "Spawn protection (radius of %d tiles) is %s.\n"
-                                    "Server-side inventory is %s.",
-                                    Response_JSON["name"].ToString(),
-                                    Response_JSON["tshockversion"]["Major"].ToInt(),
-                                    Response_JSON["tshockversion"]["Minor"].ToInt(),
-                                    Response_JSON["tshockversion"]["Build"].ToInt(),
-                                    Response_JSON["serverversion"].ToString(),
-                                    Response_JSON["port"].ToInt(),
-                                    (Response_JSON["serverpassword"].ToBool() ? "" : " not"),
-                                    Response_JSON["uptime"].ToString(),
-                                    Response_JSON["playercount"].ToInt(),
-                                    Response_JSON["world"].ToString(),
-                                    Response_JSON["maxplayers"].ToInt(),
-                                    (Rules_JSON["AutoSave"].ToBool() ? "enabled" : "disabled"),
-                                    (Rules_JSON["DisableBuild"].ToBool() ? "disabled" : "enabled"),
-                                    (Rules_JSON["DisableClownBombs"].ToBool() ? "disabled" : "enabled"),
-                                    (Rules_JSON["DisableDungeonGuardian"].ToBool() ? "disabled" : "enabled"),
-                                    (Rules_JSON["DisableInvisPvP"].ToBool() ? "disabled" : "enabled"),
-                                    (Rules_JSON["DisableSnowBalls"].ToBool() ? "disabled" : "enabled"),
-                                    (Rules_JSON["DisableTombstones"].ToBool() ? "disabled" : "enabled"),
-                                    (Rules_JSON["EnableWhitelist"].ToBool() ? "enabled" : "disabled"),
-                                    (Rules_JSON["HardcoreOnly"].ToBool() ? "disabled" : "enabled"),
-                                    Rules_JSON["PvPMode"].ToString(),
-                                    Rules_JSON["SpawnProtectionRadius"].ToInt(),
-                                    (Rules_JSON["SpawnProtection"].ToBool() ? "enabled" : "disabled"),
-                                    (Rules_JSON["ServerSideInventory"].ToBool() ? "enabled" : "disabled"));
+                ServerStatus += wxString::Format("\nAutosave is %s.\n"
+                                                 "Building is %s.\n"
+                                                 "Clown bombs are %s.\n"
+                                                 "The Dungeon Guardian is %s.\n"
+                                                 "Invisibility during PvP is %s.\n"
+                                                 "Snowballs are %s.\n"
+                                                 "Tombstones are %s.\n"
+                                                 "Server whitelist is %s.\n"
+                                                 "Non-hardcore characters are %s.\n"
+                                                 "PvP is set to %s.\n"
+                                                 "Spawn protection (radius of %d tiles) is %s.\n"
+                                                 "Server-side inventory is %s.",
+                                                 (Rules_JSON["AutoSave"].ToBool() ? "enabled" : "disabled"),
+                                                 (Rules_JSON["DisableBuild"].ToBool() ? "disabled" : "enabled"),
+                                                 (Rules_JSON["DisableClownBombs"].ToBool() ? "disabled" : "enabled"),
+                                                 (Rules_JSON["DisableDungeonGuardian"].ToBool() ? "disabled" : "enabled"),
+                                                 (Rules_JSON["DisableInvisPvP"].ToBool() ? "disabled" : "enabled"),
+                                                 (Rules_JSON["DisableSnowBalls"].ToBool() ? "disabled" : "enabled"),
+                                                 (Rules_JSON["DisableTombstones"].ToBool() ? "disabled" : "enabled"),
+                                                 (Rules_JSON["EnableWhitelist"].ToBool() ? "enabled" : "disabled"),
+                                                 (Rules_JSON["HardcoreOnly"].ToBool() ? "disabled" : "enabled"),
+                                                 Rules_JSON["PvPMode"].ToString(),
+                                                 Rules_JSON["SpawnProtectionRadius"].ToInt(),
+                                                 (Rules_JSON["SpawnProtection"].ToBool() ? "enabled" : "disabled"),
+                                                 (Rules_JSON["ServerSideInventory"].ToBool() ? "enabled" : "disabled"));
             }
             ShowInfo(ServerStatus);
         }
@@ -215,7 +192,7 @@ void EvtMainFrame::OnButtonStatusClick( wxCommandEvent& event )
     }
 }
 
-void EvtMainFrame::OnButtonMotDClick( wxCommandEvent& event )
+void EvtMainFrame::OnButtonMotDClick(wxCommandEvent& event)
 {
     try
     {
@@ -243,7 +220,7 @@ void EvtMainFrame::OnButtonMotDClick( wxCommandEvent& event )
     }
 }
 
-void EvtMainFrame::OnButtonRulesClick( wxCommandEvent& event )
+void EvtMainFrame::OnButtonRulesClick(wxCommandEvent& event)
 {
     try
     {
@@ -271,7 +248,7 @@ void EvtMainFrame::OnButtonRulesClick( wxCommandEvent& event )
     }
 }
 
-void EvtMainFrame::OnButtonReloadConfigClick( wxCommandEvent& event )
+void EvtMainFrame::OnButtonReloadConfigClick(wxCommandEvent& event)
 {
     try
     {
@@ -293,18 +270,18 @@ void EvtMainFrame::OnButtonReloadConfigClick( wxCommandEvent& event )
     }
 }
 
-void EvtMainFrame::OnButtonRestartClick( wxCommandEvent& event )
+void EvtMainFrame::OnButtonRestartClick(wxCommandEvent& event)
 {
     ShowError("This feature is disabled, because of a bug in TShock (issue #480 on GitHub).");
 }
 
-void EvtMainFrame::OnButtonShutdownClick( wxCommandEvent& event )
+void EvtMainFrame::OnButtonShutdownClick(wxCommandEvent& event)
 {
     try
     {
         int Choice = wxMessageBox("Do you want to save the world before quitting ?",
                                   "Question",
-                                  wxYES_NO|wxCENTRE|wxNO_DEFAULT|wxICON_QUESTION,
+                                  wxYES_NO | wxCENTRE | wxNO_DEFAULT | wxICON_QUESTION,
                                   this);
         wxString Response = m_TShockRESTClient.ShutdownServer((Choice == wxYES) ? "false" : "true");
         Object Response_JSON = json::Deserialize(Response.ToStdString());
@@ -319,7 +296,7 @@ void EvtMainFrame::OnButtonShutdownClick( wxCommandEvent& event )
             ShowError("I'm sorry. I'm afraid I can't do that.");
         }
     }
-    catch(const std::runtime_error e)
+    catch(std::runtime_error &e)
     {
         ShowError("The server didn't respond in time. Assuming it is shut down.");
         m_MainNotebook->SetSelection(0);
@@ -331,7 +308,7 @@ void EvtMainFrame::OnButtonShutdownClick( wxCommandEvent& event )
     }
 }
 
-void EvtMainFrame::OnButtonBroadcastClick( wxCommandEvent& event )
+void EvtMainFrame::OnButtonBroadcastClick(wxCommandEvent& event)
 {
     try
     {
@@ -354,7 +331,7 @@ void EvtMainFrame::OnButtonBroadcastClick( wxCommandEvent& event )
     }
 }
 
-void EvtMainFrame::OnButtonRawCmdClick( wxCommandEvent& event )
+void EvtMainFrame::OnButtonRawCmdClick(wxCommandEvent& event)
 {
     try
     {
@@ -384,64 +361,45 @@ void EvtMainFrame::OnButtonPlayerInfoClick( wxCommandEvent& event )
 {
     try
     {
-        wxString Response = m_TShockRESTClient.ReadPlayer(m_listBoxPlayerList->GetString(m_listBoxPlayerList->GetSelection()));
+        long index = m_listViewPlayerList->GetFirstSelected();
+        wxString Nickname = m_listViewPlayerList->GetItemText(index);
+        wxString Response = m_TShockRESTClient.ReadPlayer(Nickname);
         Object Response_JSON = json::Deserialize(Response.ToStdString());
         if(Response_JSON["status"].ToString() == "200")
         {
             wxString PlayerInfo = "";
-            if(Response_JSON["username"].ToString() == "")
+            if(Response_JSON["username"].GetType() == NULLVal)
             {
-                PlayerInfo.Printf("%s is connected from %s and is currently a %s user.\n"
+                PlayerInfo.Printf("%s is connected from %s.\n"
                                   "S/he is currently at (X,Y) %s.\n"
-                                  "S/he is carrying the following inventory:\n"
-                                  "%s\n"
-                                  "S/he also has the following items equipped:\n"
-                                  "%s\n"
-                                  "S/he has the following dyes equipped:\n"
-                                  "%s\n"
-                                  "S/he is under the effect of the following de/buffs:"
-                                  "%s",
+                                  "S/he is currently %smuted.\n",
                                   Response_JSON["nickname"].ToString(),
                                   Response_JSON["ip"].ToString(),
-                                  Response_JSON["group"].ToString(),
                                   Response_JSON["position"].ToString(),
-                                  Response_JSON["inventory"].ToString(),
-                                  Response_JSON["armor"].ToString(),
-                                  Response_JSON["dyes"].ToString(),
-                                  Response_JSON["buffs"].ToString());
+                                  (Response_JSON["muted"].ToBool() ? "" : "not "));
             }
             else
             {
                 PlayerInfo.Printf("%s is connected from %s.\n"
-                                  "S/he own the nickname %s, which was registered on %s, and is a member of the %s group."
+                                  "S/he own the nickname %s, which was registered on %s, and is a member of the %s group.\n"
                                   "S/he is currently at (X,Y) %s.\n"
-                                  "S/he is carrying the following inventory:\n"
-                                  "%s\n"
-                                  "S/he also has the following items equipped:\n"
-                                  "%s\n"
-                                  "S/he has the following dyes equipped:\n"
-                                  "%s\n"
-                                  "S/he is under the effect of the following de/buffs:"
-                                  "%s",
+                                  "S/he is currently %smuted.\n",
                                   Response_JSON["nickname"].ToString(),
                                   Response_JSON["ip"].ToString(),
                                   Response_JSON["username"].ToString(),
                                   Response_JSON["registered"].ToString(),
                                   Response_JSON["group"].ToString(),
                                   Response_JSON["position"].ToString(),
-                                  Response_JSON["inventory"].ToString(),
-                                  Response_JSON["armor"].ToString(),
-                                  Response_JSON["dyes"].ToString(),
-                                  Response_JSON["buffs"].ToString());
+                                  (Response_JSON["muted"].ToBool() ? "" : "not "));
             }
             ShowInfo(PlayerInfo);
         }
         else if(Response_JSON["status"].ToString() == "403")
             ShowError("It seems the account associated with the token has insufficient privileges.");
     }
-    catch(const std::runtime_error e)
+    catch(std::runtime_error e)
     {
-        ShowError("There was an error parsing the server response.");
+        ShowError(e.what());
     }
     catch(...)
     {
@@ -449,19 +407,20 @@ void EvtMainFrame::OnButtonPlayerInfoClick( wxCommandEvent& event )
     }
 }
 
-void EvtMainFrame::OnButtonKickPlayerClick( wxCommandEvent& event )
+void EvtMainFrame::OnButtonKickPlayerClick(wxCommandEvent& event)
 {
     try
     {
-        wxString PlayerToKick = m_listBoxPlayerList->GetString(m_listBoxPlayerList->GetSelection());
-        wxString Reason = wxGetTextFromUser("Why do you want to kick " + PlayerToKick + "?",
+        long index = m_listViewPlayerList->GetFirstSelected();
+        wxString Nickname = m_listViewPlayerList->GetItemText(index);
+        wxString Reason = wxGetTextFromUser("Why do you want to kick " + Nickname + "?",
                                             "Enter reason",
                                             "Misbehaviour",
                                             this,
                                             wxDefaultCoord,
                                             wxDefaultCoord,
                                             false);
-        wxString Response = m_TShockRESTClient.KickPlayer(PlayerToKick, Reason);
+        wxString Response = m_TShockRESTClient.KickPlayer(Nickname, Reason);
         Object Response_JSON = json::Deserialize(Response.ToStdString());
         if(Response_JSON["status"].ToString() == "200")
         {
@@ -471,7 +430,7 @@ void EvtMainFrame::OnButtonKickPlayerClick( wxCommandEvent& event )
         else if(Response_JSON["status"].ToString() == "403")
             ShowError("It seems the account associated with the token has insufficient privileges.");
     }
-    catch(const std::runtime_error e)
+    catch(std::runtime_error e)
     {
         ShowError("There was an error parsing the server response.");
     }
@@ -481,19 +440,20 @@ void EvtMainFrame::OnButtonKickPlayerClick( wxCommandEvent& event )
     }
 }
 
-void EvtMainFrame::OnButtonBanPlayerClick( wxCommandEvent& event )
+void EvtMainFrame::OnButtonBanPlayerClick(wxCommandEvent& event)
 {
     try
     {
-        wxString PlayerToBan = m_listBoxPlayerList->GetString(m_listBoxPlayerList->GetSelection());
-        wxString Reason = wxGetTextFromUser("Why do you want to ban " + PlayerToBan + "?",
+        long index = m_listViewPlayerList->GetFirstSelected();
+        wxString Nickname = m_listViewPlayerList->GetItemText(index);
+        wxString Reason = wxGetTextFromUser("Why do you want to ban " + Nickname + "?",
                                             "Enter reason",
                                             "Misbehaviour",
                                             this,
                                             wxDefaultCoord,
                                             wxDefaultCoord,
                                             false);
-        wxString Response = m_TShockRESTClient.BanPlayer(PlayerToBan, Reason);
+        wxString Response = m_TShockRESTClient.BanPlayer(Nickname, Reason);
         Object Response_JSON = json::Deserialize(Response.ToStdString());
         if(Response_JSON["status"].ToString() == "200")
         {
@@ -503,7 +463,7 @@ void EvtMainFrame::OnButtonBanPlayerClick( wxCommandEvent& event )
         else if(Response_JSON["status"].ToString() == "403")
             ShowError("It seems the account associated with the token has insufficient privileges.");
     }
-    catch(const std::runtime_error e)
+    catch(std::runtime_error e)
     {
         ShowError("There was an error parsing the server response.");
     }
@@ -513,11 +473,12 @@ void EvtMainFrame::OnButtonBanPlayerClick( wxCommandEvent& event )
     }
 }
 
-void EvtMainFrame::OnButtonKillPlayerClick( wxCommandEvent& event )
+void EvtMainFrame::OnButtonKillPlayerClick(wxCommandEvent& event)
 {
     try
     {
-        wxString PlayerToKill = m_listBoxPlayerList->GetString(m_listBoxPlayerList->GetSelection());
+        long index = m_listViewPlayerList->GetFirstSelected();
+        wxString Nickname = m_listViewPlayerList->GetItemText(index);
         wxString Reason = wxGetTextFromUser("Who is the perpetrator ?",
                                             "Enter name",
                                             "Death",
@@ -525,7 +486,7 @@ void EvtMainFrame::OnButtonKillPlayerClick( wxCommandEvent& event )
                                             wxDefaultCoord,
                                             wxDefaultCoord,
                                             false);
-        wxString Response = m_TShockRESTClient.KillPlayer(PlayerToKill, Reason);
+        wxString Response = m_TShockRESTClient.KillPlayer(Nickname, Reason);
         Object Response_JSON = json::Deserialize(Response.ToStdString());
         if(Response_JSON["status"].ToString() == "200")
         {
@@ -534,7 +495,7 @@ void EvtMainFrame::OnButtonKillPlayerClick( wxCommandEvent& event )
         else if(Response_JSON["status"].ToString() == "403")
             ShowError("It seems the account associated with the token has insufficient privileges.");
     }
-    catch(const std::runtime_error e)
+    catch(std::runtime_error e)
     {
         ShowError("There was an error parsing the server response.");
     }
@@ -544,18 +505,20 @@ void EvtMainFrame::OnButtonKillPlayerClick( wxCommandEvent& event )
     }
 }
 
-void EvtMainFrame::OnButtonMutePlayerClick( wxCommandEvent& event )
+void EvtMainFrame::OnButtonMutePlayerClick(wxCommandEvent& event)
 {
     try
     {
-        wxString Response = m_TShockRESTClient.MutePlayer(m_listBoxPlayerList->GetString(m_listBoxPlayerList->GetSelection()));
+        long index = m_listViewPlayerList->GetFirstSelected();
+        wxString Nickname = m_listViewPlayerList->GetItemText(index);
+        wxString Response = m_TShockRESTClient.MutePlayer(Nickname);
         Object Response_JSON = json::Deserialize(Response.ToStdString());
         if(Response_JSON["status"].ToString() == "200")
             ShowInfo(Response_JSON["response"].ToString());
         else if(Response_JSON["status"].ToString() == "403")
             ShowError("It seems that the account associated with the token has insufficient privileges.");
     }
-    catch(const std::runtime_error e)
+    catch(std::runtime_error e)
     {
         ShowError("There was an error.");
     }
@@ -565,18 +528,20 @@ void EvtMainFrame::OnButtonMutePlayerClick( wxCommandEvent& event )
     }
 }
 
-void EvtMainFrame::OnButtonUnmutePlayerClick( wxCommandEvent& event )
+void EvtMainFrame::OnButtonUnmutePlayerClick(wxCommandEvent& event)
 {
     try
     {
-        wxString Response = m_TShockRESTClient.UnmutePlayer(m_listBoxPlayerList->GetString(m_listBoxPlayerList->GetSelection()));
+        long index = m_listViewPlayerList->GetFirstSelected();
+        wxString Nickname = m_listViewPlayerList->GetItemText(index);
+        wxString Response = m_TShockRESTClient.UnmutePlayer(Nickname);
         Object Response_JSON = json::Deserialize(Response.ToStdString());
         if(Response_JSON["status"].ToString() == "200")
             ShowInfo(Response_JSON["response"].ToString());
         else if(Response_JSON["status"].ToString() == "403")
             ShowError("It seems that the account associated with the token has insufficient privileges.");
     }
-    catch(const std::runtime_error e)
+    catch(std::runtime_error e)
     {
         ShowError("There was an error parsing the response.");
     }
@@ -586,7 +551,15 @@ void EvtMainFrame::OnButtonUnmutePlayerClick( wxCommandEvent& event )
     }
 }
 
-void EvtMainFrame::OnButtonMoreUserInfoClick( wxCommandEvent& event )
+void EvtMainFrame::OnButtonRefreshClick(wxCommandEvent& event)
+{
+    if(event.GetId() == m_buttonPlayerListRefresh->GetId())
+    {
+        RefreshPlayerList();
+    }
+}
+
+void EvtMainFrame::OnButtonMoreUserInfoClick(wxCommandEvent& event)
 {
     try
     {
@@ -603,7 +576,7 @@ void EvtMainFrame::OnButtonMoreUserInfoClick( wxCommandEvent& event )
         else if(Response_JSON["status"].ToString() == "403")
             ShowError("It seems that the account associated with the token has insufficient privileges.");
     }
-    catch(const std::runtime_error e)
+    catch(std::runtime_error e)
     {
         ShowError("There was an error parsing the user info.");
     }
@@ -613,7 +586,7 @@ void EvtMainFrame::OnButtonMoreUserInfoClick( wxCommandEvent& event )
     }
 }
 
-void EvtMainFrame::OnButtonCreateUserClick( wxCommandEvent& event )
+void EvtMainFrame::OnButtonCreateUserClick(wxCommandEvent& event)
 {
     try
     {
@@ -651,7 +624,7 @@ void EvtMainFrame::OnButtonCreateUserClick( wxCommandEvent& event )
     }
 }
 
-void EvtMainFrame::OnButtonEditUserClick( wxCommandEvent& event )
+void EvtMainFrame::OnButtonEditUserClick(wxCommandEvent& event)
 {
     try
     {
@@ -689,7 +662,7 @@ void EvtMainFrame::OnButtonEditUserClick( wxCommandEvent& event )
     }
 }
 
-void EvtMainFrame::OnButtonDeleteUserClick( wxCommandEvent& event )
+void EvtMainFrame::OnButtonDeleteUserClick(wxCommandEvent& event)
 {
     try
     {
@@ -703,7 +676,7 @@ void EvtMainFrame::OnButtonDeleteUserClick( wxCommandEvent& event )
         else if(Response_JSON["status"].ToString() == "200")
             ShowError("It appears the account associated with the token does not have sufficient privileges.");
     }
-    catch(const std::runtime_error e)
+    catch(std::runtime_error e)
     {
         ShowError("There was an error parsing the response.");
     }
@@ -713,7 +686,7 @@ void EvtMainFrame::OnButtonDeleteUserClick( wxCommandEvent& event )
     }
 }
 
-void EvtMainFrame::OnButtonMoreGroupInfoClick( wxCommandEvent& event )
+void EvtMainFrame::OnButtonMoreGroupInfoClick(wxCommandEvent& event)
 {
     try
     {
@@ -748,7 +721,7 @@ void EvtMainFrame::OnButtonMoreGroupInfoClick( wxCommandEvent& event )
     }
 }
 
-void EvtMainFrame::OnButtonGroupCreateClick( wxCommandEvent& event )
+void EvtMainFrame::OnButtonGroupCreateClick(wxCommandEvent& event)
 {
     try
     {
@@ -766,7 +739,7 @@ void EvtMainFrame::OnButtonGroupCreateClick( wxCommandEvent& event )
             }
             else
             {
-                wxColour ChatColour = wxGetColourFromUser(this, wxColour(255,255,255), "Choose chat colour");
+                wxColour ChatColour = wxGetColourFromUser(this, wxColour(255, 255, 255), "Choose chat colour");
                 if(!ChatColour.IsOk())
                 {
                     ShowError("Group creation cancelled.");
@@ -774,9 +747,9 @@ void EvtMainFrame::OnButtonGroupCreateClick( wxCommandEvent& event )
                 else
                 {
                     wxString ChatColour_str = wxString::Format("%i,%i,%i",
-                                                               ChatColour.Red(),
-                                                               ChatColour.Green(),
-                                                               ChatColour.Blue());
+                                              ChatColour.Red(),
+                                              ChatColour.Green(),
+                                              ChatColour.Blue());
                     EvtGroupPermissionsDialog GroupPermissions(this);
                     int Ok = GroupPermissions.ShowModal();
                     if(Ok != 1)
@@ -787,9 +760,9 @@ void EvtMainFrame::OnButtonGroupCreateClick( wxCommandEvent& event )
                     {
                         wxString Permissions = GroupPermissions.GetPermissions();
                         wxString Response = m_TShockRESTClient.CreateGroup(GroupName,
-                                                                           ParentGroup,
-                                                                           Permissions,
-                                                                           ChatColour_str);
+                                            ParentGroup,
+                                            Permissions,
+                                            ChatColour_str);
                         Object Response_JSON = Deserialize(Response.ToStdString());
                         if(Response_JSON["status"] == "200")
                         {
@@ -806,7 +779,7 @@ void EvtMainFrame::OnButtonGroupCreateClick( wxCommandEvent& event )
             }
         }
     }
-    catch(const std::runtime_error e)
+    catch(std::runtime_error e)
     {
         ShowError("There was an error parsing the response");
     }
@@ -816,7 +789,7 @@ void EvtMainFrame::OnButtonGroupCreateClick( wxCommandEvent& event )
     }
 }
 
-void EvtMainFrame::OnButtonGroupEditClick( wxCommandEvent& event )
+void EvtMainFrame::OnButtonGroupEditClick(wxCommandEvent& event)
 {
     try
     {
@@ -839,10 +812,10 @@ void EvtMainFrame::OnButtonGroupEditClick( wxCommandEvent& event )
                 ChatColourRGB[1].ToLong(&ChatColourGreen);
                 ChatColourRGB[2].ToLong(&ChatColourBlue);
                 wxColour ChatColour = wxGetColourFromUser(this,
-                                                          wxColour(ChatColourRed,
-                                                                   ChatColourGreen,
-                                                                   ChatColourBlue),
-                                                                   "Choose chat color");
+                                      wxColour(ChatColourRed,
+                                               ChatColourGreen,
+                                               ChatColourBlue),
+                                      "Choose chat color");
                 if(!ChatColour.IsOk())
                 {
                     ShowError("Group update cancelled.");
@@ -850,9 +823,9 @@ void EvtMainFrame::OnButtonGroupEditClick( wxCommandEvent& event )
                 else
                 {
                     wxString ChatColour_str = wxString::Format("%i,%i,%i",
-                                                               ChatColour.Red(),
-                                                               ChatColour.Green(),
-                                                               ChatColour.Blue());
+                                              ChatColour.Red(),
+                                              ChatColour.Green(),
+                                              ChatColour.Blue());
                     wxArrayString Permissions;
                     for(unsigned int i = 0; i < FirstResponse_JSON["permissions"].size(); i++)
                     {
@@ -868,9 +841,9 @@ void EvtMainFrame::OnButtonGroupEditClick( wxCommandEvent& event )
                     {
                         wxString Permissions = GroupPermissions.GetPermissions();
                         wxString SecondResponse = m_TShockRESTClient.UpdateGroup(GroupName,
-                                                                                 ParentGroup,
-                                                                                 Permissions,
-                                                                                 ChatColour_str);
+                                                  ParentGroup,
+                                                  Permissions,
+                                                  ChatColour_str);
                         Object SecondResponse_JSON = Deserialize(SecondResponse.ToStdString());
                         if(SecondResponse_JSON["status"] == "200")
                         {
@@ -891,7 +864,7 @@ void EvtMainFrame::OnButtonGroupEditClick( wxCommandEvent& event )
             ShowError("It seems the account associated with the token has insufficient permissions.");
         }
     }
-    catch(const std::runtime_error e)
+    catch(std::runtime_error e)
     {
         ShowError("There was an error parsing the response");
     }
@@ -901,7 +874,7 @@ void EvtMainFrame::OnButtonGroupEditClick( wxCommandEvent& event )
     }
 }
 
-void EvtMainFrame::OnButtonGroupDeleteClick( wxCommandEvent& event )
+void EvtMainFrame::OnButtonGroupDeleteClick(wxCommandEvent& event)
 {
     try
     {
@@ -918,7 +891,7 @@ void EvtMainFrame::OnButtonGroupDeleteClick( wxCommandEvent& event )
             ShowError("It seems the account associated with the token has insufficient privileges.");
         }
     }
-    catch(const std::runtime_error e)
+    catch(std::runtime_error e)
     {
         ShowError("There was an error parsing the server response");
     }
@@ -928,7 +901,7 @@ void EvtMainFrame::OnButtonGroupDeleteClick( wxCommandEvent& event )
     }
 }
 
-void EvtMainFrame::OnButtonMoreBanInfoClick( wxCommandEvent& event )
+void EvtMainFrame::OnButtonMoreBanInfoClick(wxCommandEvent& event)
 {
     try
     {
@@ -950,17 +923,21 @@ void EvtMainFrame::OnButtonMoreBanInfoClick( wxCommandEvent& event )
                 wxString BanInfo = "";
                 if(Response_JSON["name"].ToString() == "")
                 {
-                    BanInfo.Printf("The IP %s was banned with the following reason:\n"
+                    BanInfo.Printf("The IP %s was banned on %s by %s,\nfor the following reason:\n"
                                    "%s",
                                    Response_JSON["ip"].ToString(),
+                                   Response_JSON["date"].ToString(),
+                                   Response_JSON["banning_user"].ToString(),
                                    Response_JSON["reason"].ToString());
                 }
                 else
                 {
-                    BanInfo.Printf("%s (from %s) was banned with the following reason:\n"
+                    BanInfo.Printf("%s (from %s) was banned on %s by %s,\nfor the following reason:\n"
                                    "%s",
                                    Response_JSON["name"].ToString(),
                                    Response_JSON["ip"].ToString(),
+                                   Response_JSON["date"].ToString(),
+                                   Response_JSON["banning_user"].ToString(),
                                    Response_JSON["reason"].ToString());
                 }
                 ShowInfo(BanInfo);
@@ -973,7 +950,7 @@ void EvtMainFrame::OnButtonMoreBanInfoClick( wxCommandEvent& event )
             ShowError("It seems the regex is not valid.");
         }
     }
-    catch(const std::runtime_error e)
+    catch(std::runtime_error e)
     {
         ShowError("There was an error parsing the server response.");
     }
@@ -983,7 +960,7 @@ void EvtMainFrame::OnButtonMoreBanInfoClick( wxCommandEvent& event )
     }
 }
 
-void EvtMainFrame::OnButtonCreateBanButtonClick( wxCommandEvent& event )
+void EvtMainFrame::OnButtonCreateBanButtonClick(wxCommandEvent& event)
 {
     try
     {
@@ -1024,7 +1001,7 @@ void EvtMainFrame::OnButtonCreateBanButtonClick( wxCommandEvent& event )
             }
         }
     }
-    catch(const std::runtime_error e)
+    catch(std::runtime_error e)
     {
         ShowError("There was an error parsing the server response.");
     }
@@ -1034,7 +1011,7 @@ void EvtMainFrame::OnButtonCreateBanButtonClick( wxCommandEvent& event )
     }
 }
 
-void EvtMainFrame::OnButtonDeleteBanClick( wxCommandEvent& event )
+void EvtMainFrame::OnButtonDeleteBanClick(wxCommandEvent& event)
 {
     try
     {
@@ -1064,7 +1041,7 @@ void EvtMainFrame::OnButtonDeleteBanClick( wxCommandEvent& event )
             ShowError("It seems the regex is not valid.");
         }
     }
-    catch(const std::runtime_error e)
+    catch(std::runtime_error e)
     {
         ShowError("There was an error parsing the server response.");
     }
@@ -1074,7 +1051,7 @@ void EvtMainFrame::OnButtonDeleteBanClick( wxCommandEvent& event )
     }
 }
 
-void EvtMainFrame::OnButtonReadWorldClick( wxCommandEvent& event )
+void EvtMainFrame::OnButtonReadWorldClick(wxCommandEvent& event)
 {
     try
     {
@@ -1122,7 +1099,7 @@ void EvtMainFrame::OnButtonReadWorldClick( wxCommandEvent& event )
         else if(Response_JSON["status"].ToString() == "403")
             ShowError("It seems the account associated with the token has insufficient privileges.");
     }
-    catch(const std::runtime_error e)
+    catch(std::runtime_error e)
     {
         ShowError("There was an error parsing the response.");
     }
@@ -1132,7 +1109,7 @@ void EvtMainFrame::OnButtonReadWorldClick( wxCommandEvent& event )
     }
 }
 
-void EvtMainFrame::OnButtonSaveWorldClick( wxCommandEvent& event )
+void EvtMainFrame::OnButtonSaveWorldClick(wxCommandEvent& event)
 {
     try
     {
@@ -1143,7 +1120,7 @@ void EvtMainFrame::OnButtonSaveWorldClick( wxCommandEvent& event )
         else if(Response_JSON["status"].ToString() == "403")
             ShowError("It seems that the account associated with the token does not have sufficient privileges.");
     }
-    catch(const std::runtime_error e)
+    catch(std::runtime_error e)
     {
         ShowError("There was an error parsing the server response.");
     }
@@ -1153,7 +1130,7 @@ void EvtMainFrame::OnButtonSaveWorldClick( wxCommandEvent& event )
     }
 }
 
-void EvtMainFrame::OnButtonEnableWorldAutosaveButtonClick( wxCommandEvent& event )
+void EvtMainFrame::OnButtonEnableWorldAutosaveButtonClick(wxCommandEvent& event)
 {
     try
     {
@@ -1164,7 +1141,7 @@ void EvtMainFrame::OnButtonEnableWorldAutosaveButtonClick( wxCommandEvent& event
         else if(Response_JSON["status"].ToString() == "403")
             ShowError("It seems that the account associated with the token does not have sufficient privileges.");
     }
-    catch(const std::runtime_error e)
+    catch(std::runtime_error e)
     {
         ShowError("There was an error parsing the server response.");
     }
@@ -1174,7 +1151,7 @@ void EvtMainFrame::OnButtonEnableWorldAutosaveButtonClick( wxCommandEvent& event
     }
 }
 
-void EvtMainFrame::OnButtonDisableWorldAutosaveClick( wxCommandEvent& event )
+void EvtMainFrame::OnButtonDisableWorldAutosaveClick(wxCommandEvent& event)
 {
     try
     {
@@ -1185,7 +1162,7 @@ void EvtMainFrame::OnButtonDisableWorldAutosaveClick( wxCommandEvent& event )
         else if(Response_JSON["status"].ToString() == "403")
             ShowError("It seems that the account associated with the token does not have sufficient privileges.");
     }
-    catch(const std::runtime_error e)
+    catch(std::runtime_error e)
     {
         ShowError("There was an error parsing the server response.");
     }
@@ -1195,7 +1172,7 @@ void EvtMainFrame::OnButtonDisableWorldAutosaveClick( wxCommandEvent& event )
     }
 }
 
-void EvtMainFrame::OnButtonMeteorFall( wxCommandEvent& event )
+void EvtMainFrame::OnButtonMeteorFall(wxCommandEvent& event)
 {
     try
     {
@@ -1206,7 +1183,7 @@ void EvtMainFrame::OnButtonMeteorFall( wxCommandEvent& event )
         else if(Response_JSON["status"].ToString() == "403")
             ShowError("It seems that the account associated with the token does not have sufficient privileges.");
     }
-    catch(const std::runtime_error e)
+    catch(std::runtime_error e)
     {
         ShowError("There was an error parsing the server response.");
     }
@@ -1216,7 +1193,7 @@ void EvtMainFrame::OnButtonMeteorFall( wxCommandEvent& event )
     }
 }
 
-void EvtMainFrame::OnButtonStartBloodmoonClick( wxCommandEvent& event )
+void EvtMainFrame::OnButtonStartBloodmoonClick(wxCommandEvent& event)
 {
     try
     {
@@ -1227,7 +1204,7 @@ void EvtMainFrame::OnButtonStartBloodmoonClick( wxCommandEvent& event )
         else if(Response_JSON["status"].ToString() == "403")
             ShowError("It seems that the account associated with the token does not have sufficient privileges.");
     }
-    catch(const std::runtime_error e)
+    catch(std::runtime_error e)
     {
         ShowError("There was an error parsing the server response.");
     }
@@ -1237,7 +1214,7 @@ void EvtMainFrame::OnButtonStartBloodmoonClick( wxCommandEvent& event )
     }
 }
 
-void EvtMainFrame::OnButtonStopBloodmoonClick( wxCommandEvent& event )
+void EvtMainFrame::OnButtonStopBloodmoonClick(wxCommandEvent& event)
 {
     try
     {
@@ -1248,7 +1225,7 @@ void EvtMainFrame::OnButtonStopBloodmoonClick( wxCommandEvent& event )
         else if(Response_JSON["status"].ToString() == "403")
             ShowError("It seems that the account associated with the token does not have sufficient privileges.");
     }
-    catch(const std::runtime_error e)
+    catch(std::runtime_error e)
     {
         ShowError("There was an error parsing the server response.");
     }
@@ -1258,7 +1235,7 @@ void EvtMainFrame::OnButtonStopBloodmoonClick( wxCommandEvent& event )
     }
 }
 
-void EvtMainFrame::OnButtonButcherClick( wxCommandEvent& event )
+void EvtMainFrame::OnButtonButcherClick(wxCommandEvent& event)
 {
     try
     {
@@ -1269,7 +1246,7 @@ void EvtMainFrame::OnButtonButcherClick( wxCommandEvent& event )
         else if(Response_JSON["status"].ToString() == "403")
             ShowError("It seems that the account associated with the token does not have sufficient privileges.");
     }
-    catch(const std::runtime_error e)
+    catch(std::runtime_error e)
     {
         ShowError("There was an error parsing the server response.");
     }
@@ -1279,7 +1256,7 @@ void EvtMainFrame::OnButtonButcherClick( wxCommandEvent& event )
     }
 }
 
-void EvtMainFrame::OnButtonLicenceInfoClick( wxCommandEvent& event )
+void EvtMainFrame::OnButtonLicenceInfoClick(wxCommandEvent& event)
 {
     EvtLicenceInfoDialog LicenceDialog(this);
     LicenceDialog.ShowModal();
@@ -1304,7 +1281,7 @@ void EvtMainFrame::RefreshUserList()
         else if(Response_JSON["status"].ToString() == "403")
             ShowError("The account associated with the token has insufficient privileges.");
     }
-    catch(const std::runtime_error e)
+    catch(std::runtime_error e)
     {
         ShowError("There was an error parsing the user list.");
     }
@@ -1323,18 +1300,48 @@ void EvtMainFrame::RefreshPlayerList()
         if(Response_JSON["status"].ToString() == "200")
         {
             Array Players_JSON = Response_JSON["players"].ToArray();
-            m_listBoxPlayerList->Clear();
+            m_listViewPlayerList->Freeze();
+            m_listViewPlayerList->DeleteAllItems();
             for(auto it = Players_JSON.begin(); it != Players_JSON.end(); ++it)
-                m_listBoxPlayerList->Append((*it)["nickname"].ToString());
-            if(!m_listBoxPlayerList->IsEmpty())
-                m_listBoxPlayerList->SetSelection(0);
+            {
+                long index = m_listViewPlayerList->InsertItem(0, (*it)["nickname"].ToString());
+                m_listViewPlayerList->SetItem(index, 1, (*it)["username"].ToString());
+                m_listViewPlayerList->SetItem(index, 2, (*it)["group"].ToString());
+                int TeamNumber = (*it)["team"].ToInt();
+                switch(TeamNumber)
+                {
+                case 0:
+                    m_listViewPlayerList->SetItem(index, 3, "None");
+                    break;
+                case 1:
+                    m_listViewPlayerList->SetItem(index, 3, "Red");
+                    break;
+                case 2:
+                    m_listViewPlayerList->SetItem(index, 3, "Green");
+                    break;
+                case 3:
+                    m_listViewPlayerList->SetItem(index, 3, "Blue");
+                    break;
+                case 4:
+                    m_listViewPlayerList->SetItem(index, 3, "Yellow");
+                    break;
+                case 5:
+                    m_listViewPlayerList->SetItem(index, 3, "Pink");
+                    break;
+                }
+            }
+            m_listViewPlayerList->SetColumnWidth(0, m_listViewPlayerList->GetSize().GetWidth() * 0.30);
+            m_listViewPlayerList->SetColumnWidth(1, m_listViewPlayerList->GetSize().GetWidth() * 0.30);
+            m_listViewPlayerList->SetColumnWidth(2, m_listViewPlayerList->GetSize().GetWidth() * 0.20);
+            m_listViewPlayerList->SetColumnWidth(3, m_listViewPlayerList->GetSize().GetWidth() * 0.20);
+            m_listViewPlayerList->Thaw();
         }
         else if(Response_JSON["status"].ToString() == "403")
             ShowError("The account associated with the token has insufficient privileges.");
     }
-    catch(const std::runtime_error e)
+    catch(std::runtime_error &e)
     {
-        ShowError("There was an error parsing the player list.");
+        ShowError(e.what());
     }
     catch(...)
     {
@@ -1360,7 +1367,7 @@ void EvtMainFrame::RefreshGroupList()
         else if(Response_JSON["status"].ToString() == "403")
             ShowError("The account associated with the token has insufficient privileges.");
     }
-    catch(const std::runtime_error e)
+    catch(std::runtime_error e)
     {
         ShowError("There was an error parsing the group list.");
     }
@@ -1393,7 +1400,7 @@ void EvtMainFrame::RefreshBanList()
         else if(Response_JSON["status"].ToString() == "403")
             ShowError("The account associated with the token has insufficient privileges.");
     }
-    catch(const std::runtime_error e)
+    catch(std::runtime_error e)
     {
         ShowError("There was an error parsing the ban list.");
     }
@@ -1403,14 +1410,14 @@ void EvtMainFrame::RefreshBanList()
     }
 }
 
-void EvtMainFrame::ShowError(wxString ErrorMessage)
-{
-    wxMessageBox(ErrorMessage, "Error", wxOK|wxCENTRE|wxICON_ERROR, this);
-}
-
 void EvtMainFrame::ShowInfo(wxString InfoMessage)
 {
     wxMessageBox(InfoMessage, "Information", wxOK|wxCENTRE|wxICON_INFORMATION, this);
+}
+
+void EvtMainFrame::ShowError(wxString ErrorMessage)
+{
+    wxMessageBox(ErrorMessage, "Error", wxOK|wxCENTRE|wxICON_ERROR, this);
 }
 
 void EvtMainFrame::SetTabs(bool Connected)

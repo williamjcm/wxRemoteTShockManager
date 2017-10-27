@@ -103,8 +103,8 @@ wxString RESTClient::GetServerInfo(wxString Rules)
 {
     wxString Response = "";
     wxInputStream *HTTPStream = NULL;
-    HTTPStream = m_HTTPClient.GetInputStream("/status?token=" + m_Token
-                                                  + "&rules=" + Rules);
+    HTTPStream = m_HTTPClient.GetInputStream("/v2/server/status?token=" + m_Token
+                                                            + "&rules=" + Rules);
     GetResponse(HTTPStream, &Response);
     delete HTTPStream;
     return Response;
@@ -113,7 +113,7 @@ wxString RESTClient::GetServerInfo(wxString Rules)
 wxString RESTClient::GetServerRules()
 {
     wxString Response = "";
-    wxInputStream *HTTPStream = m_HTTPClient.GetInputStream("/server/rules?token=" + m_Token);
+    wxInputStream *HTTPStream = m_HTTPClient.GetInputStream("/v3/server/rules?token=" + m_Token);
     GetResponse(HTTPStream, &Response);
     delete HTTPStream;
     return Response;
@@ -122,7 +122,7 @@ wxString RESTClient::GetServerRules()
 wxString RESTClient::GetServerMotD()
 {
     wxString Response = "";
-    wxInputStream *HTTPStream = m_HTTPClient.GetInputStream("/server/motd?token=" + m_Token);
+    wxInputStream *HTTPStream = m_HTTPClient.GetInputStream("/v3/server/motd?token=" + m_Token);
     GetResponse(HTTPStream, &Response);
     delete HTTPStream;
     return Response;
@@ -132,8 +132,8 @@ wxString RESTClient::BroadcastMessage(wxString Message)
 {
     Message = URLe::URLEncode(Message.ToStdString());
     wxString Response = "";
-    wxInputStream *HTTPStream = m_HTTPClient.GetInputStream("/server/broadcast?token=" + m_Token
-                                                                             + "&msg=" + Message);
+    wxInputStream *HTTPStream = m_HTTPClient.GetInputStream("/v2/server/broadcast?token=" + m_Token
+                                                                                + "&msg=" + Message);
     GetResponse(HTTPStream, &Response);
     delete HTTPStream;
     return Response;
@@ -142,7 +142,7 @@ wxString RESTClient::BroadcastMessage(wxString Message)
 wxString RESTClient::ReloadConfig()
 {
     wxString Response = "";
-    wxInputStream *HTTPStream = m_HTTPClient.GetInputStream("/server/reload?token=" + m_Token);
+    wxInputStream *HTTPStream = m_HTTPClient.GetInputStream("/v2/server/reload?token=" + m_Token);
     GetResponse(HTTPStream, &Response);
     delete HTTPStream;
     return Response;
@@ -151,8 +151,8 @@ wxString RESTClient::ReloadConfig()
 wxString RESTClient::ShutdownServer(wxString NoSave)
 {
     wxString Response = "";
-    wxInputStream *HTTPStream = m_HTTPClient.GetInputStream("/server/off?token=" + m_Token
-                                                       + "&confirm=true&nosave=" + NoSave);
+    wxInputStream *HTTPStream = m_HTTPClient.GetInputStream("/v2/server/off?token=" + m_Token
+                                                          + "&confirm=true&nosave=" + NoSave);
     GetResponse(HTTPStream, &Response);
     delete HTTPStream;
     return Response;
@@ -161,8 +161,8 @@ wxString RESTClient::ShutdownServer(wxString NoSave)
 wxString RESTClient::RestartServer(wxString NoSave)
 {
     wxString Response = "";
-    wxInputStream *HTTPStream = m_HTTPClient.GetInputStream("/server/restart?token=" + m_Token
-                                                           + "&confirm=true&nosave=" + NoSave);
+    wxInputStream *HTTPStream = m_HTTPClient.GetInputStream("/v3/server/restart?token=" + m_Token
+                                                              + "&confirm=true&nosave=" + NoSave);
     GetResponse(HTTPStream, &Response);
     delete HTTPStream;
     return Response;
@@ -172,8 +172,8 @@ wxString RESTClient::RawCommand(wxString Command)
 {
     Command = URLe::URLEncode(Command.ToStdString());
     wxString Response = "";
-    wxInputStream *HTTPStream = m_HTTPClient.GetInputStream("/server/rawcmd?token=" + m_Token
-                                                                          + "&cmd=" + Command);
+    wxInputStream *HTTPStream = m_HTTPClient.GetInputStream("/v3/server/rawcmd?token=" + m_Token
+                                                                             + "&cmd=" + Command);
     GetResponse(HTTPStream, &Response);
     delete HTTPStream;
     return Response;
@@ -182,7 +182,7 @@ wxString RESTClient::RawCommand(wxString Command)
 wxString RESTClient::GetActiveUsers()
 {
     wxString Response = "";
-    wxInputStream *HTTPStream = m_HTTPClient.GetInputStream("/users/activelist?token=" + m_Token);
+    wxInputStream *HTTPStream = m_HTTPClient.GetInputStream("/v2/users/activelist?token=" + m_Token);
     GetResponse(HTTPStream, &Response);
     delete HTTPStream;
     return Response;
@@ -195,10 +195,10 @@ wxString RESTClient::CreateUser(wxString Username, wxString Password, wxString G
     if(Group != "")
         Group = URLe::URLEncode(Group.ToStdString());
     wxString Response = "";
-    wxInputStream *HTTPStream = m_HTTPClient.GetInputStream("/users/create?token=" + m_Token
-                                                                        + "&user=" + Username
-                                                                    + "&password=" + Password
-                                                                       + "&group=" + Group);
+    wxInputStream *HTTPStream = m_HTTPClient.GetInputStream("/v2/users/create?token=" + m_Token
+                                                                           + "&user=" + Username
+                                                                       + "&password=" + Password
+                                                                          + "&group=" + Group);
     GetResponse(HTTPStream, &Response);
     delete HTTPStream;
     return Response;
@@ -207,7 +207,7 @@ wxString RESTClient::CreateUser(wxString Username, wxString Password, wxString G
 wxString RESTClient::GetUsers()
 {
     wxString Response = "";
-    wxInputStream *HTTPStream = m_HTTPClient.GetInputStream("/users/list?token=" + m_Token);
+    wxInputStream *HTTPStream = m_HTTPClient.GetInputStream("/v2/users/list?token=" + m_Token);
     GetResponse(HTTPStream, &Response);
     delete HTTPStream;
     return Response;
@@ -217,8 +217,8 @@ wxString RESTClient::GetUserInfo(wxString User)
 {
     User = URLe::URLEncode(User.ToStdString());
     wxString Response = "";
-    wxInputStream *HTTPStream = m_HTTPClient.GetInputStream("/users/read?token=" + m_Token
-                                                            + "&type=name&user=" + User);
+    wxInputStream *HTTPStream = m_HTTPClient.GetInputStream("/v2/users/read?token=" + m_Token
+                                                               + "&type=name&user=" + User);
     GetResponse(HTTPStream, &Response);
     delete HTTPStream;
     return Response;
@@ -228,8 +228,8 @@ wxString RESTClient::DestroyUser(wxString User)
 {
     User = URLe::URLEncode(User.ToStdString());
     wxString Response = "";
-    wxInputStream *HTTPStream = m_HTTPClient.GetInputStream("/users/destroy?token=" + m_Token
-                                                               + "&type=name&user=" + User);
+    wxInputStream *HTTPStream = m_HTTPClient.GetInputStream("/v2/users/destroy?token=" + m_Token
+                                                                  + "&type=name&user=" + User);
     GetResponse(HTTPStream, &Response);
     delete HTTPStream;
     return Response;
@@ -243,10 +243,10 @@ wxString RESTClient::UpdateUser(wxString User, wxString NewPassword, wxString Ne
     if(NewGroup != "")
         NewGroup = URLe::URLEncode(NewGroup.ToStdString());
     wxString Response = "";
-    wxInputStream *HTTPStream = m_HTTPClient.GetInputStream("/users/update?token=" + m_Token
-                                                              + "&type=name&user=" + User
-                                                                    + "&password=" + NewPassword
-                                                                       + "&group=" + NewGroup);
+    wxInputStream *HTTPStream = m_HTTPClient.GetInputStream("/v2/users/update?token=" + m_Token
+                                                                 + "&type=name&user=" + User
+                                                                       + "&password=" + NewPassword
+                                                                          + "&group=" + NewGroup);
     GetResponse(HTTPStream, &Response);
     delete HTTPStream;
     return Response;
@@ -269,7 +269,7 @@ wxString RESTClient::CreateBan(wxString IP, wxString PlayerName, wxString Reason
 wxString RESTClient::ListBans()
 {
     wxString Response = "";
-    wxInputStream *HTTPStream = m_HTTPClient.GetInputStream("/bans/list?token=" + m_Token);
+    wxInputStream *HTTPStream = m_HTTPClient.GetInputStream("/v2/bans/list?token=" + m_Token);
     GetResponse(HTTPStream, &Response);
     delete HTTPStream;
     return Response;
@@ -279,10 +279,10 @@ wxString RESTClient::ReadBan(wxString Ban, wxString Type)
 {
     Ban = URLe::URLEncode(Ban.ToStdString());
     wxString Response = "";
-    wxInputStream *HTTPStream = m_HTTPClient.GetInputStream("/bans/read?token=" + m_Token
-                                                                      + "&ban=" + Ban
-                                                                     + "&type=" + Type
-                                                          + "&caseinsensitive=false");
+    wxInputStream *HTTPStream = m_HTTPClient.GetInputStream("/v2/bans/read?token=" + m_Token
+                                                                         + "&ban=" + Ban
+                                                                        + "&type=" + Type
+                                                             + "&caseinsensitive=false");
     GetResponse(HTTPStream, &Response);
     delete HTTPStream;
     return Response;
@@ -292,10 +292,10 @@ wxString RESTClient::DestroyBan(wxString Ban, wxString Type)
 {
     Ban = URLe::URLEncode(Ban.ToStdString());
     wxString Response = "";
-    wxInputStream *HTTPStream = m_HTTPClient.GetInputStream("/bans/destroy?token=" + m_Token
-                                                                         + "&ban=" + Ban
-                                                                        + "&type=" + Type
-                                                             + "&caseinsensitive=false");
+    wxInputStream *HTTPStream = m_HTTPClient.GetInputStream("/v2/bans/destroy?token=" + m_Token
+                                                                            + "&ban=" + Ban
+                                                                           + "&type=" + Type
+                                                                + "&caseinsensitive=false");
     GetResponse(HTTPStream, &Response);
     delete HTTPStream;
     return Response;
@@ -322,8 +322,8 @@ wxString RESTClient::Meteor()
 wxString RESTClient::Bloodmoon(wxString State)
 {
     wxString Response = "";
-    wxInputStream *HTTPStream = m_HTTPClient.GetInputStream("/world/bloodmoon?token=" + m_Token
-                                                                           + "state=" + State);
+    wxInputStream *HTTPStream = m_HTTPClient.GetInputStream("/v3/world/bloodmoon?token=" + m_Token
+                                                                              + "state=" + State);
     GetResponse(HTTPStream, &Response);
     delete HTTPStream;
     return Response;
@@ -332,7 +332,7 @@ wxString RESTClient::Bloodmoon(wxString State)
 wxString RESTClient::SaveWorld()
 {
     wxString Response = "";
-    wxInputStream *HTTPStream = m_HTTPClient.GetInputStream("/world/save?token=" + m_Token);
+    wxInputStream *HTTPStream = m_HTTPClient.GetInputStream("/v2/world/save?token=" + m_Token);
     GetResponse(HTTPStream, &Response);
     delete HTTPStream;
     return Response;
@@ -341,8 +341,8 @@ wxString RESTClient::SaveWorld()
 wxString RESTClient::SetAutosave(wxString State)
 {
     wxString Response = "";
-    wxInputStream *HTTPStream = m_HTTPClient.GetInputStream("/world/autosave/?token=" + m_Token
-                                                                           + "state=" + State);
+    wxInputStream *HTTPStream = m_HTTPClient.GetInputStream("/v3/world/autosave/?token=" + m_Token
+                                                                              + "state=" + State);
     GetResponse(HTTPStream, &Response);
     delete HTTPStream;
     return Response;
@@ -362,7 +362,7 @@ wxString RESTClient::ListPlayers()
 {
     wxString Response = "";
     wxInputStream *HTTPStream = NULL;
-    HTTPStream = m_HTTPClient.GetInputStream("/players/list?token=" + m_Token);
+    HTTPStream = m_HTTPClient.GetInputStream("/v2/players/list?token=" + m_Token);
     GetResponse(HTTPStream, &Response);
     delete HTTPStream;
     return Response;
@@ -372,8 +372,8 @@ wxString RESTClient::ReadPlayer(wxString PlayerName)
 {
     PlayerName = URLe::URLEncode(PlayerName.ToStdString());
     wxString Response = "";
-    wxInputStream *HTTPStream = m_HTTPClient.GetInputStream("/players/read?token=" + m_Token
-                                                                      + "&player=" + PlayerName);
+    wxInputStream *HTTPStream = m_HTTPClient.GetInputStream("/v4/players/read?token=" + m_Token
+                                                                         + "&player=" + PlayerName);
     GetResponse(HTTPStream, &Response);
     delete HTTPStream;
     return Response;
@@ -384,9 +384,9 @@ wxString RESTClient::KickPlayer(wxString PlayerName, wxString Reason)
     PlayerName = URLe::URLEncode(PlayerName.ToStdString());
     Reason = URLe::URLEncode(Reason.ToStdString());
     wxString Response = "";
-    wxInputStream *HTTPStream = m_HTTPClient.GetInputStream("/players/kick?token=" + m_Token
-                                                                      + "&player=" + PlayerName
-                                                                      + "&reason=" + Reason);
+    wxInputStream *HTTPStream = m_HTTPClient.GetInputStream("/v2/players/kick?token=" + m_Token
+                                                                         + "&player=" + PlayerName
+                                                                         + "&reason=" + Reason);
     GetResponse(HTTPStream, &Response);
     delete HTTPStream;
     return Response;
@@ -397,9 +397,9 @@ wxString RESTClient::BanPlayer(wxString PlayerName, wxString Reason)
     PlayerName = URLe::URLEncode(PlayerName.ToStdString());
     Reason = URLe::URLEncode(Reason.ToStdString());
     wxString Response = "";
-    wxInputStream *HTTPStream = m_HTTPClient.GetInputStream("/players/ban?token=" + m_Token
-                                                                     + "&player=" + PlayerName
-                                                                     + "&reason=" + Reason);
+    wxInputStream *HTTPStream = m_HTTPClient.GetInputStream("/v2/players/ban?token=" + m_Token
+                                                                        + "&player=" + PlayerName
+                                                                        + "&reason=" + Reason);
     GetResponse(HTTPStream, &Response);
     delete HTTPStream;
     return Response;
@@ -410,9 +410,9 @@ wxString RESTClient::KillPlayer(wxString PlayerName, wxString Perpetrator)
     PlayerName = URLe::URLEncode(PlayerName.ToStdString());
     Perpetrator = URLe::URLEncode(Perpetrator.ToStdString());
     wxString Response = "";
-    wxInputStream *HTTPStream = m_HTTPClient.GetInputStream("/players/kill?token=" + m_Token
-                                                                      + "&player=" + PlayerName
-                                                                        + "&from=" + Perpetrator);
+    wxInputStream *HTTPStream = m_HTTPClient.GetInputStream("/v2/players/kill?token=" + m_Token
+                                                                         + "&player=" + PlayerName
+                                                                           + "&from=" + Perpetrator);
     GetResponse(HTTPStream, &Response);
     delete HTTPStream;
     return Response;
@@ -422,8 +422,8 @@ wxString RESTClient::MutePlayer(wxString PlayerName)
 {
     PlayerName = URLe::URLEncode(PlayerName.ToStdString());
     wxString Response = "";
-    wxInputStream *HTTPStream = m_HTTPClient.GetInputStream("/players/mute?token=" + m_Token
-                                                                      + "&player=" + PlayerName);
+    wxInputStream *HTTPStream = m_HTTPClient.GetInputStream("/v2/players/mute?token=" + m_Token
+                                                                         + "&player=" + PlayerName);
     GetResponse(HTTPStream, &Response);
     delete HTTPStream;
     return Response;
@@ -433,8 +433,8 @@ wxString RESTClient::UnmutePlayer(wxString PlayerName)
 {
     PlayerName = URLe::URLEncode(PlayerName.ToStdString());
     wxString Response = "";
-    wxInputStream *HTTPStream = m_HTTPClient.GetInputStream("/players/unmute?token=" + m_Token
-                                                                        + "&player=" + PlayerName);
+    wxInputStream *HTTPStream = m_HTTPClient.GetInputStream("/v2/players/unmute?token=" + m_Token
+                                                                           + "&player=" + PlayerName);
     GetResponse(HTTPStream, &Response);
     delete HTTPStream;
     return Response;
@@ -443,7 +443,7 @@ wxString RESTClient::UnmutePlayer(wxString PlayerName)
 wxString RESTClient::ListGroups()
 {
     wxString Response = "";
-    wxInputStream *HTTPStream = m_HTTPClient.GetInputStream("/groups/list?token=" + m_Token);
+    wxInputStream *HTTPStream = m_HTTPClient.GetInputStream("/v2/groups/list?token=" + m_Token);
     GetResponse(HTTPStream, &Response);
     delete HTTPStream;
     return Response;
@@ -453,8 +453,8 @@ wxString RESTClient::ReadGroup(wxString GroupName)
 {
     GroupName = URLe::URLEncode(GroupName.ToStdString());
     wxString Response = "";
-    wxInputStream *HTTPStream = m_HTTPClient.GetInputStream("/groups/read?token=" + m_Token
-                                                                      + "&group=" + GroupName);
+    wxInputStream *HTTPStream = m_HTTPClient.GetInputStream("/v2/groups/read?token=" + m_Token
+                                                                         + "&group=" + GroupName);
     GetResponse(HTTPStream, &Response);
     delete HTTPStream;
     return Response;
@@ -464,8 +464,8 @@ wxString RESTClient::DestroyGroup(wxString GroupName)
 {
     GroupName = URLe::URLEncode(GroupName.ToStdString());
     wxString Response = "";
-    wxInputStream *HTTPStream = m_HTTPClient.GetInputStream("/groups/destroy?token=" + m_Token
-                                                                         + "&group=" + GroupName);
+    wxInputStream *HTTPStream = m_HTTPClient.GetInputStream("/v2/groups/destroy?token=" + m_Token
+                                                                            + "&group=" + GroupName);
     GetResponse(HTTPStream, &Response);
     delete HTTPStream;
     return Response;
@@ -476,11 +476,11 @@ wxString RESTClient::CreateGroup(wxString GroupName, wxString GroupParent, wxStr
     GroupName = URLe::URLEncode(GroupName.ToStdString());
     GroupParent = URLe::URLEncode(GroupParent.ToStdString());
     wxString Response = "";
-    wxInputStream *HTTPStream = m_HTTPClient.GetInputStream("/groups/create?token=" + m_Token
-                                                                        + "&group=" + GroupName
-                                                                       + "&parent=" + GroupParent
-                                                                  + "&permissions=" + GroupPermissions
-                                                                    + "&chatcolor=" + ChatColor);
+    wxInputStream *HTTPStream = m_HTTPClient.GetInputStream("/v2/groups/create?token=" + m_Token
+                                                                           + "&group=" + GroupName
+                                                                          + "&parent=" + GroupParent
+                                                                     + "&permissions=" + GroupPermissions
+                                                                       + "&chatcolor=" + ChatColor);
     GetResponse(HTTPStream, &Response);
     delete HTTPStream;
     return Response;
@@ -491,11 +491,11 @@ wxString RESTClient::UpdateGroup(wxString GroupName, wxString GroupParent, wxStr
     GroupName = URLe::URLEncode(GroupName.ToStdString());
     GroupParent = URLe::URLEncode(GroupParent.ToStdString());
     wxString Response = "";
-    wxInputStream *HTTPStream = m_HTTPClient.GetInputStream("/groups/update?token=" + m_Token
-                                                                        + "&group=" + GroupName
-                                                                       + "&parent=" + GroupParent
-                                                                  + "&permissions=" + GroupPermissions
-                                                                    + "&chatcolor=" + ChatColor);
+    wxInputStream *HTTPStream = m_HTTPClient.GetInputStream("/v2/groups/update?token=" + m_Token
+                                                                           + "&group=" + GroupName
+                                                                          + "&parent=" + GroupParent
+                                                                     + "&permissions=" + GroupPermissions
+                                                                       + "&chatcolor=" + ChatColor);
     GetResponse(HTTPStream, &Response);
     delete HTTPStream;
     return Response;

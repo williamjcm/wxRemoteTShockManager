@@ -31,7 +31,7 @@
 
 MainFrame::MainFrame( wxWindow* parent, wxWindowID id, const wxString& title, const wxPoint& pos, const wxSize& size, long style ) : wxFrame( parent, id, title, pos, size, style )
 {
-	this->SetSizeHints( wxSize( 640,400 ), wxSize( 640,400 ) );
+	this->SetSizeHints( wxSize( 640,400 ), wxSize( 1024,600 ) );
 	this->SetBackgroundColour( wxSystemSettings::GetColour( wxSYS_COLOUR_MENU ) );
 
 	wxBoxSizer* bMainSizer;
@@ -52,7 +52,7 @@ MainFrame::MainFrame( wxWindow* parent, wxWindowID id, const wxString& title, co
 	m_textCtrlHostname = new wxTextCtrl( sbSizerServer->GetStaticBox(), wxID_ANY, wxT("localhost"), wxDefaultPosition, wxDefaultSize, 0 );
 	m_textCtrlHostname->SetToolTip( wxT("Hostname examples:\n  localhost\n  server.example.com\nIPv4 examples:\n  127.0.0.1\n  173.194.45.32") );
 
-	sbSizerServer->Add( m_textCtrlHostname, 1, wxALL, 5 );
+	sbSizerServer->Add( m_textCtrlHostname, 1, wxALL|wxALIGN_CENTER_VERTICAL, 5 );
 
 	m_staticTextPort = new wxStaticText( sbSizerServer->GetStaticBox(), wxID_ANY, wxT("Port:"), wxDefaultPosition, wxDefaultSize, 0 );
 	m_staticTextPort->Wrap( -1 );
@@ -69,31 +69,25 @@ MainFrame::MainFrame( wxWindow* parent, wxWindowID id, const wxString& title, co
 	#endif
 	m_textCtrlPort->SetToolTip( wxT("This must be an integer between 1 and 65535 inclusive.") );
 
-	sbSizerServer->Add( m_textCtrlPort, 0, wxALL, 5 );
+	sbSizerServer->Add( m_textCtrlPort, 0, wxALL|wxALIGN_CENTER_VERTICAL, 5 );
 
 
 	bSizerConnection->Add( sbSizerServer, 0, wxEXPAND, 5 );
 
 	wxStaticBoxSizer* sbSizerLogin;
-	sbSizerLogin = new wxStaticBoxSizer( new wxStaticBox( m_panelConnection, wxID_ANY, wxT("Login information") ), wxVERTICAL );
-
-	wxBoxSizer* bSizerToken;
-	bSizerToken = new wxBoxSizer( wxHORIZONTAL );
+	sbSizerLogin = new wxStaticBoxSizer( new wxStaticBox( m_panelConnection, wxID_ANY, wxT("Login information") ), wxHORIZONTAL );
 
 	m_staticTextToken = new wxStaticText( sbSizerLogin->GetStaticBox(), wxID_ANY, wxT("Token:"), wxDefaultPosition, wxDefaultSize, 0 );
 	m_staticTextToken->Wrap( -1 );
-	bSizerToken->Add( m_staticTextToken, 0, wxALL|wxALIGN_CENTER_VERTICAL, 5 );
+	sbSizerLogin->Add( m_staticTextToken, 0, wxALL|wxALIGN_CENTER_VERTICAL, 5 );
 
 	m_textCtrlToken = new wxTextCtrl( sbSizerLogin->GetStaticBox(), wxID_ANY, wxEmptyString, wxDefaultPosition, wxDefaultSize, 0 );
 	m_textCtrlToken->SetToolTip( wxT("The token entered here must be in the server's config, under ApplicationRestTokens. Depending on the associated account's permissions, only some commands may be available.") );
 
-	bSizerToken->Add( m_textCtrlToken, 1, wxALL|wxALIGN_CENTER_VERTICAL, 5 );
+	sbSizerLogin->Add( m_textCtrlToken, 1, wxALL|wxALIGN_CENTER_VERTICAL, 5 );
 
 
-	sbSizerLogin->Add( bSizerToken, 1, wxEXPAND, 5 );
-
-
-	bSizerConnection->Add( sbSizerLogin, 0, wxEXPAND, 5 );
+	bSizerConnection->Add( sbSizerLogin, 0, wxALIGN_CENTER_HORIZONTAL|wxEXPAND, 5 );
 
 	m_buttonConnect = new wxButton( m_panelConnection, wxID_ANY, wxT("Connect"), wxDefaultPosition, wxSize( 100,-1 ), 0 );
 	bSizerConnection->Add( m_buttonConnect, 0, wxALL|wxALIGN_CENTER_HORIZONTAL, 5 );
@@ -194,10 +188,17 @@ MainFrame::MainFrame( wxWindow* parent, wxWindowID id, const wxString& title, co
 	wxStaticBoxSizer* sbSizerPlayerList;
 	sbSizerPlayerList = new wxStaticBoxSizer( new wxStaticBox( m_panelPlayers, wxID_ANY, wxT("Player list") ), wxVERTICAL );
 
-	m_listBoxPlayerList = new wxListBox( sbSizerPlayerList->GetStaticBox(), wxID_ANY, wxDefaultPosition, wxDefaultSize, 0, NULL, wxLB_HSCROLL|wxLB_NEEDED_SB|wxLB_SINGLE );
-	m_listBoxPlayerList->SetToolTip( wxT("Click a player's nickname to enable special commands") );
-
-	sbSizerPlayerList->Add( m_listBoxPlayerList, 1, wxALL|wxEXPAND, 5 );
+	m_listViewPlayerList = new wxListView( sbSizerPlayerList->GetStaticBox(), wxID_ANY, wxDefaultPosition, wxDefaultSize, wxLC_REPORT | wxLC_SINGLE_SEL | wxLC_VRULES | wxLC_HRULES );
+	m_listViewPlayerList->AppendColumn("Nickame");
+	m_listViewPlayerList->AppendColumn("Username");
+	m_listViewPlayerList->AppendColumn("Group");
+	m_listViewPlayerList->AppendColumn("Team");
+	m_listViewPlayerList->EnableBellOnNoMatch();
+	m_listViewPlayerList->SetColumnWidth(0, m_listViewPlayerList->GetSize().GetWidth() * 0.30);
+	m_listViewPlayerList->SetColumnWidth(1, m_listViewPlayerList->GetSize().GetWidth() * 0.30);
+	m_listViewPlayerList->SetColumnWidth(2, m_listViewPlayerList->GetSize().GetWidth() * 0.20);
+	m_listViewPlayerList->SetColumnWidth(3, m_listViewPlayerList->GetSize().GetWidth() * 0.20);
+	sbSizerPlayerList->Add( m_listViewPlayerList, 1, wxALL|wxEXPAND, 5 );
 
 
 	bSizerPlayers->Add( sbSizerPlayerList, 5, wxEXPAND, 5 );
@@ -234,6 +235,9 @@ MainFrame::MainFrame( wxWindow* parent, wxWindowID id, const wxString& title, co
 	m_buttonUnmute->SetToolTip( wxT("Allows you to unmute a muted player.") );
 
 	sbSizerPlayerCommands->Add( m_buttonUnmute, 0, wxALL|wxEXPAND, 5 );
+
+	m_buttonPlayerListRefresh = new wxButton( sbSizerPlayerCommands->GetStaticBox(), wxID_ANY, wxT("Refresh"), wxDefaultPosition, wxDefaultSize, 0 );
+	sbSizerPlayerCommands->Add( m_buttonPlayerListRefresh, 0, wxALL|wxEXPAND, 5 );
 
 
 	bSizerPlayers->Add( sbSizerPlayerCommands, 2, wxEXPAND, 5 );
@@ -403,19 +407,16 @@ MainFrame::MainFrame( wxWindow* parent, wxWindowID id, const wxString& title, co
 	wxBoxSizer* bSizerAbout;
 	bSizerAbout = new wxBoxSizer( wxVERTICAL );
 
-	m_staticTextAboutTShock = new wxStaticText( m_panelAbout, wxID_ANY, wxT("Designed for TShock version 4.3.20 and later. Some features might work with older versions."), wxDefaultPosition, wxDefaultSize, wxALIGN_CENTRE );
+	m_staticTextAboutTShock = new wxStaticText( m_panelAbout, wxID_ANY, wxT("Designed for TShock version 4.3.24. Some features might work with older and/or newer versions."), wxDefaultPosition, wxDefaultSize, wxALIGN_CENTRE );
 	m_staticTextAboutTShock->Wrap( -1 );
 	bSizerAbout->Add( m_staticTextAboutTShock, 0, wxALL|wxALIGN_CENTER_HORIZONTAL, 5 );
 
 	m_hyperlinkTShock = new wxHyperlinkCtrl( m_panelAbout, wxID_ANY, wxT("TShock official website"), wxT("https://tshock.co/xf/index.php"), wxDefaultPosition, wxDefaultSize, wxHL_DEFAULT_STYLE );
 	bSizerAbout->Add( m_hyperlinkTShock, 0, wxALL|wxALIGN_CENTER_HORIZONTAL, 5 );
 
-
-	bSizerAbout->Add( 0, 0, 1, wxEXPAND, 5 );
-
-	m_staticTextAboutCopyright = new wxStaticText( m_panelAbout, wxID_ANY, wxT("wxRemoteTShockManager Copyright (C) 2017 Guillaume Jacquemin (\"William JCM\")\n\nThis program is free software: you can redistribute it and/or modify it under the terms of the GNU General Public License as\npublished by the Free Software Foundation, either version 3 of the License, or (at your option) any later version.\n\nThis program is distributed in the hope that it will be useful, but WITHOUT ANY WARRANTY; without even the implied\nwarranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.\nSee the GNU General Public License for more details."), wxDefaultPosition, wxDefaultSize, 0 );
+	m_staticTextAboutCopyright = new wxStaticText( m_panelAbout, wxID_ANY, wxT("wxRemoteTShockManager Copyright (C) 2017 Guillaume Jacquemin (\"William JCM\")\n\nThis program is free software: you can redistribute it and/or modify it under the terms of the GNU General Public License as published by the Free Software Foundation, either version 3 of the License, or (at your option) any later version.\n\nThis program is distributed in the hope that it will be useful, but WITHOUT ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.\nSee the GNU General Public License for more details."), wxDefaultPosition, wxDefaultSize, 0 );
 	m_staticTextAboutCopyright->Wrap( -1 );
-	bSizerAbout->Add( m_staticTextAboutCopyright, 0, wxALL|wxALIGN_CENTER_HORIZONTAL, 5 );
+	bSizerAbout->Add( m_staticTextAboutCopyright, 1, wxALL|wxALIGN_CENTER_HORIZONTAL, 5 );
 
 	m_buttonLicence = new wxButton( m_panelAbout, wxID_ANY, wxT("Licence information (opens a modal dialog)"), wxDefaultPosition, wxDefaultSize, 0 );
 	bSizerAbout->Add( m_buttonLicence, 0, wxALL|wxALIGN_CENTER_HORIZONTAL, 5 );
@@ -451,6 +452,7 @@ MainFrame::MainFrame( wxWindow* parent, wxWindowID id, const wxString& title, co
 	m_buttonKill->Connect( wxEVT_COMMAND_BUTTON_CLICKED, wxCommandEventHandler( MainFrame::OnButtonKillPlayerClick ), NULL, this );
 	m_buttonMute->Connect( wxEVT_COMMAND_BUTTON_CLICKED, wxCommandEventHandler( MainFrame::OnButtonMutePlayerClick ), NULL, this );
 	m_buttonUnmute->Connect( wxEVT_COMMAND_BUTTON_CLICKED, wxCommandEventHandler( MainFrame::OnButtonUnmutePlayerClick ), NULL, this );
+	m_buttonPlayerListRefresh->Connect( wxEVT_COMMAND_BUTTON_CLICKED, wxCommandEventHandler( MainFrame::OnButtonRefreshClick ), NULL, this );
 	m_buttonUserInfo->Connect( wxEVT_COMMAND_BUTTON_CLICKED, wxCommandEventHandler( MainFrame::OnButtonMoreUserInfoClick ), NULL, this );
 	m_buttonCreateUser->Connect( wxEVT_COMMAND_BUTTON_CLICKED, wxCommandEventHandler( MainFrame::OnButtonCreateUserClick ), NULL, this );
 	m_buttonEditUser->Connect( wxEVT_COMMAND_BUTTON_CLICKED, wxCommandEventHandler( MainFrame::OnButtonEditUserClick ), NULL, this );
@@ -492,6 +494,7 @@ MainFrame::~MainFrame()
 	m_buttonKill->Disconnect( wxEVT_COMMAND_BUTTON_CLICKED, wxCommandEventHandler( MainFrame::OnButtonKillPlayerClick ), NULL, this );
 	m_buttonMute->Disconnect( wxEVT_COMMAND_BUTTON_CLICKED, wxCommandEventHandler( MainFrame::OnButtonMutePlayerClick ), NULL, this );
 	m_buttonUnmute->Disconnect( wxEVT_COMMAND_BUTTON_CLICKED, wxCommandEventHandler( MainFrame::OnButtonUnmutePlayerClick ), NULL, this );
+	m_buttonPlayerListRefresh->Disconnect( wxEVT_COMMAND_BUTTON_CLICKED, wxCommandEventHandler( MainFrame::OnButtonRefreshClick ), NULL, this );
 	m_buttonUserInfo->Disconnect( wxEVT_COMMAND_BUTTON_CLICKED, wxCommandEventHandler( MainFrame::OnButtonMoreUserInfoClick ), NULL, this );
 	m_buttonCreateUser->Disconnect( wxEVT_COMMAND_BUTTON_CLICKED, wxCommandEventHandler( MainFrame::OnButtonCreateUserClick ), NULL, this );
 	m_buttonEditUser->Disconnect( wxEVT_COMMAND_BUTTON_CLICKED, wxCommandEventHandler( MainFrame::OnButtonEditUserClick ), NULL, this );

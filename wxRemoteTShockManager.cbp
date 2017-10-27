@@ -130,7 +130,6 @@
 				</ResourceCompiler>
 				<Linker>
 					<Add option="-static" />
-					<Add option="-LC:/msys64/mingw64/lib" />
 					<Add option="-pipe" />
 					<Add option="-Wl,--subsystem,windows" />
 					<Add option="-mwindows" />
@@ -156,6 +155,7 @@
 					<Add option="-lwsock32" />
 					<Add option="-lgdi32" />
 					<Add option="-loleacc" />
+					<Add directory="C:/msys64/mingw64/lib" />
 				</Linker>
 			</Target>
 			<Target title="Win MSYS2/MinGW64 (Release)">
@@ -182,7 +182,6 @@
 				<Linker>
 					<Add option="-s" />
 					<Add option="-static" />
-					<Add option="-LC:/msys64/mingw64/lib" />
 					<Add option="-pipe" />
 					<Add option="-Wl,--subsystem,windows" />
 					<Add option="-mwindows" />
@@ -208,6 +207,7 @@
 					<Add option="-lwsock32" />
 					<Add option="-lgdi32" />
 					<Add option="-loleacc" />
+					<Add directory="C:/msys64/mingw64/lib" />
 				</Linker>
 			</Target>
 			<Target title="Linux GCC (Debug)">

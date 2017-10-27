@@ -1,4 +1,6 @@
 /* XPM */
+#pragma GCC diagnostic push
+#pragma GCC diagnostic ignored "-Wunused-variable"
 static char * tshock_xpm[] = {
 "32 32 293 2",
 "  	c None",
@@ -326,3 +328,4 @@ static char * tshock_xpm[] = {
 "                                                                ",
 "                                                                ",
 "                                                                "};
+#pragma GCC diagnostic pop
