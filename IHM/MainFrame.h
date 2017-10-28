@@ -48,6 +48,7 @@
 #include <wx/listbox.h>
 #include <wx/hyperlink.h>
 #include <wx/notebook.h>
+#include <wx/timer.h>
 #include <wx/frame.h>
 
 ///////////////////////////////////////////////////////////////////////////
@@ -91,22 +92,24 @@ class MainFrame : public wxFrame
 		wxButton* m_buttonUnmute;
 		wxButton* m_buttonPlayerListRefresh;
 		wxPanel* m_panelUsers;
-		wxListBox* m_listBoxUsers;
-		wxButton* m_buttonUserInfo;
+		wxListView* m_listViewUserList;
 		wxButton* m_buttonCreateUser;
 		wxButton* m_buttonEditUser;
 		wxButton* m_buttonDeleteUser;
+		wxButton* m_buttonUserListRefresh;
 		wxPanel* m_panelGroups;
 		wxListBox* m_listBoxGroups;
 		wxButton* m_buttonMoreGroupInfo;
 		wxButton* m_buttonGroupCreate;
 		wxButton* m_buttonGroupUpdate;
 		wxButton* m_buttonGroupDelete;
+		wxButton* m_buttonGroupListRefresh;
 		wxPanel* m_panelBans;
 		wxListBox* m_listBoxBans;
 		wxButton* m_buttonMoreBanInfo;
 		wxButton* m_buttonCreateBan;
 		wxButton* m_buttonDeleteBan;
+		wxButton* m_buttonBanListRefresh;
 		wxPanel* m_panelWorld;
 		wxButton* m_buttonWorldRead;
 		wxButton* m_buttonSaveWorld;
@@ -121,6 +124,7 @@ class MainFrame : public wxFrame
 		wxHyperlinkCtrl* m_hyperlinkTShock;
 		wxStaticText* m_staticTextAboutCopyright;
 		wxButton* m_buttonLicence;
+		wxTimer m_RefreshTimer;
 
 		// Virtual event handlers, overide them in your derived class
 		virtual void OnManagerPageChanged( wxNotebookEvent& event ) { event.Skip(); }
@@ -140,7 +144,6 @@ class MainFrame : public wxFrame
 		virtual void OnButtonMutePlayerClick( wxCommandEvent& event ) { event.Skip(); }
 		virtual void OnButtonUnmutePlayerClick( wxCommandEvent& event ) { event.Skip(); }
 		virtual void OnButtonRefreshClick( wxCommandEvent& event ) { event.Skip(); }
-		virtual void OnButtonMoreUserInfoClick( wxCommandEvent& event ) { event.Skip(); }
 		virtual void OnButtonCreateUserClick( wxCommandEvent& event ) { event.Skip(); }
 		virtual void OnButtonEditUserClick( wxCommandEvent& event ) { event.Skip(); }
 		virtual void OnButtonDeleteUserClick( wxCommandEvent& event ) { event.Skip(); }
@@ -160,6 +163,7 @@ class MainFrame : public wxFrame
 		virtual void OnButtonStopBloodmoonClick( wxCommandEvent& event ) { event.Skip(); }
 		virtual void OnButtonButcherClick( wxCommandEvent& event ) { event.Skip(); }
 		virtual void OnButtonLicenceInfoClick( wxCommandEvent& event ) { event.Skip(); }
+		virtual void OnRefreshTimerHit( wxTimerEvent& event ) { event.Skip(); }
 
 
 	public:

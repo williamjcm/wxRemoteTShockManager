@@ -75,7 +75,6 @@ class EvtMainFrame : public MainFrame
 		void OnButtonMutePlayerClick( wxCommandEvent& event );
 		void OnButtonUnmutePlayerClick( wxCommandEvent& event );
 		void OnButtonRefreshClick( wxCommandEvent& event );
-		void OnButtonMoreUserInfoClick( wxCommandEvent& event );
 		void OnButtonCreateUserClick( wxCommandEvent& event );
 		void OnButtonEditUserClick( wxCommandEvent& event );
 		void OnButtonDeleteUserClick( wxCommandEvent& event );
@@ -95,10 +94,12 @@ class EvtMainFrame : public MainFrame
 		void OnButtonStopBloodmoonClick( wxCommandEvent& event );
 		void OnButtonButcherClick( wxCommandEvent& event );
 		void OnButtonLicenceInfoClick( wxCommandEvent& event );
+		void OnRefreshTimerHit( wxCommandEvent& event );
 	public:
 		/** Constructor */
 		EvtMainFrame( wxWindow* parent );
 	//// end generated class members
+        ~EvtMainFrame();
 	private:
 	    RESTClient m_TShockRESTClient;
 	    void ShowError(wxString ErrorMessage);

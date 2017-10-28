@@ -192,12 +192,9 @@ MainFrame::MainFrame( wxWindow* parent, wxWindowID id, const wxString& title, co
 	m_listViewPlayerList->AppendColumn("Nickame");
 	m_listViewPlayerList->AppendColumn("Username");
 	m_listViewPlayerList->AppendColumn("Group");
+	m_listViewPlayerList->AppendColumn("Active");
 	m_listViewPlayerList->AppendColumn("Team");
 	m_listViewPlayerList->EnableBellOnNoMatch();
-	m_listViewPlayerList->SetColumnWidth(0, m_listViewPlayerList->GetSize().GetWidth() * 0.30);
-	m_listViewPlayerList->SetColumnWidth(1, m_listViewPlayerList->GetSize().GetWidth() * 0.30);
-	m_listViewPlayerList->SetColumnWidth(2, m_listViewPlayerList->GetSize().GetWidth() * 0.20);
-	m_listViewPlayerList->SetColumnWidth(3, m_listViewPlayerList->GetSize().GetWidth() * 0.20);
 	sbSizerPlayerList->Add( m_listViewPlayerList, 1, wxALL|wxEXPAND, 5 );
 
 
@@ -254,17 +251,18 @@ MainFrame::MainFrame( wxWindow* parent, wxWindowID id, const wxString& title, co
 	wxStaticBoxSizer* sbSizerUsersList;
 	sbSizerUsersList = new wxStaticBoxSizer( new wxStaticBox( m_panelUsers, wxID_ANY, wxT("Users") ), wxVERTICAL );
 
-	m_listBoxUsers = new wxListBox( sbSizerUsersList->GetStaticBox(), wxID_ANY, wxDefaultPosition, wxDefaultSize, 0, NULL, wxLB_HSCROLL|wxLB_NEEDED_SB|wxLB_SINGLE );
-	sbSizerUsersList->Add( m_listBoxUsers, 1, wxALL|wxEXPAND, 5 );
+	m_listViewUserList = new wxListView( sbSizerUsersList->GetStaticBox(), wxID_ANY, wxDefaultPosition, wxDefaultSize, wxLC_REPORT | wxLC_SINGLE_SEL | wxLC_VRULES | wxLC_HRULES );
+	m_listViewUserList->AppendColumn("ID");
+	m_listViewUserList->AppendColumn("Username");
+	m_listViewUserList->AppendColumn("Group");
+	m_listViewUserList->EnableBellOnNoMatch();
+	sbSizerUsersList->Add( m_listViewUserList, 0, wxALL, 5 );
 
 
 	bSizerUsers->Add( sbSizerUsersList, 5, wxEXPAND, 5 );
 
 	wxStaticBoxSizer* sbSizerUserCommands;
 	sbSizerUserCommands = new wxStaticBoxSizer( new wxStaticBox( m_panelUsers, wxID_ANY, wxT("Commands") ), wxVERTICAL );
-
-	m_buttonUserInfo = new wxButton( sbSizerUserCommands->GetStaticBox(), wxID_ANY, wxT("More info"), wxDefaultPosition, wxDefaultSize, 0 );
-	sbSizerUserCommands->Add( m_buttonUserInfo, 0, wxALL|wxEXPAND, 5 );
 
 	m_buttonCreateUser = new wxButton( sbSizerUserCommands->GetStaticBox(), wxID_ANY, wxT("Create user"), wxDefaultPosition, wxDefaultSize, 0 );
 	sbSizerUserCommands->Add( m_buttonCreateUser, 0, wxALL|wxEXPAND, 5 );
@@ -274,6 +272,9 @@ MainFrame::MainFrame( wxWindow* parent, wxWindowID id, const wxString& title, co
 
 	m_buttonDeleteUser = new wxButton( sbSizerUserCommands->GetStaticBox(), wxID_ANY, wxT("Delete user"), wxDefaultPosition, wxDefaultSize, 0 );
 	sbSizerUserCommands->Add( m_buttonDeleteUser, 0, wxALL|wxEXPAND, 5 );
+
+	m_buttonUserListRefresh = new wxButton( sbSizerUserCommands->GetStaticBox(), wxID_ANY, wxT("Refresh"), wxDefaultPosition, wxDefaultSize, 0 );
+	sbSizerUserCommands->Add( m_buttonUserListRefresh, 0, wxALL|wxEXPAND, 5 );
 
 
 	bSizerUsers->Add( sbSizerUserCommands, 2, wxEXPAND, 5 );
@@ -294,12 +295,12 @@ MainFrame::MainFrame( wxWindow* parent, wxWindowID id, const wxString& title, co
 	sbSizerGroupList->Add( m_listBoxGroups, 1, wxALL|wxEXPAND, 5 );
 
 
-	bSizerGroups->Add( sbSizerGroupList, 3, wxEXPAND, 5 );
+	bSizerGroups->Add( sbSizerGroupList, 5, wxEXPAND, 5 );
 
 	wxStaticBoxSizer* sbSizerGroupsCommands;
 	sbSizerGroupsCommands = new wxStaticBoxSizer( new wxStaticBox( m_panelGroups, wxID_ANY, wxT("Commands") ), wxVERTICAL );
 
-	m_buttonMoreGroupInfo = new wxButton( sbSizerGroupsCommands->GetStaticBox(), wxID_ANY, wxT("More info"), wxDefaultPosition, wxDefaultSize, 0 );
+	m_buttonMoreGroupInfo = new wxButton( sbSizerGroupsCommands->GetStaticBox(), wxID_ANY, wxT("More information"), wxDefaultPosition, wxDefaultSize, 0 );
 	sbSizerGroupsCommands->Add( m_buttonMoreGroupInfo, 0, wxALL|wxEXPAND, 5 );
 
 	m_buttonGroupCreate = new wxButton( sbSizerGroupsCommands->GetStaticBox(), wxID_ANY, wxT("Create group"), wxDefaultPosition, wxDefaultSize, 0 );
@@ -311,8 +312,11 @@ MainFrame::MainFrame( wxWindow* parent, wxWindowID id, const wxString& title, co
 	m_buttonGroupDelete = new wxButton( sbSizerGroupsCommands->GetStaticBox(), wxID_ANY, wxT("Delete group"), wxDefaultPosition, wxDefaultSize, 0 );
 	sbSizerGroupsCommands->Add( m_buttonGroupDelete, 0, wxALL|wxEXPAND, 5 );
 
+	m_buttonGroupListRefresh = new wxButton( sbSizerGroupsCommands->GetStaticBox(), wxID_ANY, wxT("Refresh"), wxDefaultPosition, wxDefaultSize, 0 );
+	sbSizerGroupsCommands->Add( m_buttonGroupListRefresh, 0, wxALL|wxEXPAND, 5 );
 
-	bSizerGroups->Add( sbSizerGroupsCommands, 1, wxEXPAND, 5 );
+
+	bSizerGroups->Add( sbSizerGroupsCommands, 2, wxEXPAND, 5 );
 
 
 	m_panelGroups->SetSizer( bSizerGroups );
@@ -330,22 +334,25 @@ MainFrame::MainFrame( wxWindow* parent, wxWindowID id, const wxString& title, co
 	sbSizerBanList->Add( m_listBoxBans, 1, wxALL|wxEXPAND, 5 );
 
 
-	bSizerBans->Add( sbSizerBanList, 3, wxEXPAND, 5 );
+	bSizerBans->Add( sbSizerBanList, 5, wxEXPAND, 5 );
 
 	wxStaticBoxSizer* sbSizerBanCommands;
 	sbSizerBanCommands = new wxStaticBoxSizer( new wxStaticBox( m_panelBans, wxID_ANY, wxT("Commands") ), wxVERTICAL );
 
-	m_buttonMoreBanInfo = new wxButton( sbSizerBanCommands->GetStaticBox(), wxID_ANY, wxT("More info"), wxDefaultPosition, wxDefaultSize, 0 );
+	m_buttonMoreBanInfo = new wxButton( sbSizerBanCommands->GetStaticBox(), wxID_ANY, wxT("More information"), wxDefaultPosition, wxDefaultSize, 0 );
 	sbSizerBanCommands->Add( m_buttonMoreBanInfo, 0, wxALL|wxEXPAND, 5 );
 
 	m_buttonCreateBan = new wxButton( sbSizerBanCommands->GetStaticBox(), wxID_ANY, wxT("Create ban"), wxDefaultPosition, wxDefaultSize, 0 );
 	sbSizerBanCommands->Add( m_buttonCreateBan, 0, wxALL|wxEXPAND, 5 );
 
-	m_buttonDeleteBan = new wxButton( sbSizerBanCommands->GetStaticBox(), wxID_ANY, wxT("Delete Ban"), wxDefaultPosition, wxDefaultSize, 0 );
+	m_buttonDeleteBan = new wxButton( sbSizerBanCommands->GetStaticBox(), wxID_ANY, wxT("Delete ban"), wxDefaultPosition, wxDefaultSize, 0 );
 	sbSizerBanCommands->Add( m_buttonDeleteBan, 0, wxALL|wxEXPAND, 5 );
 
+	m_buttonBanListRefresh = new wxButton( sbSizerBanCommands->GetStaticBox(), wxID_ANY, wxT("Refresh"), wxDefaultPosition, wxDefaultSize, 0 );
+	sbSizerBanCommands->Add( m_buttonBanListRefresh, 0, wxALL|wxEXPAND, 5 );
 
-	bSizerBans->Add( sbSizerBanCommands, 1, wxEXPAND, 5 );
+
+	bSizerBans->Add( sbSizerBanCommands, 2, wxEXPAND, 5 );
 
 
 	m_panelBans->SetSizer( bSizerBans );
@@ -432,6 +439,7 @@ MainFrame::MainFrame( wxWindow* parent, wxWindowID id, const wxString& title, co
 
 	this->SetSizer( bMainSizer );
 	this->Layout();
+	m_RefreshTimer.SetOwner( this, wxID_ANY );
 
 	this->Centre( wxBOTH );
 
@@ -453,17 +461,19 @@ MainFrame::MainFrame( wxWindow* parent, wxWindowID id, const wxString& title, co
 	m_buttonMute->Connect( wxEVT_COMMAND_BUTTON_CLICKED, wxCommandEventHandler( MainFrame::OnButtonMutePlayerClick ), NULL, this );
 	m_buttonUnmute->Connect( wxEVT_COMMAND_BUTTON_CLICKED, wxCommandEventHandler( MainFrame::OnButtonUnmutePlayerClick ), NULL, this );
 	m_buttonPlayerListRefresh->Connect( wxEVT_COMMAND_BUTTON_CLICKED, wxCommandEventHandler( MainFrame::OnButtonRefreshClick ), NULL, this );
-	m_buttonUserInfo->Connect( wxEVT_COMMAND_BUTTON_CLICKED, wxCommandEventHandler( MainFrame::OnButtonMoreUserInfoClick ), NULL, this );
 	m_buttonCreateUser->Connect( wxEVT_COMMAND_BUTTON_CLICKED, wxCommandEventHandler( MainFrame::OnButtonCreateUserClick ), NULL, this );
 	m_buttonEditUser->Connect( wxEVT_COMMAND_BUTTON_CLICKED, wxCommandEventHandler( MainFrame::OnButtonEditUserClick ), NULL, this );
 	m_buttonDeleteUser->Connect( wxEVT_COMMAND_BUTTON_CLICKED, wxCommandEventHandler( MainFrame::OnButtonDeleteUserClick ), NULL, this );
+	m_buttonUserListRefresh->Connect( wxEVT_COMMAND_BUTTON_CLICKED, wxCommandEventHandler( MainFrame::OnButtonRefreshClick ), NULL, this );
 	m_buttonMoreGroupInfo->Connect( wxEVT_COMMAND_BUTTON_CLICKED, wxCommandEventHandler( MainFrame::OnButtonMoreGroupInfoClick ), NULL, this );
 	m_buttonGroupCreate->Connect( wxEVT_COMMAND_BUTTON_CLICKED, wxCommandEventHandler( MainFrame::OnButtonGroupCreateClick ), NULL, this );
 	m_buttonGroupUpdate->Connect( wxEVT_COMMAND_BUTTON_CLICKED, wxCommandEventHandler( MainFrame::OnButtonGroupEditClick ), NULL, this );
 	m_buttonGroupDelete->Connect( wxEVT_COMMAND_BUTTON_CLICKED, wxCommandEventHandler( MainFrame::OnButtonGroupDeleteClick ), NULL, this );
+	m_buttonGroupListRefresh->Connect( wxEVT_COMMAND_BUTTON_CLICKED, wxCommandEventHandler( MainFrame::OnButtonRefreshClick ), NULL, this );
 	m_buttonMoreBanInfo->Connect( wxEVT_COMMAND_BUTTON_CLICKED, wxCommandEventHandler( MainFrame::OnButtonMoreBanInfoClick ), NULL, this );
 	m_buttonCreateBan->Connect( wxEVT_COMMAND_BUTTON_CLICKED, wxCommandEventHandler( MainFrame::OnButtonCreateBanButtonClick ), NULL, this );
 	m_buttonDeleteBan->Connect( wxEVT_COMMAND_BUTTON_CLICKED, wxCommandEventHandler( MainFrame::OnButtonDeleteBanClick ), NULL, this );
+	m_buttonBanListRefresh->Connect( wxEVT_COMMAND_BUTTON_CLICKED, wxCommandEventHandler( MainFrame::OnButtonRefreshClick ), NULL, this );
 	m_buttonWorldRead->Connect( wxEVT_COMMAND_BUTTON_CLICKED, wxCommandEventHandler( MainFrame::OnButtonReadWorldClick ), NULL, this );
 	m_buttonSaveWorld->Connect( wxEVT_COMMAND_BUTTON_CLICKED, wxCommandEventHandler( MainFrame::OnButtonSaveWorldClick ), NULL, this );
 	m_buttonEnableWorldAutosave->Connect( wxEVT_COMMAND_BUTTON_CLICKED, wxCommandEventHandler( MainFrame::OnButtonEnableWorldAutosaveButtonClick ), NULL, this );
@@ -473,6 +483,7 @@ MainFrame::MainFrame( wxWindow* parent, wxWindowID id, const wxString& title, co
 	m_buttonStopBloodmoon->Connect( wxEVT_COMMAND_BUTTON_CLICKED, wxCommandEventHandler( MainFrame::OnButtonStopBloodmoonClick ), NULL, this );
 	m_buttonButcher->Connect( wxEVT_COMMAND_BUTTON_CLICKED, wxCommandEventHandler( MainFrame::OnButtonButcherClick ), NULL, this );
 	m_buttonLicence->Connect( wxEVT_COMMAND_BUTTON_CLICKED, wxCommandEventHandler( MainFrame::OnButtonLicenceInfoClick ), NULL, this );
+	this->Connect( wxID_ANY, wxEVT_TIMER, wxTimerEventHandler( MainFrame::OnRefreshTimerHit ) );
 }
 
 MainFrame::~MainFrame()
@@ -495,17 +506,19 @@ MainFrame::~MainFrame()
 	m_buttonMute->Disconnect( wxEVT_COMMAND_BUTTON_CLICKED, wxCommandEventHandler( MainFrame::OnButtonMutePlayerClick ), NULL, this );
 	m_buttonUnmute->Disconnect( wxEVT_COMMAND_BUTTON_CLICKED, wxCommandEventHandler( MainFrame::OnButtonUnmutePlayerClick ), NULL, this );
 	m_buttonPlayerListRefresh->Disconnect( wxEVT_COMMAND_BUTTON_CLICKED, wxCommandEventHandler( MainFrame::OnButtonRefreshClick ), NULL, this );
-	m_buttonUserInfo->Disconnect( wxEVT_COMMAND_BUTTON_CLICKED, wxCommandEventHandler( MainFrame::OnButtonMoreUserInfoClick ), NULL, this );
 	m_buttonCreateUser->Disconnect( wxEVT_COMMAND_BUTTON_CLICKED, wxCommandEventHandler( MainFrame::OnButtonCreateUserClick ), NULL, this );
 	m_buttonEditUser->Disconnect( wxEVT_COMMAND_BUTTON_CLICKED, wxCommandEventHandler( MainFrame::OnButtonEditUserClick ), NULL, this );
 	m_buttonDeleteUser->Disconnect( wxEVT_COMMAND_BUTTON_CLICKED, wxCommandEventHandler( MainFrame::OnButtonDeleteUserClick ), NULL, this );
+	m_buttonUserListRefresh->Disconnect( wxEVT_COMMAND_BUTTON_CLICKED, wxCommandEventHandler( MainFrame::OnButtonRefreshClick ), NULL, this );
 	m_buttonMoreGroupInfo->Disconnect( wxEVT_COMMAND_BUTTON_CLICKED, wxCommandEventHandler( MainFrame::OnButtonMoreGroupInfoClick ), NULL, this );
 	m_buttonGroupCreate->Disconnect( wxEVT_COMMAND_BUTTON_CLICKED, wxCommandEventHandler( MainFrame::OnButtonGroupCreateClick ), NULL, this );
 	m_buttonGroupUpdate->Disconnect( wxEVT_COMMAND_BUTTON_CLICKED, wxCommandEventHandler( MainFrame::OnButtonGroupEditClick ), NULL, this );
 	m_buttonGroupDelete->Disconnect( wxEVT_COMMAND_BUTTON_CLICKED, wxCommandEventHandler( MainFrame::OnButtonGroupDeleteClick ), NULL, this );
+	m_buttonGroupListRefresh->Disconnect( wxEVT_COMMAND_BUTTON_CLICKED, wxCommandEventHandler( MainFrame::OnButtonRefreshClick ), NULL, this );
 	m_buttonMoreBanInfo->Disconnect( wxEVT_COMMAND_BUTTON_CLICKED, wxCommandEventHandler( MainFrame::OnButtonMoreBanInfoClick ), NULL, this );
 	m_buttonCreateBan->Disconnect( wxEVT_COMMAND_BUTTON_CLICKED, wxCommandEventHandler( MainFrame::OnButtonCreateBanButtonClick ), NULL, this );
 	m_buttonDeleteBan->Disconnect( wxEVT_COMMAND_BUTTON_CLICKED, wxCommandEventHandler( MainFrame::OnButtonDeleteBanClick ), NULL, this );
+	m_buttonBanListRefresh->Disconnect( wxEVT_COMMAND_BUTTON_CLICKED, wxCommandEventHandler( MainFrame::OnButtonRefreshClick ), NULL, this );
 	m_buttonWorldRead->Disconnect( wxEVT_COMMAND_BUTTON_CLICKED, wxCommandEventHandler( MainFrame::OnButtonReadWorldClick ), NULL, this );
 	m_buttonSaveWorld->Disconnect( wxEVT_COMMAND_BUTTON_CLICKED, wxCommandEventHandler( MainFrame::OnButtonSaveWorldClick ), NULL, this );
 	m_buttonEnableWorldAutosave->Disconnect( wxEVT_COMMAND_BUTTON_CLICKED, wxCommandEventHandler( MainFrame::OnButtonEnableWorldAutosaveButtonClick ), NULL, this );
@@ -515,5 +528,6 @@ MainFrame::~MainFrame()
 	m_buttonStopBloodmoon->Disconnect( wxEVT_COMMAND_BUTTON_CLICKED, wxCommandEventHandler( MainFrame::OnButtonStopBloodmoonClick ), NULL, this );
 	m_buttonButcher->Disconnect( wxEVT_COMMAND_BUTTON_CLICKED, wxCommandEventHandler( MainFrame::OnButtonButcherClick ), NULL, this );
 	m_buttonLicence->Disconnect( wxEVT_COMMAND_BUTTON_CLICKED, wxCommandEventHandler( MainFrame::OnButtonLicenceInfoClick ), NULL, this );
+	this->Disconnect( wxID_ANY, wxEVT_TIMER, wxTimerEventHandler( MainFrame::OnRefreshTimerHit ) );
 
 }

@@ -3555,7 +3555,7 @@
 1509030901 source:c:\msys64\home\guillaume\wxremotetshockmanager\ihm\mainframe.cpp
 	"MainFrame.h"
 
-1509025419 c:\msys64\home\guillaume\wxremotetshockmanager\ihm\mainframe.h
+1509182168 c:\msys64\home\guillaume\wxremotetshockmanager\ihm\mainframe.h
 	<wx/artprov.h>
 	<wx/xrc/xmlres.h>
 	<wx/string.h>
@@ -3576,6 +3576,7 @@
 	<wx/listbox.h>
 	<wx/hyperlink.h>
 	<wx/notebook.h>
+	<wx/timer.h>
 	<wx/frame.h>
 
 1503391880 source:c:\msys64\home\guillaume\wxremotetshockmanager\ihm\usermoddialog.cpp
@@ -3589,7 +3590,7 @@
 1503391880 c:\msys64\home\guillaume\wxremotetshockmanager\myapp.h
 	<wx/app.h>
 
-1509025425 c:\msys64\home\guillaume\wxremotetshockmanager\ihm\evtmainframe.h
+1509180889 c:\msys64\home\guillaume\wxremotetshockmanager\ihm\evtmainframe.h
 	"MainFrame.h"
 	<memory>
 	<wx/msgdlg.h>
@@ -3653,7 +3654,7 @@
 1504886526 c:\msys64\mingw64\include\wx-3.0\wx\recguard.h
 	"wx/defs.h"
 
-1509112173 source:c:\msys64\home\guillaume\wxremotetshockmanager\ihm\evtmainframe.cpp
+1509181303 source:c:\msys64\home\guillaume\wxremotetshockmanager\ihm\evtmainframe.cpp
 	"EvtMainFrame.h"
 
 1508843760 source:c:\msys64\home\guillaume\wxremotetshockmanager\src\restclient.cpp
@@ -3696,4 +3697,36 @@
 	"wx/textctrl.h"
 	"wx/dynarray.h"
 	"wx/vector.h"
+
+1505331395 c:\msys64\mingw32\include\wx-3.0\wx\timer.h
+	"wx/defs.h"
+	"wx/object.h"
+	"wx/longlong.h"
+	"wx/event.h"
+	"wx/stopwatch.h"
+	"wx/utils.h"
+
+1505331393 c:\msys64\mingw32\include\wx-3.0\wx\stopwatch.h
+	"wx/defs.h"
+	"wx/longlong.h"
+	"wx/time.h"
+
+1505331395 c:\msys64\mingw32\include\wx-3.0\wx\time.h
+	"wx/longlong.h"
+
+1505330110 c:\msys64\mingw64\include\wx-3.0\wx\timer.h
+	"wx/defs.h"
+	"wx/object.h"
+	"wx/longlong.h"
+	"wx/event.h"
+	"wx/stopwatch.h"
+	"wx/utils.h"
+
+1505330109 c:\msys64\mingw64\include\wx-3.0\wx\stopwatch.h
+	"wx/defs.h"
+	"wx/longlong.h"
+	"wx/time.h"
+
+1505330110 c:\msys64\mingw64\include\wx-3.0\wx\time.h
+	"wx/longlong.h"
 

@@ -20,9 +20,7 @@
 
 #include "EvtMainFrame.h"
 
-EvtMainFrame::EvtMainFrame( wxWindow* parent )
-:
-MainFrame( parent )
+EvtMainFrame::EvtMainFrame( wxWindow* parent ) : MainFrame( parent )
 {
     m_LastServerConfig.reset(new wxFileConfig("wxRemoteTShockManager",
                                               wxEmptyString,
@@ -47,6 +45,11 @@ MainFrame( parent )
 #ifdef WXRTSM_DEBUG
     this->SetTitle(this->GetTitle() + " (Debug build)");
 #endif
+}
+
+EvtMainFrame::~EvtMainFrame()
+{
+    m_RefreshTimer.Stop();
 }
 
 void EvtMainFrame::OnManagerPageChanged(wxNotebookEvent& event)
@@ -553,37 +556,15 @@ void EvtMainFrame::OnButtonUnmutePlayerClick(wxCommandEvent& event)
 
 void EvtMainFrame::OnButtonRefreshClick(wxCommandEvent& event)
 {
-    if(event.GetId() == m_buttonPlayerListRefresh->GetId())
-    {
+    int ID = event.GetId();
+    if(ID == m_buttonPlayerListRefresh->GetId())
         RefreshPlayerList();
-    }
-}
-
-void EvtMainFrame::OnButtonMoreUserInfoClick(wxCommandEvent& event)
-{
-    try
-    {
-        wxString Response = m_TShockRESTClient.GetUserInfo(m_listBoxUsers->GetString(m_listBoxUsers->GetSelection()));
-        Object Response_JSON = json::Deserialize(Response.ToStdString());
-        if(Response_JSON["status"].ToString() == "200")
-        {
-            wxString UserInfo = wxString::Format("%s (user ID %s) is a member of the %s group.",
-                                                 Response_JSON["name"].ToString(),
-                                                 Response_JSON["id"].ToString(),
-                                                 Response_JSON["group"].ToString());
-            ShowInfo(UserInfo);
-        }
-        else if(Response_JSON["status"].ToString() == "403")
-            ShowError("It seems that the account associated with the token has insufficient privileges.");
-    }
-    catch(std::runtime_error e)
-    {
-        ShowError("There was an error parsing the user info.");
-    }
-    catch(...)
-    {
-        ShowError("There was an error getting the user info.");
-    }
+    else if(ID == m_buttonUserListRefresh->GetId())
+        RefreshUserList();
+    else if(ID == m_buttonGroupListRefresh->GetId())
+        RefreshGroupList();
+    else if(ID == m_buttonBanListRefresh->GetId())
+        RefreshBanList();
 }
 
 void EvtMainFrame::OnButtonCreateUserClick(wxCommandEvent& event)
@@ -634,7 +615,9 @@ void EvtMainFrame::OnButtonEditUserClick(wxCommandEvent& event)
         Array Groups_JSON = Response_JSON["groups"].ToArray();
         for(auto it = Groups_JSON.begin(); it != Groups_JSON.end(); ++it)
             Groups.Add((*it)["name"].ToString());
-        EvtUserModDialog UserCreateDialog(this, m_listBoxUsers->GetString(m_listBoxUsers->GetSelection()), Groups);
+        long index = m_listViewUserList->GetFirstSelected();
+        wxString User = m_listViewUserList->GetItemText(index, 1);
+        EvtUserModDialog UserCreateDialog(this, User, Groups);
         int ReturnCode = UserCreateDialog.ShowModal();
         if(ReturnCode == wxID_CANCEL)
         {
@@ -666,7 +649,9 @@ void EvtMainFrame::OnButtonDeleteUserClick(wxCommandEvent& event)
 {
     try
     {
-        wxString Response = m_TShockRESTClient.DestroyUser(m_listBoxUsers->GetString(m_listBoxUsers->GetSelection()));
+        long index = m_listViewUserList->GetFirstSelected();
+        wxString User = m_listViewUserList->GetItemText(index, 1);
+        wxString Response = m_TShockRESTClient.DestroyUser(User);
         Object Response_JSON = json::Deserialize(Response.ToStdString());
         if(Response_JSON["status"].ToString() == "200")
         {
@@ -1263,31 +1248,22 @@ void EvtMainFrame::OnButtonLicenceInfoClick(wxCommandEvent& event)
     LicenceDialog.Destroy();
 }
 
-void EvtMainFrame::RefreshUserList()
+void EvtMainFrame::OnRefreshTimerHit(wxCommandEvent& event)
 {
-    try
+    switch(m_MainNotebook->GetSelection())
     {
-        wxString Response = m_TShockRESTClient.GetUsers();
-        Object Response_JSON = json::Deserialize(Response.ToStdString());
-        if(Response_JSON["status"].ToString() == "200")
-        {
-            Array Users_JSON = Response_JSON["users"].ToArray();
-            m_listBoxUsers->Clear();
-            for(auto it = Users_JSON.begin(); it != Users_JSON.end(); ++it)
-                m_listBoxUsers->Append((*it)["name"].ToString());
-            if(!m_listBoxUsers->IsEmpty())
-                m_listBoxUsers->SetSelection(0);
-        }
-        else if(Response_JSON["status"].ToString() == "403")
-            ShowError("The account associated with the token has insufficient privileges.");
-    }
-    catch(std::runtime_error e)
-    {
-        ShowError("There was an error parsing the user list.");
-    }
-    catch(...)
-    {
-        ShowError("There was an error getting the user list.");
+    case 2:
+        RefreshPlayerList();
+        break;
+    case 3:
+        RefreshUserList();
+        break;
+    case 4:
+        RefreshGroupList();
+        break;
+    case 5:
+        RefreshBanList();
+        break;
     }
 }
 
@@ -1307,33 +1283,35 @@ void EvtMainFrame::RefreshPlayerList()
                 long index = m_listViewPlayerList->InsertItem(0, (*it)["nickname"].ToString());
                 m_listViewPlayerList->SetItem(index, 1, (*it)["username"].ToString());
                 m_listViewPlayerList->SetItem(index, 2, (*it)["group"].ToString());
+                m_listViewPlayerList->SetItem(index, 3, ((*it)["active"].ToBool() ? "Yes" : "No"));
                 int TeamNumber = (*it)["team"].ToInt();
                 switch(TeamNumber)
                 {
                 case 0:
-                    m_listViewPlayerList->SetItem(index, 3, "None");
+                    m_listViewPlayerList->SetItem(index, 4, "None");
                     break;
                 case 1:
-                    m_listViewPlayerList->SetItem(index, 3, "Red");
+                    m_listViewPlayerList->SetItem(index, 4, "Red");
                     break;
                 case 2:
-                    m_listViewPlayerList->SetItem(index, 3, "Green");
+                    m_listViewPlayerList->SetItem(index, 4, "Green");
                     break;
                 case 3:
-                    m_listViewPlayerList->SetItem(index, 3, "Blue");
+                    m_listViewPlayerList->SetItem(index, 4, "Blue");
                     break;
                 case 4:
-                    m_listViewPlayerList->SetItem(index, 3, "Yellow");
+                    m_listViewPlayerList->SetItem(index, 4, "Yellow");
                     break;
                 case 5:
-                    m_listViewPlayerList->SetItem(index, 3, "Pink");
+                    m_listViewPlayerList->SetItem(index, 4, "Pink");
                     break;
                 }
             }
             m_listViewPlayerList->SetColumnWidth(0, m_listViewPlayerList->GetSize().GetWidth() * 0.30);
             m_listViewPlayerList->SetColumnWidth(1, m_listViewPlayerList->GetSize().GetWidth() * 0.30);
             m_listViewPlayerList->SetColumnWidth(2, m_listViewPlayerList->GetSize().GetWidth() * 0.20);
-            m_listViewPlayerList->SetColumnWidth(3, m_listViewPlayerList->GetSize().GetWidth() * 0.20);
+            m_listViewPlayerList->SetColumnWidth(3, m_listViewPlayerList->GetSize().GetWidth() * 0.10);
+            m_listViewPlayerList->SetColumnWidth(4, m_listViewPlayerList->GetSize().GetWidth() * 0.10);
             m_listViewPlayerList->Thaw();
         }
         else if(Response_JSON["status"].ToString() == "403")
@@ -1346,6 +1324,41 @@ void EvtMainFrame::RefreshPlayerList()
     catch(...)
     {
         ShowError("There was an error getting the player list.");
+    }
+}
+
+void EvtMainFrame::RefreshUserList()
+{
+    try
+    {
+        wxString Response = m_TShockRESTClient.GetUsers();
+        Object Response_JSON = json::Deserialize(Response.ToStdString());
+        if(Response_JSON["status"].ToString() == "200")
+        {
+            Array Users_JSON = Response_JSON["users"].ToArray();
+            m_listViewUserList->Freeze();
+            m_listViewUserList->DeleteAllItems();
+            for(auto it = Users_JSON.begin(); it != Users_JSON.end(); ++it)
+            {
+                long index = m_listViewUserList->InsertItem(0, (*it)["id"].ToString());
+                m_listViewUserList->SetItem(index, 1, (*it)["name"].ToString());
+                m_listViewUserList->SetItem(index, 2, (*it)["group"].ToString());
+            }
+            m_listViewUserList->SetColumnWidth(0, wxLIST_AUTOSIZE);
+            m_listViewUserList->SetColumnWidth(2, m_listViewUserList->GetSize().GetWidth() * 0.15);
+            m_listViewUserList->SetColumnWidth(1, m_listViewUserList->GetSize().GetWidth() - (m_listViewUserList->GetColumnWidth(0) + m_listViewUserList->GetColumnWidth(2)));
+            m_listViewUserList->Thaw();
+        }
+        else if(Response_JSON["status"].ToString() == "403")
+            ShowError("The account associated with the token has insufficient privileges.");
+    }
+    catch(std::runtime_error e)
+    {
+        ShowError("There was an error parsing the user list.");
+    }
+    catch(...)
+    {
+        ShowError("There was an error getting the user list.");
     }
 }
 
@@ -1430,10 +1443,12 @@ void EvtMainFrame::SetTabs(bool Connected)
         m_MainNotebook->InsertPage(4, m_panelGroups, "Manage groups");
         m_MainNotebook->InsertPage(5, m_panelBans, "Manage bans");
         m_MainNotebook->InsertPage(6, m_panelWorld, "Manage world");
+        m_RefreshTimer.Start(1000, false);
     }
     else
     {
         for(int i = 1; i <= 6; i++)
             m_MainNotebook->RemovePage(1);
+        m_RefreshTimer.Stop();
     }
 }
