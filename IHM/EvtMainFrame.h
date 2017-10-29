@@ -94,7 +94,6 @@ class EvtMainFrame : public MainFrame
 		void OnButtonStopBloodmoonClick( wxCommandEvent& event );
 		void OnButtonButcherClick( wxCommandEvent& event );
 		void OnButtonLicenceInfoClick( wxCommandEvent& event );
-		void OnRefreshTimerHit( wxCommandEvent& event );
 	public:
 		/** Constructor */
 		EvtMainFrame( wxWindow* parent );

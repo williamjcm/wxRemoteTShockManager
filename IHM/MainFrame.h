@@ -48,7 +48,6 @@
 #include <wx/listbox.h>
 #include <wx/hyperlink.h>
 #include <wx/notebook.h>
-#include <wx/timer.h>
 #include <wx/frame.h>
 
 ///////////////////////////////////////////////////////////////////////////
@@ -124,7 +123,6 @@ class MainFrame : public wxFrame
 		wxHyperlinkCtrl* m_hyperlinkTShock;
 		wxStaticText* m_staticTextAboutCopyright;
 		wxButton* m_buttonLicence;
-		wxTimer m_RefreshTimer;
 
 		// Virtual event handlers, overide them in your derived class
 		virtual void OnManagerPageChanged( wxNotebookEvent& event ) { event.Skip(); }
@@ -163,7 +161,6 @@ class MainFrame : public wxFrame
 		virtual void OnButtonStopBloodmoonClick( wxCommandEvent& event ) { event.Skip(); }
 		virtual void OnButtonButcherClick( wxCommandEvent& event ) { event.Skip(); }
 		virtual void OnButtonLicenceInfoClick( wxCommandEvent& event ) { event.Skip(); }
-		virtual void OnRefreshTimerHit( wxTimerEvent& event ) { event.Skip(); }
 
 
 	public:

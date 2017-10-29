@@ -256,7 +256,7 @@ MainFrame::MainFrame( wxWindow* parent, wxWindowID id, const wxString& title, co
 	m_listViewUserList->AppendColumn("Username");
 	m_listViewUserList->AppendColumn("Group");
 	m_listViewUserList->EnableBellOnNoMatch();
-	sbSizerUsersList->Add( m_listViewUserList, 0, wxALL, 5 );
+	sbSizerUsersList->Add( m_listViewUserList, 1, wxALL|wxEXPAND, 5 );
 
 
 	bSizerUsers->Add( sbSizerUsersList, 5, wxEXPAND, 5 );
@@ -439,7 +439,6 @@ MainFrame::MainFrame( wxWindow* parent, wxWindowID id, const wxString& title, co
 
 	this->SetSizer( bMainSizer );
 	this->Layout();
-	m_RefreshTimer.SetOwner( this, wxID_ANY );
 
 	this->Centre( wxBOTH );
 
@@ -483,7 +482,6 @@ MainFrame::MainFrame( wxWindow* parent, wxWindowID id, const wxString& title, co
 	m_buttonStopBloodmoon->Connect( wxEVT_COMMAND_BUTTON_CLICKED, wxCommandEventHandler( MainFrame::OnButtonStopBloodmoonClick ), NULL, this );
 	m_buttonButcher->Connect( wxEVT_COMMAND_BUTTON_CLICKED, wxCommandEventHandler( MainFrame::OnButtonButcherClick ), NULL, this );
 	m_buttonLicence->Connect( wxEVT_COMMAND_BUTTON_CLICKED, wxCommandEventHandler( MainFrame::OnButtonLicenceInfoClick ), NULL, this );
-	this->Connect( wxID_ANY, wxEVT_TIMER, wxTimerEventHandler( MainFrame::OnRefreshTimerHit ) );
 }
 
 MainFrame::~MainFrame()
@@ -528,6 +526,5 @@ MainFrame::~MainFrame()
 	m_buttonStopBloodmoon->Disconnect( wxEVT_COMMAND_BUTTON_CLICKED, wxCommandEventHandler( MainFrame::OnButtonStopBloodmoonClick ), NULL, this );
 	m_buttonButcher->Disconnect( wxEVT_COMMAND_BUTTON_CLICKED, wxCommandEventHandler( MainFrame::OnButtonButcherClick ), NULL, this );
 	m_buttonLicence->Disconnect( wxEVT_COMMAND_BUTTON_CLICKED, wxCommandEventHandler( MainFrame::OnButtonLicenceInfoClick ), NULL, this );
-	this->Disconnect( wxID_ANY, wxEVT_TIMER, wxTimerEventHandler( MainFrame::OnRefreshTimerHit ) );
 
 }

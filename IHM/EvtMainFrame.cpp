@@ -20,6 +20,7 @@
 
 #include "EvtMainFrame.h"
 
+//{ ctor and dtor
 EvtMainFrame::EvtMainFrame( wxWindow* parent ) : MainFrame( parent )
 {
     m_LastServerConfig.reset(new wxFileConfig("wxRemoteTShockManager",
@@ -49,27 +50,9 @@ EvtMainFrame::EvtMainFrame( wxWindow* parent ) : MainFrame( parent )
 
 EvtMainFrame::~EvtMainFrame()
 {
-    m_RefreshTimer.Stop();
+    //dtor
 }
-
-void EvtMainFrame::OnManagerPageChanged(wxNotebookEvent& event)
-{
-    switch(m_MainNotebook->GetSelection())
-    {
-    case 2:
-        RefreshPlayerList();
-        break;
-    case 3:
-        RefreshUserList();
-        break;
-    case 4:
-        RefreshGroupList();
-        break;
-    case 5:
-        RefreshBanList();
-        break;
-    }
-}
+//}
 
 void EvtMainFrame::OnButtonConnectClick(wxCommandEvent& event)
 {
@@ -126,6 +109,7 @@ void EvtMainFrame::OnButtonConnectClick(wxCommandEvent& event)
     }
 }
 
+//{ server tab event handlers
 void EvtMainFrame::OnButtonStatusClick(wxCommandEvent& event)
 {
     try
@@ -359,7 +343,9 @@ void EvtMainFrame::OnButtonRawCmdClick(wxCommandEvent& event)
         ShowError("Error running the command");
     }
 }
+//}
 
+//{ players tab event handlers
 void EvtMainFrame::OnButtonPlayerInfoClick( wxCommandEvent& event )
 {
     try
@@ -553,20 +539,9 @@ void EvtMainFrame::OnButtonUnmutePlayerClick(wxCommandEvent& event)
         ShowError("There was an error unmuting the player.");
     }
 }
+//}
 
-void EvtMainFrame::OnButtonRefreshClick(wxCommandEvent& event)
-{
-    int ID = event.GetId();
-    if(ID == m_buttonPlayerListRefresh->GetId())
-        RefreshPlayerList();
-    else if(ID == m_buttonUserListRefresh->GetId())
-        RefreshUserList();
-    else if(ID == m_buttonGroupListRefresh->GetId())
-        RefreshGroupList();
-    else if(ID == m_buttonBanListRefresh->GetId())
-        RefreshBanList();
-}
-
+//{ users tab event handlers
 void EvtMainFrame::OnButtonCreateUserClick(wxCommandEvent& event)
 {
     try
@@ -670,7 +645,9 @@ void EvtMainFrame::OnButtonDeleteUserClick(wxCommandEvent& event)
         ShowError("There was an error destroying the user.");
     }
 }
+//}
 
+//{ groups tab event handlers
 void EvtMainFrame::OnButtonMoreGroupInfoClick(wxCommandEvent& event)
 {
     try
@@ -885,7 +862,9 @@ void EvtMainFrame::OnButtonGroupDeleteClick(wxCommandEvent& event)
         ShowError("There was an error during group deletion");
     }
 }
+//}
 
+//{ bans tab event handlers
 void EvtMainFrame::OnButtonMoreBanInfoClick(wxCommandEvent& event)
 {
     try
@@ -1035,7 +1014,9 @@ void EvtMainFrame::OnButtonDeleteBanClick(wxCommandEvent& event)
         ShowError("There was an error deleting the ban.");
     }
 }
+//}
 
+//{ world tab event handlers
 void EvtMainFrame::OnButtonReadWorldClick(wxCommandEvent& event)
 {
     try
@@ -1240,6 +1221,7 @@ void EvtMainFrame::OnButtonButcherClick(wxCommandEvent& event)
         ShowError("There was an error when sending the request.");
     }
 }
+//}
 
 void EvtMainFrame::OnButtonLicenceInfoClick(wxCommandEvent& event)
 {
@@ -1248,7 +1230,8 @@ void EvtMainFrame::OnButtonLicenceInfoClick(wxCommandEvent& event)
     LicenceDialog.Destroy();
 }
 
-void EvtMainFrame::OnRefreshTimerHit(wxCommandEvent& event)
+//{ list refresh methods
+void EvtMainFrame::OnManagerPageChanged(wxNotebookEvent& event)
 {
     switch(m_MainNotebook->GetSelection())
     {
@@ -1265,6 +1248,19 @@ void EvtMainFrame::OnRefreshTimerHit(wxCommandEvent& event)
         RefreshBanList();
         break;
     }
+}
+
+void EvtMainFrame::OnButtonRefreshClick(wxCommandEvent& event)
+{
+    int ID = event.GetId();
+    if(ID == m_buttonPlayerListRefresh->GetId())
+        RefreshPlayerList();
+    else if(ID == m_buttonUserListRefresh->GetId())
+        RefreshUserList();
+    else if(ID == m_buttonGroupListRefresh->GetId())
+        RefreshGroupList();
+    else if(ID == m_buttonBanListRefresh->GetId())
+        RefreshBanList();
 }
 
 void EvtMainFrame::RefreshPlayerList()
@@ -1340,12 +1336,12 @@ void EvtMainFrame::RefreshUserList()
             m_listViewUserList->DeleteAllItems();
             for(auto it = Users_JSON.begin(); it != Users_JSON.end(); ++it)
             {
-                long index = m_listViewUserList->InsertItem(0, (*it)["id"].ToString());
+                long index = m_listViewUserList->InsertItem(0, wxString::Format("%i", (*it)["id"].ToInt()));
                 m_listViewUserList->SetItem(index, 1, (*it)["name"].ToString());
                 m_listViewUserList->SetItem(index, 2, (*it)["group"].ToString());
             }
             m_listViewUserList->SetColumnWidth(0, wxLIST_AUTOSIZE);
-            m_listViewUserList->SetColumnWidth(2, m_listViewUserList->GetSize().GetWidth() * 0.15);
+            m_listViewUserList->SetColumnWidth(2, m_listViewUserList->GetSize().GetWidth() * 0.25);
             m_listViewUserList->SetColumnWidth(1, m_listViewUserList->GetSize().GetWidth() - (m_listViewUserList->GetColumnWidth(0) + m_listViewUserList->GetColumnWidth(2)));
             m_listViewUserList->Thaw();
         }
@@ -1422,6 +1418,7 @@ void EvtMainFrame::RefreshBanList()
         ShowError("There was an error getting the ban list.");
     }
 }
+//}
 
 void EvtMainFrame::ShowInfo(wxString InfoMessage)
 {
@@ -1443,12 +1440,10 @@ void EvtMainFrame::SetTabs(bool Connected)
         m_MainNotebook->InsertPage(4, m_panelGroups, "Manage groups");
         m_MainNotebook->InsertPage(5, m_panelBans, "Manage bans");
         m_MainNotebook->InsertPage(6, m_panelWorld, "Manage world");
-        m_RefreshTimer.Start(1000, false);
     }
     else
     {
         for(int i = 1; i <= 6; i++)
             m_MainNotebook->RemovePage(1);
-        m_RefreshTimer.Stop();
     }
 }
