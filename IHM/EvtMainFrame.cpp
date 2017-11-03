@@ -648,32 +648,30 @@ void EvtMainFrame::OnButtonDeleteUserClick(wxCommandEvent& event)
 //}
 
 //{ groups tab event handlers
-void EvtMainFrame::OnButtonMoreGroupInfoClick(wxCommandEvent& event)
+void EvtMainFrame::OnButtonGroupPermissionsClick(wxCommandEvent& event)
 {
     try
     {
-        wxString Response = m_TShockRESTClient.ReadGroup(m_listBoxGroups->GetString(m_listBoxGroups->GetSelection()));
+        long index = m_listViewGroupList->GetFirstSelected();
+        wxString Group = m_listViewGroupList->GetItemText(index);
+        wxString Response = m_TShockRESTClient.ReadGroup(Group);
         Object Response_JSON = Deserialize(Response.ToStdString());
         if(Response_JSON["status"].ToString() == "200")
         {
-            wxString GroupInfo = wxString::Format("Parent: %s\n"
-                                                  "Chat color (R,G,B): %s\n\n"
-                                                  "Permissions:\n",
-                                                  Response_JSON["parent"].ToString() == "" ? "none" : Response_JSON["parent"].ToString(),
-                                                  Response_JSON["chatcolor"].ToString());
+            wxString PermInfo = "Permissions:";
             for(unsigned int i = 0; i < Response_JSON["totalpermissions"].size(); i++)
             {
-                GroupInfo << Response_JSON["totalpermissions"][i].ToString();
-                GroupInfo << "\n";
+                PermInfo << "\n";
+                PermInfo << Response_JSON["totalpermissions"][i].ToString();
             }
-            ShowInfo(GroupInfo);
+            ShowInfo(PermInfo);
         }
         else if(Response_JSON["status"].ToString() == "403")
         {
             ShowError("It seems the account associated with the token has insufficient privileges");
         }
     }
-    catch(std::runtime_error)
+    catch(std::runtime_error e)
     {
         ShowError("There was an error parsing the JSON response.");
     }
@@ -755,8 +753,9 @@ void EvtMainFrame::OnButtonGroupEditClick(wxCommandEvent& event)
 {
     try
     {
-        wxString GroupName = m_listBoxGroups->GetString(m_listBoxGroups->GetSelection());
-        wxString FirstResponse = m_TShockRESTClient.ReadGroup(GroupName);
+        long index = m_listViewGroupList->GetFirstSelected();
+        wxString Group = m_listViewGroupList->GetItemText(index);
+        wxString FirstResponse = m_TShockRESTClient.ReadGroup(Group);
         Object FirstResponse_JSON = Deserialize(FirstResponse.ToStdString());
         if(FirstResponse_JSON["status"] == "200")
         {
@@ -802,7 +801,7 @@ void EvtMainFrame::OnButtonGroupEditClick(wxCommandEvent& event)
                     else
                     {
                         wxString Permissions = GroupPermissions.GetPermissions();
-                        wxString SecondResponse = m_TShockRESTClient.UpdateGroup(GroupName,
+                        wxString SecondResponse = m_TShockRESTClient.UpdateGroup(Group,
                                                   ParentGroup,
                                                   Permissions,
                                                   ChatColour_str);
@@ -840,7 +839,8 @@ void EvtMainFrame::OnButtonGroupDeleteClick(wxCommandEvent& event)
 {
     try
     {
-        wxString GroupToDelete = m_listBoxGroups->GetString(m_listBoxGroups->GetSelection());
+        long index = m_listViewGroupList->GetFirstSelected();
+        wxString GroupToDelete = m_listViewGroupList->GetItemText(index);
         wxString Response = m_TShockRESTClient.DestroyGroup(GroupToDelete);
         Object Response_JSON = Deserialize(Response.ToStdString());
         if(Response_JSON["status"].ToString() == "200")
@@ -1367,11 +1367,18 @@ void EvtMainFrame::RefreshGroupList()
         if(Response_JSON["status"].ToString() == "200")
         {
             Array Groups_JSON = Response_JSON["groups"].ToArray();
-            m_listBoxGroups->Clear();
+            m_listViewGroupList->Freeze();
+            m_listViewGroupList->DeleteAllItems();
             for(auto it = Groups_JSON.begin(); it != Groups_JSON.end(); ++it)
-                m_listBoxGroups->Append((*it)["name"].ToString());
-            if(!m_listBoxGroups->IsEmpty())
-                m_listBoxGroups->SetSelection(0);
+            {
+                long index = m_listViewGroupList->InsertItem(0, (*it)["name"].ToString());
+                m_listViewGroupList->SetItem(index, 1, (*it)["parent"].ToString());
+                m_listViewGroupList->SetItem(index, 2, (*it)["chatcolor"].ToString());
+            }
+            m_listViewGroupList->SetColumnWidth(0, m_listViewGroupList->GetSize().GetWidth() * 0.40);
+            m_listViewGroupList->SetColumnWidth(1, m_listViewGroupList->GetSize().GetWidth() * 0.40);
+            m_listViewGroupList->SetColumnWidth(2, m_listViewGroupList->GetSize().GetWidth() * 0.20);
+            m_listViewGroupList->Thaw();
         }
         else if(Response_JSON["status"].ToString() == "403")
             ShowError("The account associated with the token has insufficient privileges.");

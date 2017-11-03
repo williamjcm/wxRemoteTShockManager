@@ -78,7 +78,7 @@ class EvtMainFrame : public MainFrame
 		void OnButtonCreateUserClick( wxCommandEvent& event );
 		void OnButtonEditUserClick( wxCommandEvent& event );
 		void OnButtonDeleteUserClick( wxCommandEvent& event );
-		void OnButtonMoreGroupInfoClick( wxCommandEvent& event );
+		void OnButtonGroupPermissionsClick( wxCommandEvent& event );
 		void OnButtonGroupCreateClick( wxCommandEvent& event );
 		void OnButtonGroupEditClick( wxCommandEvent& event );
 		void OnButtonGroupDeleteClick( wxCommandEvent& event );

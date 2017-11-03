@@ -3552,10 +3552,10 @@
 1503388280 source:c:\msys64\home\guillaume\wxremotetshockmanager\ihm\licenceinfodialog.cpp
 	"LicenceInfoDialog.h"
 
-1509282867 source:c:\msys64\home\guillaume\wxremotetshockmanager\ihm\mainframe.cpp
+1509698689 source:c:\msys64\home\guillaume\wxremotetshockmanager\ihm\mainframe.cpp
 	"MainFrame.h"
 
-1509284153 c:\msys64\home\guillaume\wxremotetshockmanager\ihm\mainframe.h
+1509702293 c:\msys64\home\guillaume\wxremotetshockmanager\ihm\mainframe.h
 	<wx/artprov.h>
 	<wx/xrc/xmlres.h>
 	<wx/string.h>
@@ -3589,7 +3589,7 @@
 1503388280 c:\msys64\home\guillaume\wxremotetshockmanager\myapp.h
 	<wx/app.h>
 
-1509283950 c:\msys64\home\guillaume\wxremotetshockmanager\ihm\evtmainframe.h
+1509698721 c:\msys64\home\guillaume\wxremotetshockmanager\ihm\evtmainframe.h
 	"MainFrame.h"
 	<memory>
 	<wx/msgdlg.h>
@@ -3653,7 +3653,7 @@
 1504886526 c:\msys64\mingw64\include\wx-3.0\wx\recguard.h
 	"wx/defs.h"
 
-1509284037 source:c:\msys64\home\guillaume\wxremotetshockmanager\ihm\evtmainframe.cpp
+1509701476 source:c:\msys64\home\guillaume\wxremotetshockmanager\ihm\evtmainframe.cpp
 	"EvtMainFrame.h"
 
 1508840160 source:c:\msys64\home\guillaume\wxremotetshockmanager\src\restclient.cpp

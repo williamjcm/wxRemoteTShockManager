@@ -97,8 +97,8 @@ class MainFrame : public wxFrame
 		wxButton* m_buttonDeleteUser;
 		wxButton* m_buttonUserListRefresh;
 		wxPanel* m_panelGroups;
-		wxListBox* m_listBoxGroups;
-		wxButton* m_buttonMoreGroupInfo;
+		wxListView* m_listViewGroupList;
+		wxButton* m_buttonGroupPermissions;
 		wxButton* m_buttonGroupCreate;
 		wxButton* m_buttonGroupUpdate;
 		wxButton* m_buttonGroupDelete;
@@ -145,7 +145,7 @@ class MainFrame : public wxFrame
 		virtual void OnButtonCreateUserClick( wxCommandEvent& event ) { event.Skip(); }
 		virtual void OnButtonEditUserClick( wxCommandEvent& event ) { event.Skip(); }
 		virtual void OnButtonDeleteUserClick( wxCommandEvent& event ) { event.Skip(); }
-		virtual void OnButtonMoreGroupInfoClick( wxCommandEvent& event ) { event.Skip(); }
+		virtual void OnButtonGroupPermissionsClick( wxCommandEvent& event ) { event.Skip(); }
 		virtual void OnButtonGroupCreateClick( wxCommandEvent& event ) { event.Skip(); }
 		virtual void OnButtonGroupEditClick( wxCommandEvent& event ) { event.Skip(); }
 		virtual void OnButtonGroupDeleteClick( wxCommandEvent& event ) { event.Skip(); }

@@ -291,8 +291,12 @@ MainFrame::MainFrame( wxWindow* parent, wxWindowID id, const wxString& title, co
 	wxStaticBoxSizer* sbSizerGroupList;
 	sbSizerGroupList = new wxStaticBoxSizer( new wxStaticBox( m_panelGroups, wxID_ANY, wxT("List of groups") ), wxVERTICAL );
 
-	m_listBoxGroups = new wxListBox( sbSizerGroupList->GetStaticBox(), wxID_ANY, wxDefaultPosition, wxDefaultSize, 0, NULL, wxLB_HSCROLL|wxLB_NEEDED_SB|wxLB_SINGLE );
-	sbSizerGroupList->Add( m_listBoxGroups, 1, wxALL|wxEXPAND, 5 );
+	m_listViewGroupList = new wxListView( sbSizerGroupList->GetStaticBox(), wxID_ANY, wxDefaultPosition, wxDefaultSize, wxLC_REPORT | wxLC_SINGLE_SEL | wxLC_VRULES | wxLC_HRULES );
+	m_listViewUserList->AppendColumn("Group name");
+	m_listViewUserList->AppendColumn("Parent");
+	m_listViewUserList->AppendColumn("Chat color (R,G,B)");
+	m_listViewUserList->EnableBellOnNoMatch();
+	sbSizerGroupList->Add( m_listViewGroupList, 1, wxALL|wxEXPAND, 5 );
 
 
 	bSizerGroups->Add( sbSizerGroupList, 5, wxEXPAND, 5 );
@@ -300,8 +304,8 @@ MainFrame::MainFrame( wxWindow* parent, wxWindowID id, const wxString& title, co
 	wxStaticBoxSizer* sbSizerGroupsCommands;
 	sbSizerGroupsCommands = new wxStaticBoxSizer( new wxStaticBox( m_panelGroups, wxID_ANY, wxT("Commands") ), wxVERTICAL );
 
-	m_buttonMoreGroupInfo = new wxButton( sbSizerGroupsCommands->GetStaticBox(), wxID_ANY, wxT("More information"), wxDefaultPosition, wxDefaultSize, 0 );
-	sbSizerGroupsCommands->Add( m_buttonMoreGroupInfo, 0, wxALL|wxEXPAND, 5 );
+	m_buttonGroupPermissions = new wxButton( sbSizerGroupsCommands->GetStaticBox(), wxID_ANY, wxT("Get permissions"), wxDefaultPosition, wxDefaultSize, 0 );
+	sbSizerGroupsCommands->Add( m_buttonGroupPermissions, 0, wxALL|wxEXPAND, 5 );
 
 	m_buttonGroupCreate = new wxButton( sbSizerGroupsCommands->GetStaticBox(), wxID_ANY, wxT("Create group"), wxDefaultPosition, wxDefaultSize, 0 );
 	sbSizerGroupsCommands->Add( m_buttonGroupCreate, 0, wxALL|wxEXPAND, 5 );
@@ -464,7 +468,7 @@ MainFrame::MainFrame( wxWindow* parent, wxWindowID id, const wxString& title, co
 	m_buttonEditUser->Connect( wxEVT_COMMAND_BUTTON_CLICKED, wxCommandEventHandler( MainFrame::OnButtonEditUserClick ), NULL, this );
 	m_buttonDeleteUser->Connect( wxEVT_COMMAND_BUTTON_CLICKED, wxCommandEventHandler( MainFrame::OnButtonDeleteUserClick ), NULL, this );
 	m_buttonUserListRefresh->Connect( wxEVT_COMMAND_BUTTON_CLICKED, wxCommandEventHandler( MainFrame::OnButtonRefreshClick ), NULL, this );
-	m_buttonMoreGroupInfo->Connect( wxEVT_COMMAND_BUTTON_CLICKED, wxCommandEventHandler( MainFrame::OnButtonMoreGroupInfoClick ), NULL, this );
+	m_buttonGroupPermissions->Connect( wxEVT_COMMAND_BUTTON_CLICKED, wxCommandEventHandler( MainFrame::OnButtonGroupPermissionsClick ), NULL, this );
 	m_buttonGroupCreate->Connect( wxEVT_COMMAND_BUTTON_CLICKED, wxCommandEventHandler( MainFrame::OnButtonGroupCreateClick ), NULL, this );
 	m_buttonGroupUpdate->Connect( wxEVT_COMMAND_BUTTON_CLICKED, wxCommandEventHandler( MainFrame::OnButtonGroupEditClick ), NULL, this );
 	m_buttonGroupDelete->Connect( wxEVT_COMMAND_BUTTON_CLICKED, wxCommandEventHandler( MainFrame::OnButtonGroupDeleteClick ), NULL, this );
@@ -508,7 +512,7 @@ MainFrame::~MainFrame()
 	m_buttonEditUser->Disconnect( wxEVT_COMMAND_BUTTON_CLICKED, wxCommandEventHandler( MainFrame::OnButtonEditUserClick ), NULL, this );
 	m_buttonDeleteUser->Disconnect( wxEVT_COMMAND_BUTTON_CLICKED, wxCommandEventHandler( MainFrame::OnButtonDeleteUserClick ), NULL, this );
 	m_buttonUserListRefresh->Disconnect( wxEVT_COMMAND_BUTTON_CLICKED, wxCommandEventHandler( MainFrame::OnButtonRefreshClick ), NULL, this );
-	m_buttonMoreGroupInfo->Disconnect( wxEVT_COMMAND_BUTTON_CLICKED, wxCommandEventHandler( MainFrame::OnButtonMoreGroupInfoClick ), NULL, this );
+	m_buttonGroupPermissions->Disconnect( wxEVT_COMMAND_BUTTON_CLICKED, wxCommandEventHandler( MainFrame::OnButtonGroupPermissionsClick ), NULL, this );
 	m_buttonGroupCreate->Disconnect( wxEVT_COMMAND_BUTTON_CLICKED, wxCommandEventHandler( MainFrame::OnButtonGroupCreateClick ), NULL, this );
 	m_buttonGroupUpdate->Disconnect( wxEVT_COMMAND_BUTTON_CLICKED, wxCommandEventHandler( MainFrame::OnButtonGroupEditClick ), NULL, this );
 	m_buttonGroupDelete->Disconnect( wxEVT_COMMAND_BUTTON_CLICKED, wxCommandEventHandler( MainFrame::OnButtonGroupDeleteClick ), NULL, this );
